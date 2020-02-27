@@ -1,0 +1,76 @@
+[{
+	"_id": "01",
+	"category": "attire",
+	"product_name": "White T-Shirt",
+	"product_image": "01",
+	"product_price": "8.97",
+	"date": "27 February 2020"
+},
+{
+	"_id": "02",
+	"category": "attire",
+	"product_name": "Blue T-Shirt",
+	"product_image": "02",
+	"product_price": "8.92",
+	"date": "27 February 2020"
+},
+{
+	"_id": "03",
+	"category": "attire",
+	"product_name": "Black T-Shirt",
+	"product_image": "02",
+	"product_price": "8.92",
+	"date": "27 February 2020"
+},
+{
+	"_id": "04",
+	"category": "attire",
+	"product_name": "Gray T-Shirt",
+	"product_image": "04",
+	"product_price": "9.96",
+	"date": "27 February 2020"
+},
+{
+	"_id": "05",
+	"category": "attire",
+	"product_name": "Gray T-Shirt",
+	"product_image": "04",
+	"product_price": "9.96",
+	"date": "27 February 2020"
+},
+{
+	"_id": "06",
+	"category": "watch",
+	"product_name": "Swiss  Wrist Watch",
+	"product_image": "04",
+	"product_price": "432",
+	"date": "27 February 2020"
+},
+{
+	"_id": "07",
+	"category": "watch",
+	"product_name": "Rolex Watch",
+	"product_image": "04",
+	"product_price": "432",
+	"date": "27 February 2020"
+},
+{
+	"_id": "08",
+	"category": "watch",
+	"product_name": "Patek Philippe Watch",
+	"product_image": "04",
+	"product_price": "432",
+	"date": "27 February 2020"
+},
+{
+	"_id": "09",
+	"category": "watch",
+	"product_name": "Audemars Piguet",
+	"product_image": "04",
+	"product_price": "432",
+	"date": "27 February 2020"
+}
+]
+
+
+

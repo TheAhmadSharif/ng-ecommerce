@@ -1,0 +1,15 @@
+<div style="margin-top: 30px" class="d-flex flex-wrap">
+    <div class="row">
+        <div class="col-sm-4 product" *ngFor="let product of products; let i = index;" style="margin-bottom: 10px;">
+            {{ product.product_name }}
+            {{ product.product_price }}
+             <img src="assets/products/{{ product.category }}/1.jpg" alt="">
+            {{ product.category }}
+
+            <div style="margin-top: 10px;">
+                <a href="#" class="btn btn-sm btn-success">Add To Cart</a>
+            </div>
+    
+        </div> <!-- End  -->
+    </div> <!-- End  -->
+</div> <!-- End col -->
