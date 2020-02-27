@@ -3,11 +3,16 @@
         <div class="col-sm-4 product" *ngFor="let product of products; let i = index;" style="margin-bottom: 10px;">
             {{ product.product_name }}
             {{ product.product_price }}
-             <img src="assets/products/{{ product.category }}/1.jpg" alt="">
+             <img src="assets/products/{{ product.category }}/{{ product.product_image}}.jpg" alt="" height="240">
             {{ product.category }}
+            
+
+            <div>
+                Price   {{ product.product_price }} $
+            </div>
 
             <div style="margin-top: 10px;">
-                <a href="#" class="btn btn-sm btn-success">Add To Cart</a>
+                <a href="#" (click)="addToCart(product._id)" class="btn btn-sm btn-success">Add To Cart</a>
             </div>
     
         </div> <!-- End  -->
