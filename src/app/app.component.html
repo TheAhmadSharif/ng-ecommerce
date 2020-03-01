@@ -22,10 +22,9 @@
                       <a routerLink="product/watch" routerLinkActive="active">Watch</a>
                     </li>
 
-                    <li class="cart-li">
-                      <a routerLink="cart" routerLinkActive="active">Cart</a>
+                    <li>
+                      <a class="btn btn-sm btn-success" routerLink="cart" routerLinkActive="active">Cart <span *ngIf="cartArray > 0" class="badge badge-light">{{ cartArray }}</span></a>
                     </li>
-                  
                   </ul> 
                </nav>
           </div> <!-- End col 8 -->

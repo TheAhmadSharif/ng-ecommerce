@@ -1,20 +1,19 @@
 <div style="margin-top: 30px" class="d-flex flex-wrap">
     <div class="row">
-        <div class="col-sm-4 product" *ngFor="let product of products; let i = index;" style="margin-bottom: 10px;">
-            {{ product.product_name }}
-            {{ product.product_price }}
-             <img src="assets/products/{{ product.category }}/{{ product.product_image}}.jpg" alt="" height="240">
-            {{ product.category }}
-            
-
-            <div>
-                Price   {{ product.product_price }} $
-            </div>
-
-            <div style="margin-top: 10px;">
-                <a href="#" (click)="addToCart(product._id)" class="btn btn-sm btn-success">Add To Cart</a>
-            </div>
-    
-        </div> <!-- End  -->
-    </div> <!-- End  -->
+        <div class="col-sm-4" *ngFor="let product of products; let i = index;" style="margin-bottom: 10px;">
+                <div class="card">
+                    <img src="assets/products/{{ product.category }}/{{ product.product_image}}.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.product_name }} <span>
+                                <small>{{ product.category | titlecase  }}</small>
+                            </span></h5>
+                            
+                            <div style="margin: 5px 0;"> 
+                                   {{ product.product_price }} <small>$</small>
+                            </div>
+                            <div (click)="addToCart(product)" class="btn btn-sm btn-success">Add To Cart</div>
+                        </div> <!-- End card body -->
+                </div> <!-- End card  -->
+        </div> <!-- End col  -->
+    </div> <!-- End row -->
 </div> <!-- End col -->

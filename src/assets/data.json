@@ -32,34 +32,26 @@
     "date": "27 February 2020"
   },
   {
-    "_id": "05",
-    "category": "attire",
-    "product_name": "Gray T-Shirt",
-    "product_image": "4",
-    "product_price": "9.96",
-    "date": "27 February 2020"
-  },
-  {
     "_id": "06",
     "category": "watch",
-    "product_name": "Swiss  Wrist Watch",
-    "product_image": "4",
+    "product_name": "Swiss  Wrist",
+    "product_image": "1",
     "product_price": "432",
     "date": "27 February 2020"
   },
   {
     "_id": "07",
     "category": "watch",
-    "product_name": "Rolex Watch",
-    "product_image": "4",
+    "product_name": "Rolex",
+    "product_image": "2",
     "product_price": "432",
     "date": "27 February 2020"
   },
   {
     "_id": "08",
     "category": "watch",
-    "product_name": "Patek Philippe Watch",
-    "product_image": "4",
+    "product_name": "Patek Philippe",
+    "product_image": "3",
     "product_price": "432",
     "date": "27 February 2020"
   },
@@ -70,5 +62,13 @@
     "product_image": "4",
     "product_price": "432",
     "date": "27 February 2020"
+  },
+  {
+    "_id": "10",
+    "category": "shoes",
+    "product_name": "Adidas",
+    "product_image": "1",
+    "product_price": "102",
+    "date": "01 March 2020"
   }
 ]
