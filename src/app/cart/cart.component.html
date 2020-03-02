@@ -13,22 +13,21 @@
     <div class="cart">
 
       <ul class="cartWrap">
-        <li class="items" *ngFor="let product of products; let i = index" [ngClass]="{'even': i%2 == 0}">
+        <li class="items" *ngFor="let product of products; let i = index;" [ngClass]="{'even': i%2 == 0}">
                 <div class="infoWrap"> 
                     <div class="cartSection">
                         <img src="assets/products/{{ product.category }}/{{ product.product_image}}.jpg" style="max-width: 100px;" class="itemImg" />
                         <p class="itemNumber">{{ product._id }}</p>
                 
                         <h3>{{ product.product_name}}</h3>
-                            <p> <input type="number"  class="qty" placeholder="1" style="min-width: 60px;" [(ngModel)]="quantity[i]"> x ${{ product.product_price }}</p>
+                            <p> <input type="number" style="max-width: 60px;" [(ngModel)]="quantity[i]"> x 
+                              ${{ product.product_price }}</p>
 
-                          {{ quantity[i] }}
                     
                     </div>   <!-- End cartSection -->
 
-                    
                             <div class="prodTotal cartSection">
-                                <p>${{ quantity[i] * product.product_price | number: '3.1-2'}}</p>
+                                <p>${{ quantity[i] * product.product_price | number: '1.1-2'}}</p>
                             </div>
                             <div class="cartSection removeWrap">
                                 <div class="remove" (click)="removeItem(i)">x</div>

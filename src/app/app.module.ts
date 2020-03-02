@@ -12,13 +12,15 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CategoryComponent } from './category/category.component';
 import { CartComponent } from './cart/cart.component';
+import { FilterPipe} from './filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
     CategoryComponent,
-    CartComponent
+    CartComponent,
+    FilterPipe 
   ],
   imports: [
     BrowserModule,

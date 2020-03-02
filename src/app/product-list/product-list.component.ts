@@ -12,7 +12,7 @@ import { CartService } from '../cart.service';
 export class ProductListComponent implements OnInit {
   products: any;
   cart: any;
-  searchTerm:any;
+  searchText:any;
   
     
   constructor(
@@ -32,14 +32,5 @@ export class ProductListComponent implements OnInit {
   addToCart(product:any) {
     this.cartService.addToCart(product);
   }
-
-  search(): void {
-    let term = this.searchTerm;
-    this.products = this.products.filter(function(tag) {
-        return tag.name.indexOf(term) >= 0;
-    }); 
-}
-
-
 
 }

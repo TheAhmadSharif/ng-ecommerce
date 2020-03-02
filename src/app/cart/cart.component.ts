@@ -9,7 +9,7 @@ import { CartService } from '../cart.service';
 export class CartComponent implements OnInit {
 
   products;
-  quantity:any = [];
+  quantity:Array<number> = [];
   constructor(public cartService: CartService) {
     
    }

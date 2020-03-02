@@ -14,3 +14,12 @@
  .container {
      max-width: 940px !important;
  }
+
+ .form-control:active, .form-control:focus, input {
+     border: #495057;
+ }
+
+ .row {
+    width: 100%;
+
+}

@@ -16,6 +16,7 @@ export class CategoryComponent implements OnInit {
   data:any;
   title:any;
   products:any;
+  searchText:any;
 
   constructor(public http: HttpClient, 
     private route: ActivatedRoute,
