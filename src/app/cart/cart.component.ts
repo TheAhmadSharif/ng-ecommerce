@@ -9,14 +9,17 @@ import { CartService } from '../cart.service';
 export class CartComponent implements OnInit {
 
   products;
-
-
-  constructor(private cartService: CartService) {
+  quantity:any = [];
+  constructor(public cartService: CartService) {
     
    }
 
   ngOnInit(): void {
     this.products = this.cartService.getItems();
+  }
+
+  removeItem(product:number) {
+    this.cartService.items.splice(product,1);
   }
 
 }

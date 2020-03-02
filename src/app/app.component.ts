@@ -9,14 +9,14 @@ import { CartService } from './cart.service';
 
 export class AppComponent  implements OnInit {
   title = 'Ecommerce App';
-  cartArray: number = 0;
+  cartArray: number;
 
-
-  constructor(private cartService: CartService) {
-
+  constructor(public cartService: CartService) {
+    this.cartArray = this.cartService.getItems.length;
   }
 
   ngOnInit(): void { 
-
+    this.cartArray = this.cartService.getItems().length;
   }
+
 }

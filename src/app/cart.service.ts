@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +11,7 @@ export class CartService {
 
   addToCart(product:any) {
     this.items.push(product);
+    console.log(this.items);
   }
 
   getItems() {
@@ -19,9 +22,6 @@ export class CartService {
     this.items = [];
     return this.items;
   }
-
-
- 
 
 
   constructor() {}

@@ -38,14 +38,10 @@ export class CategoryComponent implements OnInit {
         }));
 
 
-
-
-
     }
 
     addToCart(product:any) {
       this.cartService.addToCart(product);
-      console.log(this.cartService.getItems());
     }
 
 }

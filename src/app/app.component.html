@@ -21,9 +21,9 @@
                     <li>
                       <a routerLink="product/watch" routerLinkActive="active">Watch</a>
                     </li>
-
+                    
                     <li>
-                      <a class="btn btn-sm btn-success" routerLink="cart" routerLinkActive="active">Cart <span *ngIf="cartArray > 0" class="badge badge-light">{{ cartArray }}</span></a>
+                      <a class="btn btn-sm btn-success" routerLink="cart" routerLinkActive="active">Cart <span class="badge badge-light">{{ cartService.getItems().length }}</span></a>
                     </li>
                   </ul> 
                </nav>

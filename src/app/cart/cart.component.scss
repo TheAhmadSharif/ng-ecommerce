@@ -1,3 +1,25 @@
+.remove {
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    color: #ffffff;
+    font-weight: bold;
+    background: #e0e0e0;
+    padding: .5em;
+    font-size: .75em;
+    display: inline-block;
+    border-radius: 100%;
+    line-height: .85;
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -ms-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear;
+}
+
+.remove:hover {
+  background: #f30;
+}
 
 table {
   border-collapse: collapse;
@@ -97,7 +119,6 @@ img {
   color: #fff;
   background: #82ca9c;
   font-weight: bold;
-  border-radius: 50px;
   float: right;
   text-align: right;
   -webkit-transition: all 0.25s linear;
@@ -296,18 +317,9 @@ a.remove:hover {
   font-family: "Montserrat", sans-serif;
   letter-spacing: -.015em;
   font-size: 1em;
-  padding: 1em 3em;
   color: #fff;
-  background: #82ca9c;
+  background: #01a13c;
   font-weight: bold;
-  border-radius: 50px;
-  float: right;
-  text-align: right;
-  -webkit-transition: all 0.25s linear;
-  -moz-transition: all 0.25s linear;
-  -ms-transition: all 0.25s linear;
-  -o-transition: all 0.25s linear;
-  transition: all 0.25s linear;
 }
 .btn:after {
   content: "\276f";
@@ -339,6 +351,7 @@ a.remove:hover {
 .subtotal .totalRow {
   padding: .5em;
   text-align: right;
+  float: right;
 }
 .subtotal .totalRow.final {
   font-size: 1.25em;
