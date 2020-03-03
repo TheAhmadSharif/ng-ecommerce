@@ -17,17 +17,16 @@
                 <div class="infoWrap"> 
                     <div class="cartSection">
                         <img src="assets/products/{{ product.category }}/{{ product.product_image}}.jpg" style="max-width: 100px;" class="itemImg" />
-                        <p class="itemNumber">{{ product._id }}</p>
+                        <p class="itemNumber">Item number: {{ product._id }}</p>
                 
                         <h3>{{ product.product_name}}</h3>
-                            <p> <input type="number" style="max-width: 60px;" [(ngModel)]="quantity[i]"> x 
+                            <p> <input type="number" style="max-width: 60px;" min="1" value="1" (click)="addNumber(quantity.value, product.product_price)" #quantity> x 
                               ${{ product.product_price }}</p>
 
-                    
                     </div>   <!-- End cartSection -->
 
                             <div class="prodTotal cartSection">
-                                <p>${{ quantity[i] * product.product_price | number: '1.1-2'}}</p>
+                                <p>$ {{  quantity.value * product.product_price | number: '1.1-2'}}</p>
                             </div>
                             <div class="cartSection removeWrap">
                                 <div class="remove" (click)="removeItem(i)">x</div>
@@ -40,12 +39,7 @@
     
     <div class="subtotal cf">
       <ul>
-        <li class="totalRow"><span class="label">Subtotal</span><span class="value">$35.00</span></li>
-        
-            <li class="totalRow"><span class="label">Shipping</span><span class="value">$5.00</span></li>
-        
-              <li class="totalRow"><span class="label">Tax</span><span class="value">$4.00</span></li>
-              <li class="totalRow final"><span class="label">Total</span><span class="value">$44.00</span></li>
+        <li class="totalRow final"><span class="label">Total</span><span class="value"> ${{ totalAmount | number: '1.1-2' }}</span></li>
         <li class="totalRow"><a href="#" class="btn">Checkout</a></li>
       </ul>
     </div>

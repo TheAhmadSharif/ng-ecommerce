@@ -21,5 +21,8 @@
 
  .row {
     width: 100%;
+}
 
+.nav li:last-child {
+    margin-right: 0;
 }

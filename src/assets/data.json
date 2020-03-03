@@ -36,7 +36,7 @@
     "category": "watch",
     "product_name": "Swiss  Wrist",
     "product_image": "1",
-    "product_price": "432",
+    "product_price": "220",
     "date": "27 February 2020"
   },
   {
@@ -44,7 +44,7 @@
     "category": "watch",
     "product_name": "Rolex",
     "product_image": "2",
-    "product_price": "432",
+    "product_price": "152",
     "date": "27 February 2020"
   },
   {
@@ -52,7 +52,7 @@
     "category": "watch",
     "product_name": "Patek Philippe",
     "product_image": "3",
-    "product_price": "432",
+    "product_price": "120",
     "date": "27 February 2020"
   },
   {
@@ -60,7 +60,7 @@
     "category": "watch",
     "product_name": "Audemars Piguet",
     "product_image": "4",
-    "product_price": "432",
+    "product_price": "244",
     "date": "27 February 2020"
   },
   {
@@ -69,6 +69,22 @@
     "product_name": "Adidas",
     "product_image": "1",
     "product_price": "102",
+    "date": "01 March 2020"
+  },
+  {
+    "_id": "11",
+    "category": "shoes",
+    "product_name": "Bespoke Brown",
+    "product_image": "2",
+    "product_price": "202",
+    "date": "01 March 2020"
+  },
+  {
+    "_id": "12",
+    "category": "shoes",
+    "product_name": "Bespoke Black",
+    "product_image": "3",
+    "product_price": "182",
     "date": "01 March 2020"
   }
 ]
