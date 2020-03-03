@@ -13,6 +13,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { CategoryComponent } from './category/category.component';
 import { CartComponent } from './cart/cart.component';
 import { FilterPipe} from './filter.pipe';
+import { PricePipe} from './range.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FilterPipe} from './filter.pipe';
     ProductListComponent,
     CategoryComponent,
     CartComponent,
-    FilterPipe 
+    FilterPipe,
+    PricePipe 
   ],
   imports: [
     BrowserModule,

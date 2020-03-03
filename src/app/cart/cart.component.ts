@@ -29,6 +29,7 @@ export class CartComponent implements OnInit {
 
   removeItem(product:number) {
     this.cartService.items.splice(product,1);
+    this.ngOnInit();
   }
 
   addNumber(quantity, price) {

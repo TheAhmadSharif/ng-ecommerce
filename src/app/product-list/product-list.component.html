@@ -2,6 +2,18 @@
     <div class="col-sm-12">
         <div style="margin-top: 40px;">
             <input [(ngModel)]="searchText" placeholder="Search ..." class="form-control" />
+            
+        </div> <!-- End search -->
+    </div> <!-- End col -->
+</div> <!-- End row -->
+
+<div class="row">
+    <div class="col-sm-12">
+        <div style="margin-top: 40px;">
+                <div class="slidecontainer">
+                    <input type="range" min="10" max="500" value="50" class="slider" [(ngModel)]="changePrice">
+                </div>
+                {{ changePrice }}
         </div> <!-- End search -->
     </div> <!-- End col -->
 </div> <!-- End row -->
@@ -9,8 +21,7 @@
 
 <div style="margin-top: 30px" class="d-flex">
     <div class="row">
-        <div class="col-sm-4" *ngFor="let product of products | filter : searchText" style="margin-bottom: 10px;">
-                <div class="card">
+        <div class="col-sm-4" *ngFor="let product of products | range : changePrice | filter: searchText" style="margin-bottom: 10px;"> <div class="card">
                     <img src="assets/products/{{ product.category }}/{{ product.product_image}}.jpg" class="card-img-top" alt="">
                         <div class="card-body">
                             <h5 class="card-title">{{ product.product_name }} <span>

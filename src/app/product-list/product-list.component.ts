@@ -13,6 +13,7 @@ export class ProductListComponent implements OnInit {
   products: any;
   cart: any;
   searchText:any;
+  changePrice:number = 50;
   
     
   constructor(
@@ -27,7 +28,6 @@ export class ProductListComponent implements OnInit {
       this.products = data;
     });
   }
-
 
   addToCart(product:any) {
     this.cartService.addToCart(product);
