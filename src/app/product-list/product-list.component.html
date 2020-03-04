@@ -7,47 +7,17 @@
     </div> <!-- End col -->
 </div> <!-- End row -->
 
-<div class="row">
-    <div class="col-sm-12">
-        <div style="margin-top: 40px;">
-                <div class="slidecontainer">
-                    <input type="range" min="5" max="500" value="50" class="slider" [(ngModel)]="changePrice" [title]="changePrice" data-toggle="tooltip">
-
-                    
-
-                </div>
-                <div class="text-center" style="margin: 10px 0;">
-                    <span class="badge badge-warning">{{ changePrice }}</span>
-                </div>
-                
-        </div> <!-- End search -->
-    </div> <!-- End col -->
-</div> <!-- End row -->
-
 
 <div class="row">
     <div class="col-sm-12">
         <div style="margin-top: 40px;">
                    <div class="d-flex">
 
-                       <div>
-                             <input type="number" class="form-control" style="max-width: 120px;" placeholder="min-price" #minPrice>
-                       </div>
-                         
+                    <p>Min value: <input type="number" [(ngModel)]="minValue" (click)="searchPrice(minValue, maxValue)"></p>
+                    <p>Max value: <input type="number" [(ngModel)]="maxValue" (click)="searchPrice(minValue, maxValue)"></p>
+                    <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" (click)="searchPrice(minValue, maxValue)"></ng5-slider>
 
-                       <div style="margin: 10px 10px;">
-                          To
-                       </div>
-
-                    <div>
-                        <input type="number" class="form-control" style="max-width: 120px;"placeholder="max-price" #maxPrice>
-                    </div>
-
-                    <div style="margin: 0 10px;">
-                        <button class="btn btn-success" (click)="searchPrice(minPrice.value, maxPrice.value)">
-                            Filter Price
-                        </button>
-                    </div>
+                   
                    </div> <!-- End div -->
         </div> <!-- End search -->
     </div> <!-- End col -->
@@ -57,7 +27,7 @@
 
 <div style="margin-top: 30px" class="d-flex">
     <div class="row">
-        <div class="col-sm-4" *ngFor="let product of products | range : changePrice | filter: searchText" style="margin-bottom: 10px;"> <div class="card">
+        <div class="col-sm-4" *ngFor="let product of products | filter: searchText" style="margin-bottom: 10px;"> <div class="card">
                     <img src="assets/products/{{ product.category }}/{{ product.product_image}}.jpg" class="card-img-top" alt="">
                         <div class="card-body">
                             <h5 class="card-title">{{ product.product_name }} <span>

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router, Route } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { Ng5SliderModule } from 'ng5-slider';
 
 
 
@@ -29,6 +30,7 @@ import { PricePipe} from './range.pipe';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    Ng5SliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
