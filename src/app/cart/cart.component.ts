@@ -11,6 +11,8 @@ export class CartComponent implements OnInit {
   products;
   totalAmount:any;
   quantity:Array<number> = [1];
+  product_totalprice:any;
+  product_price:any = [];
   constructor(public cartService: CartService) {
     
    }
@@ -20,23 +22,29 @@ export class CartComponent implements OnInit {
     this.totalAmount = 0;
 
     var arr = this.products;
-    var total = 0;
     for(var i in arr) { 
-      this.totalAmount += parseFloat(arr[i].product_price);
+      var product_price = parseFloat(arr[i].product_price) * parseFloat(arr[i].product_quantity);
+      this.totalAmount += product_price;
+      this.product_price[i] = arr[i].product_price * arr[i].product_quantity;
     }
 
   }
 
-  removeItem(product:number) {
-    this.cartService.items.splice(product,1);
+  removeItem(index:number) {
+    this.cartService.items.splice(index, 1);
     this.ngOnInit();
   }
 
-  addNumber(quantity, price) {
+  addNumber(quantity, product_price, index) {
+      this.cartService.items[index].product_quantity = quantity;
+      this.product_price[index] = (quantity * product_price).toFixed(2);
+      this.totalAmount = 0;
+
+      for(var i = 0; i < this.product_price.length; i++) {
+        this.totalAmount += parseFloat(this.product_price[i]);
+      }
   }
-  totalPrice(){
-    console.log(this.quantity);
-  }
+  
 }
 
 

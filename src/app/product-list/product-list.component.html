@@ -11,12 +11,41 @@
     <div class="col-sm-12">
         <div style="margin-top: 40px;">
                 <div class="slidecontainer">
-                    <input type="range" min="10" max="500" value="50" class="slider" [(ngModel)]="changePrice">
+                    <input type="range" min="10" max="500" value="50" class="slider" [(ngModel)]="changePrice" [title]="changePrice">
                 </div>
-                {{ changePrice }}
         </div> <!-- End search -->
     </div> <!-- End col -->
 </div> <!-- End row -->
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div style="margin-top: 40px;">
+                   <div class="d-flex">
+
+                       <div>
+                             <input type="number" class="form-control" style="max-width: 120px;" placeholder="min-price" #minPrice>
+                       </div>
+                         
+
+                       <div style="margin: 10px 10px;">
+                          To
+                       </div>
+
+                    <div>
+                        <input type="number" class="form-control" style="max-width: 120px;"placeholder="max-price" #maxPrice>
+                    </div>
+
+                    <div style="margin: 0 10px;">
+                        <button class="btn btn-success" (click)="searchPrice(minPrice.value, maxPrice.value)">
+                            Search
+                        </button>
+                    </div>
+                   </div> <!-- End div -->
+        </div> <!-- End search -->
+    </div> <!-- End col -->
+</div> <!-- End row -->
+
 
 
 <div style="margin-top: 30px" class="d-flex">

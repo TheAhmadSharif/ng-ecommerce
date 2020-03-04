@@ -1,5 +1,3 @@
-
-
 <div *ngIf="cartService.getItems().length < 1" class="d-flex justify-content-center align-items-center mh">
   <h2 class="projTitle"> Your Cart is empty. </h2>
 </div>
@@ -20,13 +18,14 @@
                         <p class="itemNumber">Item number: {{ product._id }}</p>
                 
                         <h3>{{ product.product_name}}</h3>
-                            <p> <input type="number" style="max-width: 60px;" min="1" value="1" (click)="addNumber(quantity.value, product.product_price)" #quantity> x 
-                              ${{ product.product_price }}</p>
+                            <p> 
+                              <input type="number" style="max-width: 60px;" min="1" [value]="product.product_quantity" (click)="addNumber(quantity.value, product.product_price, i)" #quantity> 
+                              
+                              x ${{ product.product_price }}</p>
 
                     </div>   <!-- End cartSection -->
-
                             <div class="prodTotal cartSection">
-                                <p>$ {{  quantity.value * product.product_price | number: '1.1-2'}}</p>
+                                <p>$ {{  product.product_price * product.product_quantity | number: '1.1-2' }}</p>
                             </div>
                             <div class="cartSection removeWrap">
                                 <div class="remove" (click)="removeItem(i)">x</div>
@@ -35,8 +34,6 @@
         </li>
       </ul>
     </div>
-
-    
     <div class="subtotal cf">
       <ul>
         <li class="totalRow final"><span class="label">Total</span><span class="value"> ${{ totalAmount | number: '1.1-2' }}</span></li>

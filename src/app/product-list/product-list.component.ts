@@ -13,7 +13,9 @@ export class ProductListComponent implements OnInit {
   products: any;
   cart: any;
   searchText:any;
-  changePrice:number = 50;
+  minPrice:number;
+  maxPrice:number;
+  changePrice:number = 500;
   
     
   constructor(
@@ -31,6 +33,14 @@ export class ProductListComponent implements OnInit {
 
   addToCart(product:any) {
     this.cartService.addToCart(product);
+  }
+
+  searchPrice(min, max) {
+    if(min < max) {
+      console.log(min, max)
+    } else {
+      console.log('Wrong combination');
+    } 
   }
 
 }
