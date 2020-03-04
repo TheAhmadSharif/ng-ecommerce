@@ -11,6 +11,7 @@ export class CartComponent implements OnInit {
   products;
   totalAmount:any;
   quantity:Array<number> = [1];
+  productPrice;
   constructor(public cartService: CartService) {
     
    }
@@ -32,7 +33,8 @@ export class CartComponent implements OnInit {
     this.ngOnInit();
   }
 
-  addNumber(quantity, price) {
+  addNumber(quantity, price, index) {
+    this.productPrice = quantity * price;
   }
   totalPrice(){
     console.log(this.quantity);
