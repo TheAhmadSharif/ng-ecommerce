@@ -16,6 +16,7 @@ export class ProductListComponent implements OnInit {
   minPrice:number;
   maxPrice:number;
   changePrice:number = 500;
+  data;
   
     
   constructor(
@@ -36,7 +37,14 @@ export class ProductListComponent implements OnInit {
   }
 
   searchPrice(min, max) {
-    if(min < max) {
+    if(parseFloat(min) < parseFloat(max)) {
+
+
+      this.http.get("assets/data.json").subscribe(data =>{
+        this.data = data;
+        this.products = this.data.filter(object => parseFloat(object.product_price) > parseFloat(min) && parseFloat(object.product_price) < parseFloat(max) + 1); ;
+      });
+
       console.log(min, max)
     } else {
       console.log('Wrong combination');

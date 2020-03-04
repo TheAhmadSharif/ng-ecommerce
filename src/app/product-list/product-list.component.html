@@ -11,8 +11,15 @@
     <div class="col-sm-12">
         <div style="margin-top: 40px;">
                 <div class="slidecontainer">
-                    <input type="range" min="10" max="500" value="50" class="slider" [(ngModel)]="changePrice" [title]="changePrice">
+                    <input type="range" min="5" max="500" value="50" class="slider" [(ngModel)]="changePrice" [title]="changePrice" data-toggle="tooltip">
+
+                    
+
                 </div>
+                <div class="text-center" style="margin: 10px 0;">
+                    <span class="badge badge-warning">{{ changePrice }}</span>
+                </div>
+                
         </div> <!-- End search -->
     </div> <!-- End col -->
 </div> <!-- End row -->
@@ -38,7 +45,7 @@
 
                     <div style="margin: 0 10px;">
                         <button class="btn btn-success" (click)="searchPrice(minPrice.value, maxPrice.value)">
-                            Search
+                            Filter Price
                         </button>
                     </div>
                    </div> <!-- End div -->
