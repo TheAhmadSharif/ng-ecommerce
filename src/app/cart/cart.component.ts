@@ -13,6 +13,7 @@ export class CartComponent implements OnInit {
   quantity:Array<number> = [1];
   product_totalprice:any;
   product_price:any = [];
+
   constructor(public cartService: CartService) {
     
    }
@@ -43,6 +44,7 @@ export class CartComponent implements OnInit {
       for(var i = 0; i < this.product_price.length; i++) {
         this.totalAmount += parseFloat(this.product_price[i]);
       }
+
   }
   
 }
