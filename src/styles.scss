@@ -26,3 +26,16 @@
 .nav li:last-child {
     margin-right: 0;
 }
+
+.top-header {
+    position: relative;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    min-height: 40px;
+    background: #FFF;
+}
+
+.component-div {
+    margin-top: 0;
+}

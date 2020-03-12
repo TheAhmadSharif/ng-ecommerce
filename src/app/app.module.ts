@@ -6,6 +6,11 @@ import { FormsModule } from '@angular/forms';
 import { Ng5SliderModule } from 'ng5-slider';
 
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+import { environment } from '../environments/environment';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +20,7 @@ import { CategoryComponent } from './category/category.component';
 import { CartComponent } from './cart/cart.component';
 import { FilterPipe} from './filter.pipe';
 import { PricePipe} from './range.pipe';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +29,18 @@ import { PricePipe} from './range.pipe';
     CategoryComponent,
     CartComponent,
     FilterPipe,
-    PricePipe 
+    PricePipe,
+    SignupComponent 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    Ng5SliderModule
+    Ng5SliderModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
