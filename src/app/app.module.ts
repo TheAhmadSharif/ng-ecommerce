@@ -23,6 +23,8 @@ import { FilterPipe} from './filter.pipe';
 import { PricePipe} from './range.pipe';
 import { SignupComponent } from './signup/signup.component';
 import { CustomerComponent } from './customer/customer.component';
+import { SigninComponent } from './signin/signin.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { CustomerComponent } from './customer/customer.component';
     FilterPipe,
     PricePipe,
     SignupComponent,
-    CustomerComponent 
+    CustomerComponent,
+    SigninComponent,
+    DashboardComponent 
   ],
   imports: [
     BrowserModule,

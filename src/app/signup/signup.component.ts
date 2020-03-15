@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 
@@ -8,6 +9,8 @@ import { auth } from 'firebase/app';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
+  
+  notification: any;
 
   constructor(public auth: AngularFireAuth) {
   }
@@ -18,16 +21,16 @@ export class SignupComponent implements OnInit {
   }
 
   createUser() {
-    var email = 'TheAhmadSharif@gmail.com';
+    var email = '98712ahmadshorif@gmail.com';
     var password = '123456';
 
-    // console.log(this.auth);
-      /*  this.auth.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-            var errorCode = error.code;
-            var errorMessage = error.message;
+      this.auth.auth.createUserWithEmailAndPassword(email, password)
+      .catch(error => {
+
+          this.notification = error.message;
         
           });
-      */    
+        
   }
 
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, HostListener, Directive, HostBinding, Inject} from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { CartService } from './cart.service';
 
 @Component({
@@ -11,9 +12,25 @@ export class AppComponent  implements OnInit {
   title = 'Ecommerce App';
   cartArray: number;
 
-  constructor(public cartService: CartService) {
+  constructor(@Inject(DOCUMENT) private document: Document, public cartService: CartService) {
     this.cartArray = this.cartService.getItems.length;
   }
+
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    if (document.body.scrollTop > 40 ||     
+    document.documentElement.scrollTop > 40) {
+      document.getElementById('topHeader').classList.add('fixedheader');
+    }
+    else {
+      document.getElementById('topHeader').classList.remove('fixedheader');
+    }
+  }
+
+
+
+
 
   ngOnInit(): void { 
     this.cartArray = this.cartService.getItems().length;
