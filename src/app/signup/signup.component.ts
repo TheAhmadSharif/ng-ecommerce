@@ -21,10 +21,12 @@ export class SignupComponent implements OnInit {
   }
 
   createUser() {
-    var email = '98712ahmadshorif@gmail.com';
+    var email = '234ahmadshorif@gmail.com';
     var password = '123456';
 
-      this.auth.auth.createUserWithEmailAndPassword(email, password)
+      this.auth.auth.createUserWithEmailAndPassword(email, password).then(success => {
+        console.log(success);
+      })
       .catch(error => {
 
           this.notification = error.message;
