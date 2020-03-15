@@ -10,7 +10,7 @@ export class DashboardComponent implements OnInit {
   product ={
     name: '',
     price: '',
-    category: '',
+    category: ['attire', 'watch', 'shoes'],
   }
 
   constructor() { }

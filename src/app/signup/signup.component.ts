@@ -20,13 +20,13 @@ export class SignupComponent implements OnInit {
     
   }
 
-  createUser() {
-    var email = 'ahmadsharif11@gmail.com';
-    var password = '123456';
+  createUser(email:string, password:string) {
+    var emailaddress = email;
+    var userpassword = password;
 
       this.auth.auth.createUserWithEmailAndPassword(email, password).then(success => {
         console.log(success);
-        this.router.navigate(['/signin']);
+        this.notification = "You have successfully signup in our system. Please login to place a order.";
 
       })
       .catch(error => {

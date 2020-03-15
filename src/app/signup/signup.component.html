@@ -9,21 +9,17 @@
         </div>
   
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Email Address">
+          <input type="text" class="form-control" placeholder="Email Address" #email_address>
         </div> <!-- End -->
   
   
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Password">
-        </div> <!-- End -->
-  
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Confirm Password">
+          <input type="text" class="form-control" placeholder="Password" #password>
         </div> <!-- End -->
 
 
         <div class="d-flex justify-content-between">
-          <button type="submit" class="btn btn-success" (click)="createUser()">Submit</button>
+          <button type="submit" class="btn btn-success" (click)="createUser(email_address.value, password.value)">Submit</button>
 
           <span class="mt-2">
             Already have an account ? <a routerLink="/signin">Login</a>

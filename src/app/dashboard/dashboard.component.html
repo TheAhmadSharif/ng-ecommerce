@@ -1,27 +1,42 @@
 <div class="row">
     <div class="col-sm-12 col-md-8">
       <div class="card" style="margin-top: 20px;">
+        
         <div class="card-body">
             <h4>Dashboard</h4>
+        </div> <!-- End card body -->
+        <div class="card-body">
+
+            <div>
+                <h6>Add New Product</h6>
+            </div>
+            
 
             <div>
                 <form>
                     <div class="form-group">
-                        <input type="text" class="form-group" placeholder="Product Name" [(ngModel)]="product.name" name="name">
-                    </div> <!-- End form grouo -->
+                        <input type="text" class="form-control" placeholder="Product Name" [(ngModel)]="product.name" name="name">
+                    </div> <!-- End form group -->
 
                     <div class="form-group">
-                        <input type="text" class="form-group" placeholder="Product Price" [(ngModel)]="product.price" name="price">
-                    </div> <!-- End form grouo -->
-
+                        <input type="number" class="form-control" placeholder="Product Price" [(ngModel)]="product.price" name="price">
+                    </div> <!-- End form group -->
 
                     <div class="form-group">
-                        <select name="category" [(ngModel)]="product.category">
-                            <option value="attire" selected>Attire</option>
-                            <option value="watch">Watch</option>
-                            <option value="shoes">Shoes</option>
-                        </select>
-                    </div> <!-- End form grouo -->
+                        <input type="hidden" value="attire">
+                    </div> <!-- End form group -->
+
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                            </div>
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                          </div>
+                    </div> <!-- End form group -->
 
                     <button class="btn btn-success">Add product</button>
                 </form>

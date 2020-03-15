@@ -19,8 +19,8 @@ export class AppComponent  implements OnInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    if (document.body.scrollTop > 40 ||     
-    document.documentElement.scrollTop > 40) {
+    if (document.body.scrollTop > 20 ||     
+    document.documentElement.scrollTop > 20) {
       document.getElementById('topHeader').classList.add('fixedheader');
     }
     else {

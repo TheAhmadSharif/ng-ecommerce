@@ -40,7 +40,11 @@
     box-shadow:2px 2px 4px 0 rgba(83,70,70,.3);
     -webkit-box-shadow:2px 2px 4px 0 rgba(83,70,70,.3);
     -moz-box-shadow:2px 2px 4px 0 rgba(83,70,70,.3);
-    -ms-box-shadow:2px 2px 4px 0 rgba(83,70,70,.3)
+    -ms-box-shadow:2px 2px 4px 0 rgba(83,70,70,.3);
+    
+    -webkit-transition: all 0.2s linear;
+       -moz-transition: all 0.2s linear;
+            transition: all 0.2s linear;
 }
 
 .cart-li {
@@ -50,8 +54,20 @@
 .fixedheader {
     position: fixed !important;
     top: 0;
+    
+
+    -webkit-transition: all 0.2s linear;
+       -moz-transition: all 0.2s linear;
+            transition: all 0.2s linear;
 }
 
 .component-div {
     margin-top: 0;
+}
+
+input {
+    padding: 12px 10px;
+    border: 1px solid #efefef;
+    border-radius: 2px;
+    width: 100%;
 }
