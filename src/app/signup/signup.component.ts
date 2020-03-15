@@ -22,12 +22,12 @@ export class SignupComponent implements OnInit {
     var password = '123456';
 
     // console.log(this.auth);
-    // this.auth.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-    //   var errorCode = error.code;
-    //   var errorMessage = error.message;
-    //   // ...
-    // });
-    
+      /*  this.auth.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+        
+          });
+      */    
   }
 
 }
