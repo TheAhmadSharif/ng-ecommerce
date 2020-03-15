@@ -12,7 +12,7 @@ export class SignupComponent implements OnInit {
   
   notification: any;
 
-  constructor(public auth: AngularFireAuth) {
+  constructor(public auth: AngularFireAuth, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -21,11 +21,13 @@ export class SignupComponent implements OnInit {
   }
 
   createUser() {
-    var email = '234ahmadshorif@gmail.com';
+    var email = 'ahmadsharif11@gmail.com';
     var password = '123456';
 
       this.auth.auth.createUserWithEmailAndPassword(email, password).then(success => {
         console.log(success);
+        this.router.navigate(['/signin']);
+
       })
       .catch(error => {
 
