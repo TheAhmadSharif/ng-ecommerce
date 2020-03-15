@@ -3,7 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from '../cart.service';
 import { Options } from 'ng5-slider';
-
+import { AngularFirestore } from '@angular/fire/firestore';
+import 'firebase/firestore';
 
 
 @Component({
@@ -28,14 +29,21 @@ export class ProductListComponent implements OnInit {
   constructor(
     public http: HttpClient,
     private route: ActivatedRoute,
-    private cartService: CartService ) { 
+    private cartService: CartService,
+    public firestore: AngularFirestore ) { 
 
     }
 
+
+    
   ngOnInit(): void {
-    this.http.get("assets/data.json").subscribe(data =>{
-      this.products = data;
-    });
+   
+    this.firestore.collection('Product').valueChanges()
+      .subscribe(object => {
+        this.products = object;
+        
+    })
+
   }
 
   addToCart(product:any) {

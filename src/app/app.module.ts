@@ -9,6 +9,8 @@ import { Ng5SliderModule } from 'ng5-slider';
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+
 
 import { environment } from '../environments/environment';
 
@@ -47,7 +49,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     Ng5SliderModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireStorageModule
+
 
   ],
   providers: [],

@@ -10,6 +10,7 @@ import { auth } from 'firebase/app';
   styleUrls: ['./signin.component.scss']
 })
 export class SigninComponent implements OnInit {
+  notification: any;
 
   constructor(public auth: AngularFireAuth, private router: Router) {
   }
@@ -23,9 +24,11 @@ export class SigninComponent implements OnInit {
     console.log('login');
     return this.auth.auth.signInWithEmailAndPassword(email, password)
       .then((result) => {
+
         this.router.navigate(['dashboard']);
+        
       }).catch((error) => {
-        window.alert(error.message)
+        this.notification = error.message;
       })
   }
 

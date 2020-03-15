@@ -6,17 +6,17 @@
         <form>
          
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Email Address">
+            <input type="text" class="form-control" placeholder="Email Address" #email>
           </div> <!-- End -->
     
     
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Password">
+            <input type="password" class="form-control" placeholder="Password" #password>
           </div> <!-- End -->
 
 
           <div class="d-flex justify-content-between">
-            <button type="submit" class="btn btn-success" (click)="doDogin()">Submit</button>
+            <button type="submit" class="btn btn-success" (click)="doDogin(email.value, password.value)">Submit</button>
 
             <span class="mt-2">
               Does not have any account ? <a routerLink="/signup">Signup</a>
@@ -24,10 +24,13 @@
           </div> <!-- End div -->
 
     
-    
-         
-    
         </form>
+
+        <div *ngIf="notification" class="mt-4">
+          <div class="alert alert-warning">
+                {{ notification }}
+          </div> <!-- End alert -->
+      </div> <!-- End notification-->
   
        
         </div> <!-- End -->
