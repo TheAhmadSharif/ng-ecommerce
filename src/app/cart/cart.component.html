@@ -14,7 +14,7 @@
         <li class="items" *ngFor="let product of products; let i = index;" [ngClass]="{'even': i%2 == 0}">
                 <div class="infoWrap"> 
                     <div class="cartSection">
-                        <img src="assets/products/{{ product.category }}/{{ product.product_image}}.jpg" style="max-width: 100px;" class="itemImg" />
+                        <img [src]="product.product_img" style="max-width: 100px;" class="itemImg" />
                         <p class="itemNumber">Item number: {{ product._id }}</p>
                 
                         <h3>{{ product.product_name}}</h3>

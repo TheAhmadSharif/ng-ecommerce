@@ -11,10 +11,10 @@
 <div class="row">
     <div class="col-sm-12">
         <div style="margin-top: 40px;">
-                   <div class="d-flex">
+                   <div class="d-flex pricerange-div">
 
-                    <p>Min value: <input type="number" [(ngModel)]="minValue" (click)="searchPrice(minValue, maxValue)"></p>
-                    <p>Max value: <input type="number" [(ngModel)]="maxValue" (click)="searchPrice(minValue, maxValue)"></p>
+                    <p><span class="label">Min value</span> <input type="number" [(ngModel)]="minValue" (click)="searchPrice(minValue, maxValue)"></p>
+                    <p><span class="label">Max value:</span> <input type="number" [(ngModel)]="maxValue" (click)="searchPrice(minValue, maxValue)"></p>
                     <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" (click)="searchPrice(minValue, maxValue)"></ng5-slider>
 
                    

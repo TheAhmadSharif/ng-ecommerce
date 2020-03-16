@@ -19,10 +19,11 @@ const routes: Routes = [
     component: SiteLayoutComponent,
     children: [
       { path: '', component: ProductListComponent, pathMatch: 'full'},
-      { path: 'product/:type', component: CategoryComponent }
+      { path: 'product/:type', component: CategoryComponent },
+      { path: 'cart', component: CartComponent }
     ]
   },
-  { path: 'cart', component: CartComponent },
+  
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'dashboard', component: DashboardComponent,

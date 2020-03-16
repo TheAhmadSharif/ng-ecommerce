@@ -22,6 +22,7 @@ export class AddProductComponent implements OnInit {
     price: '',
     type: '',
     imgPath: '',
+    quantity: 1,
     category: ['Attire', 'Watch', 'Shoes']
   }
 
@@ -60,7 +61,8 @@ export class AddProductComponent implements OnInit {
               product_name: product.name,
               product_price: product.price,
               product_category: product.category,
-              product_img: this.imagePath
+              product_img: this.imagePath,
+              product_quantity: product.quantity
           });
        } */
 

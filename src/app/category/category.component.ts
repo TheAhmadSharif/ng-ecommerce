@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from '../cart.service';
-import data from '../../assets/data.json';
+
+import { Options } from 'ng5-slider';
+
+import { AngularFirestore } from '@angular/fire/firestore';
+import 'firebase/firestore';
 
 
 
@@ -21,7 +25,8 @@ export class CategoryComponent implements OnInit {
 
   constructor(public http: HttpClient, 
     private route: ActivatedRoute,
-    private cartService: CartService 
+    private cartService: CartService,
+    public firestore: AngularFirestore 
     ) {
       this.parameter = this.route.snapshot.paramMap.get('type');
   }
@@ -30,14 +35,15 @@ export class CategoryComponent implements OnInit {
   ngOnInit(): void {
      let parameter = this.parameter;
 
+    
 
-        this.route.params.subscribe( param =>  this.http.get(`assets/data.json`).subscribe( httpResponse => { 
-            this.data = httpResponse;
-            this.products = this.data.filter(object => object.category == param['type']); 
-            
-        }, (err) => { 
-           this.products = data.filter(object => object.category == param['type']);
-        }));
+    this.route.params.subscribe( param => {
+              this.firestore.collection('Product', ref => ref.where('product_category', '==', param.type)).valueChanges().subscribe(object=> {
+                this.products = object;
+          
+             });
+
+    }); 
 
 
     }

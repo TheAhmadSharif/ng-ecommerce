@@ -1,5 +1,5 @@
 <div class="col-sm-12 col-md-12">
-    <div class="card" style="margin-top: 20px;">
+    <div class="card">
       
       <div class="card-body">
           <h4>Dashboard</h4>
@@ -19,6 +19,8 @@
 
                   <div class="form-group">
                       <input type="number" class="form-control" placeholder="Product Price" [(ngModel)]="product.price" name="price">
+
+                      <input type="hidden" class="form-control" [(ngModel)]="product.quantity" name="quantity">
                   </div> <!-- End form group -->
 
                   <div class="form-group">
