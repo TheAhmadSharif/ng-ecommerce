@@ -13,8 +13,8 @@
         <div style="margin-top: 40px;">
                    <div class="d-flex pricerange-div">
 
-                    <p><span class="label">Min value</span> <input type="number" [(ngModel)]="minValue" (click)="searchPrice(minValue, maxValue)"></p>
-                    <p><span class="label">Max value:</span> <input type="number" [(ngModel)]="maxValue" (click)="searchPrice(minValue, maxValue)"></p>
+                    <p><span class="label">Min Price</span> <input type="number" [(ngModel)]="minValue" (click)="searchPrice(minValue, maxValue)"></p>
+                    <p><span class="label">Max Price</span> <input type="number" [(ngModel)]="maxValue" (click)="searchPrice(minValue, maxValue)"></p>
                     <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" (click)="searchPrice(minValue, maxValue)"></ng5-slider>
 
                    
@@ -37,7 +37,7 @@
 
 <div style="margin-top: 30px" class="d-flex">
     <div class="row">
-        <div class="col-sm-4" *ngFor="let product of products | filter: searchText" style="margin-bottom: 10px;"> <div class="card">
+        <div class="col-sm-4" *ngFor="let product of products | searchname: searchText" style="margin-bottom: 10px;"> <div class="card">
                     <img src="{{ product.product_img }}" class="card-img-top" alt="">
                         <div class="card-body">
                             <h5 class="card-title">{{ product.product_name }} <span>

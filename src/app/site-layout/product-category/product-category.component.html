@@ -27,7 +27,7 @@
 
 <div style="margin-top: 30px">
     <div class="row">
-        <div class="col-sm-4" *ngFor="let product of products | filter : searchText; let i = index;" style="margin-bottom: 10px;">
+        <div class="col-sm-4" *ngFor="let product of products | searchname : searchText; let i = index;" style="margin-bottom: 10px;">
                 <div class="card">
 
                     <img src="{{ product.product_img }}" class="card-img-top" alt="">

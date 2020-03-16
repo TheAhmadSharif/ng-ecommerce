@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ProductListComponent } from './product-list/product-list.component';
-import { CategoryComponent } from './category/category.component';
+
 import { CartComponent } from './cart/cart.component';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { CustomerComponent } from './customer/customer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+
 import { SiteLayoutComponent } from './site-layout/site-layout.component';
+import { ProductListComponent } from './site-layout/product-list/product-list.component';
+import { ProductCategoryComponent } from './site-layout/product-category/product-category.component';
+
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
-import { AddProductComponent } from './add-product/add-product.component';
+import { AddProductComponent } from './dashboard/add-product/add-product.component';
 
 
 
@@ -19,7 +22,7 @@ const routes: Routes = [
     component: SiteLayoutComponent,
     children: [
       { path: '', component: ProductListComponent, pathMatch: 'full'},
-      { path: 'product/:type', component: CategoryComponent },
+      { path: 'product/:type', component: ProductCategoryComponent },
       { path: 'cart', component: CartComponent }
     ]
   },

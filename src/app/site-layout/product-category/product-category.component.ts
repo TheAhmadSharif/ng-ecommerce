@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import { CartService } from '../cart.service';
+import { CartService } from '../../cart.service';
 
 import { Options } from 'ng5-slider';
 
@@ -9,13 +9,12 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import 'firebase/firestore';
 
 
-
 @Component({
   selector: 'app-category',
-  templateUrl: './category.component.html',
-  styleUrls: ['./category.component.scss']
+  templateUrl: './product-category.component.html',
+  styleUrls: ['./product-category.component.scss']
 })
-export class CategoryComponent implements OnInit {
+export class ProductCategoryComponent implements OnInit {
   parameter: string;
   data:any;
   title:any;

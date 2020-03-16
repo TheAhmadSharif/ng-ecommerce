@@ -20,25 +20,28 @@ import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { CategoryComponent } from './category/category.component';
+
+import { ProductListComponent } from './site-layout/product-list/product-list.component';
+import { ProductCategoryComponent } from './site-layout/product-category/product-category.component';
+
 import { CartComponent } from './cart/cart.component';
-import { FilterPipe} from './filter.pipe';
+import { Searchname} from './searchname.pipe';
 import { PricePipe} from './range.pipe';
 import { SignupComponent } from './signup/signup.component';
 import { CustomerComponent } from './customer/customer.component';
 import { SigninComponent } from './signin/signin.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { SiteLayoutComponent } from './site-layout/site-layout.component';
-import { AddProductComponent } from './add-product/add-product.component';
+
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AddProductComponent } from './dashboard/add-product/add-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
-    CategoryComponent,
+    ProductCategoryComponent,
     CartComponent,
-    FilterPipe,
+    Searchname,
     PricePipe,
     SignupComponent,
     CustomerComponent,

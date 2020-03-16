@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import { CartService } from '../cart.service';
+import { CartService } from '../../cart.service';
 import { Options } from 'ng5-slider';
 import { AngularFirestore } from '@angular/fire/firestore';
 import 'firebase/firestore';
@@ -55,13 +55,12 @@ export class ProductListComponent implements OnInit {
   }
 
   searchPrice(min, max) {
+
+    console.log(this.products);
     if(parseFloat(min) < parseFloat(max)) {
 
+      this.products = this.products.filter(object => parseFloat(object.product_price) > parseFloat(min) && parseFloat(object.product_price) < parseFloat(max) + 1);
 
-      this.http.get("assets/data.json").subscribe(data =>{
-        this.data = data;
-        this.products = this.data.filter(object => parseFloat(object.product_price) > parseFloat(min) && parseFloat(object.product_price) < parseFloat(max) + 1); ;
-      });
 
     } else {
       console.log('Wrong combination');
