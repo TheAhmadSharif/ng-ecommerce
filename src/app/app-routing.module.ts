@@ -7,20 +7,34 @@ import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { CustomerComponent } from './customer/customer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SiteLayoutComponent } from './site-layout/site-layout.component';
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
+import { AddProductComponent } from './add-product/add-product.component';
 
 
 
 const routes: Routes = [
-  { path: '', component: ProductListComponent },
-  { path: 'product', component: ProductListComponent },
-  { path: 'product/:type', component: CategoryComponent },
+  { 
+    path: '', 
+    component: SiteLayoutComponent,
+    children: [
+      { path: '', component: ProductListComponent, pathMatch: 'full'},
+      { path: 'product/:type', component: CategoryComponent }
+    ]
+  },
   { path: 'cart', component: CartComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent,
+      children: [
+        { path: 'add-product', component: AddProductComponent, pathMatch: 'full'}
+      ]
+  },
   { path: 'customer', component: CustomerComponent, canActivate: [AngularFireAuthGuard] },
 ];
+
+
+
 
 
 @NgModule({

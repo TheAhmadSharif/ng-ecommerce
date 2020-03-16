@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router, Route } from '@angular/router';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { FormsModule } from '@angular/forms';
 import { Ng5SliderModule } from 'ng5-slider';
 
@@ -27,6 +29,8 @@ import { SignupComponent } from './signup/signup.component';
 import { CustomerComponent } from './customer/customer.component';
 import { SigninComponent } from './signin/signin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SiteLayoutComponent } from './site-layout/site-layout.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -39,10 +43,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SignupComponent,
     CustomerComponent,
     SigninComponent,
-    DashboardComponent 
+    DashboardComponent,
+    SiteLayoutComponent,
+    AddProductComponent 
   ],
   imports: [
     BrowserModule,
+    NgbModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,

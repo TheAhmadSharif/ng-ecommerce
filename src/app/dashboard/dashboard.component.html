@@ -1,65 +1,34 @@
-<div class="row">
-    <div class="col-sm-12 col-md-8">
-      <div class="card" style="margin-top: 20px;">
-        
-        <div class="card-body">
-            <h4>Dashboard</h4>
-        </div> <!-- End card body -->
-        <div class="card-body">
+<div class="container-fluid" style="width: 100%; max-width: 100%;">
 
-            <div>
-                <h6>Add New Product</h6>
-            </div>
-            
+    
+    <div class="row">
+        <div class="sidebar col-lg-2">
+           <div class="sb-content">
 
-            <div>
-                <form (ngSubmit)="omSubmit($event, product)">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Product Name" [(ngModel)]="product.name" name="name">
-                    </div> <!-- End form group -->
+            <ul class="list-group-flush">
+                <li class="d-flex justify-content-center">
+                    <div class="logo-block">
+                        <a routerLink="/dashboard" routerLinkActive="active"><img src="assets/logo.png" alt="shop" height="40"></a>
+                    </div> <!-- End logo Block -->
+                </li>
+                <li class="list-group-item"><a routerLink="add-product" routerLinkActive="active">+ Add New Product</a></li>
+                <li class="list-group-item"><a routerLink="/" routerLinkActive="active">= Product List </a></li>
+              </ul>
+           </div> <!-- End sb content -->
+       </div> <!-- End sidebar -->
+       <div class="col-lg-10">
+            <h4>Welcome To Dashboard</h4>
+       <router-outlet></router-outlet>
+        </div>  <!-- End col 12 -->
+    </div> <!-- End row -->
+</div> <!-- End container -->
 
-                    <div class="form-group">
-                        <input type="number" class="form-control" placeholder="Product Price" [(ngModel)]="product.price" name="price">
-                    </div> <!-- End form group -->
-
-                    <div class="form-group">
-                        
-                            <select [(ngModel)]="product.category[0]"  class="form-control input-sm" name="product.type">
-                            <option *ngFor="let category of product.category; let i = index;" [value]="category">{{ category }}</option>
-                          </select>
-                    </div> <!-- End form group -->
-
-                   
-
-                    <div class="form-group">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                            </div>
-                            <div class="custom-file">
-                             
-
-                              <input type="file" class="custom-file-input" (change)="uploadFile($event)" id="inputGroupFile01" [(ngModel)]="product.imgPath" name="product.imgPath">
-                              <label class="custom-file-label" for="inputGroupFile01">{{ product.imgPath }}</label>
-                            </div>
-                            
-                          </div>
-                    </div> <!-- End form group -->
-
-                    <div class="mb-4 mt-4">
-                        <div *ngIf="imagePath">
-                            <img [src]="imagePath" alt="" width="140">
-                        </div> <!-- End -->
-                    </div> <!-- End card  -->
-
-                  
-
-                    <button class="btn btn-success">Add product</button>
-                </form>
-            </div>
-       
-        </div> <!-- End -->
-    </div> <!-- End card -->
-    </div> <!-- End col sm -->
-  </div> <!-- End row -->
-  
+<footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+            &copy; 2020. All rights reserved.
+        </div> <!-- End col sm --> 
+      </div> <!-- End row -->
+    </div> <!--  End container --> 
+  </footer> 

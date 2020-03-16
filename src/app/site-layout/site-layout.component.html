@@ -1,0 +1,77 @@
+<header id="topHeader">
+    <div class="container">
+      <div class="row header-section">
+              <div class="col-4">
+                    <div class="logo-block">
+                        <a routerLink="/" routerLinkActive="active"><img src="assets/logo.png" alt="shop" height="40"></a>
+                    </div>  <!-- End Logo Block -->
+              </div>  <!-- End md 2 -->
+  
+  
+              <div class="col-8">
+                  <nav class="nav-block">
+                    <ul class="nav">
+  
+                      <li>
+                        <a routerLink="/dashboard" routerLinkActive="active" class="btn btn-sm btn-outline-success">Dashboard</a>
+                      </li>
+
+                      <li>
+                        <div ngbDropdown> <!-- **here** -->
+                          <button class="btn btn-outline-primary" 
+                              id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+                          <div ngbDropdownMenu>
+                            <button ngbDropdownItem>Action - 1</button>
+                            <button ngbDropdownItem>Another Action</button>
+                            <button ngbDropdownItem>Something else is here</button>
+                          </div>
+                        </div>
+
+
+                      </li>
+
+                      <li>
+
+                        <a routerLink="/signup" routerLinkActive="active" class="btn btn-sm btn-outline-success">Signup</a>
+                      </li>
+  
+                      <li>
+                        <a routerLink="/signin" routerLinkActive="active" class="btn btn-sm btn-outline-success">Login</a>
+                      </li>
+                     
+                      <li>
+                        <a routerLink="product/attire" routerLinkActive="active">Attire</a>
+                      </li>
+                      <li>
+                        <a routerLink="product/shoes" routerLinkActive="active">Shoes</a>
+                      </li>
+                      <li>
+                        <a routerLink="product/watch" routerLinkActive="active">Watch</a>
+                      </li>
+                      
+                      <li>
+                        <a class="btn btn-sm btn-outline-success" routerLink="cart" routerLinkActive="active">Cart <span class="badge badge-warning">{{ cartService.getItems().length }}</span></a>
+                      </li>
+                    </ul> 
+                 </nav>
+            </div> <!-- End col 8 -->
+        </div>    <!-- End row -->
+    </div>    <!-- End container -->
+  </header>
+
+  <div class="container mh">
+    <div class="component-div h70">
+        <router-outlet></router-outlet>
+    </div>  <!-- End component-div -->
+
+    
+</div> <!--  End container -->  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+          &copy; 2020. All rights reserved.
+      </div> <!-- End col sm --> 
+    </div> <!-- End row -->
+  </div> <!--  End container --> 
+</footer> 

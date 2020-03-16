@@ -12,7 +12,7 @@
 
 
  .container {
-     max-width: 940px !important;
+     max-width: 940px;
  }
 
  .form-control:active, .form-control:focus, input {
@@ -139,8 +139,10 @@ input {
   
   /* End Content Loader */
   
-
   select.form-control {
     padding: 5px 10px;
   }
   
+  .ng5-slider-pointer.ng5-slider-active::after {
+    background: #ffc107 !important;
+  }
