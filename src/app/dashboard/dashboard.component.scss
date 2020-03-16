@@ -1,16 +1,14 @@
 .sidebar {
     background: #eee;
     max-width: 220px;
-    position: relative;
-    z-index: 10;
-    height: 100vh;
-}
-.sb-content {
-    position: relative;
     z-index: 12;
-    left: 0;
-    top: 0;
     height: 100vh;
+    position: fixed;
+    height: 100%;
+}
+
+.sb-content {
+    z-index: 12;
 }
 
 .logo-block {
