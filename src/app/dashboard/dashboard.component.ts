@@ -20,9 +20,12 @@ export class DashboardComponent implements OnInit {
   product ={
     name: '',
     price: '',
-    category: 'attire'
+    type: '',
+    imgPath: '',
+    category: ['Attire', 'Watch', 'Shoes']
   }
 
+  
   constructor(private storage: AngularFireStorage, public firestore: AngularFirestore) { }
 
 
@@ -51,13 +54,15 @@ export class DashboardComponent implements OnInit {
 
         var d = new Date().getTime().toString(); 
 
-        this.firestore.collection('Product').doc(d).set({
-          _id: d,
-          product_name: product.name,
-          product_price: product.price,
-          product_category: product.category,
-          product_img: this.imagePath
-      });
+      /*  if(product) {
+            this.firestore.collection('Product').doc(d).set({
+              _id: d,
+              product_name: product.name,
+              product_price: product.price,
+              product_category: product.category,
+              product_img: this.imagePath
+          });
+       } */
 
 
         
