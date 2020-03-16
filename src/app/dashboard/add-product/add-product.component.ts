@@ -23,7 +23,8 @@ export class AddProductComponent implements OnInit {
     type: '',
     imgPath: '',
     quantity: 1,
-    category: ['Attire', 'Watch', 'Shoes']
+    category: 'Attire',
+    options: ['Attire', 'Watch', 'Shoes']
   }
 
   
@@ -52,6 +53,8 @@ export class AddProductComponent implements OnInit {
   }
 
   omSubmit(event:any, product:any) {
+
+    console.log(product);
 
         var d = new Date().getTime().toString(); 
 
