@@ -14,6 +14,8 @@ import { ProductCategoryComponent } from './site-layout/product-category/product
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { AddProductComponent } from './dashboard/add-product/add-product.component';
 
+import { AuthGuard } from './guard/auth.guard';
+
 
 
 const routes: Routes = [
@@ -29,12 +31,12 @@ const routes: Routes = [
   
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'dashboard', component: DashboardComponent,
+  { path: 'dashboard', component: DashboardComponent, 
       children: [
         { path: 'add-product', component: AddProductComponent, pathMatch: 'full'}
       ]
   },
-  { path: 'customer', component: CustomerComponent, canActivate: [AngularFireAuthGuard] },
+  { path: 'customer', component: CustomerComponent, canActivate: [AuthGuard] },
 ];
 
 

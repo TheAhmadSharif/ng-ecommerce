@@ -1,3 +1,48 @@
+@font-face {
+  font-family: 'jostLight';
+  src: URL('assets/fonts/Jost-400-Book.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('assets/fonts/material-icon/MaterialIcons-Regular.eot'); /* For IE6-8 */
+  src: local('assets/fonts/material-icon/Material Icons'),
+       local('assets/fonts/material-icon/MaterialIcons-Regular'),
+       url('assets/fonts/material-icon/MaterialIcons-Regular.woff2') format('woff2'),
+       url('assets/fonts/material-icon/MaterialIcons-Regular.woff') format('woff'),
+       url('assets/fonts/material-icon/MaterialIcons-Regular.ttf') format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: middle;
+  color: #666;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+
 /*!
  * Bootstrap Grid v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -139,6 +184,9 @@ input {
   
   /* End Content Loader */
 
+  body {
+    font-family: 'jostLight';
+  }
 
 
   select.form-control {
@@ -178,6 +226,7 @@ input {
 
 .dashboard {
     margin-left: 180px;
+    width: 100%;
 }
 .remove {
   cursor: pointer;
@@ -202,3 +251,6 @@ input {
 background: #f30;
 }
 
+.sidebar a {
+  font-size: 14px;
+}

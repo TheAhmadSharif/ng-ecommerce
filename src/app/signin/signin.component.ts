@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
+import { AuthGuard } from '../guard/auth.guard';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -12,7 +14,9 @@ import { auth } from 'firebase/app';
 export class SigninComponent implements OnInit {
   notification: any;
 
-  constructor(public auth: AngularFireAuth, private router: Router) {
+  constructor(public auth: AngularFireAuth, 
+              private router: Router,
+              public authService: AuthService) {
   }
 
   ngOnInit(): void {
@@ -21,9 +25,9 @@ export class SigninComponent implements OnInit {
  
 
   doDogin(email:string, password:string) {
-    console.log('login');
     return this.auth.auth.signInWithEmailAndPassword(email, password)
       .then((result) => {
+        this.authService;
 
         this.router.navigate(['dashboard']);
         

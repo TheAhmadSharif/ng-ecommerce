@@ -35,6 +35,9 @@ import { SiteLayoutComponent } from './site-layout/site-layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddProductComponent } from './dashboard/add-product/add-product.component';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +51,7 @@ import { AddProductComponent } from './dashboard/add-product/add-product.compone
     SigninComponent,
     DashboardComponent,
     SiteLayoutComponent,
-    AddProductComponent 
+    AddProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,7 @@ import { AddProductComponent } from './dashboard/add-product/add-product.compone
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
 
 
   ],

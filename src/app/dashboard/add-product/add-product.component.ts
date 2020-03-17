@@ -46,7 +46,6 @@ export class AddProductComponent implements OnInit {
     const fileRef = this.storage.ref(filePath);
     const task = this.storage.upload(filePath, file);
 
-    console.log(file.name, 'filename');
 
     this.product.filename = file.name;
     this.uploadPercent = task.percentageChanges();
@@ -54,7 +53,6 @@ export class AddProductComponent implements OnInit {
         finalize(() => {
           fileRef.getDownloadURL().subscribe(url=>{
             this.product.imgPath = url;
-            console.log(url, 'this.product.imgPath');
           });
         })
      )
