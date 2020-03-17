@@ -1,0 +1,13 @@
+.product-image {
+    position: relative;
+    z-index: 12;
+    display: inline-block;
+    width: 150px;
+    min-height: 100px;
+    .remove {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 14;
+    }
+}

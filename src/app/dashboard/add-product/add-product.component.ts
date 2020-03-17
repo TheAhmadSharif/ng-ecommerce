@@ -22,6 +22,7 @@ export class AddProductComponent implements OnInit {
     price: '',
     type: '',
     imgPath: '',
+    filename: '',
     quantity: 1,
     category: 'Attire',
     options: ['Attire', 'Watch', 'Shoes']
@@ -34,18 +35,26 @@ export class AddProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  removeImage() {
+    this.product.imgPath = null;
+    this.product.filename = null;
+  }
+
   uploadFile(event:any) {
     const file = event.target.files[0];
     const filePath = 'product_image' + '/' + new Date().getTime().toString(); 
     const fileRef = this.storage.ref(filePath);
     const task = this.storage.upload(filePath, file);
 
+    console.log(file.name, 'filename');
+
+    this.product.filename = file.name;
     this.uploadPercent = task.percentageChanges();
     task.snapshotChanges().pipe(
         finalize(() => {
           fileRef.getDownloadURL().subscribe(url=>{
-            this.imagePath = url;
-            console.log(url, 'this.imagePath');
+            this.product.imgPath = url;
+            console.log(url, 'this.product.imgPath');
           });
         })
      )
