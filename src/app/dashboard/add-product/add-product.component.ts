@@ -16,6 +16,7 @@ export class AddProductComponent implements OnInit {
 
   uploadPercent: Observable<number>;
   imagePath: Observable<string>;
+  notification:any;
 
   product ={
     name: '',
@@ -61,11 +62,10 @@ export class AddProductComponent implements OnInit {
 
   omSubmit(event:any, product:any) {
 
-    console.log(product);
 
         var d = new Date().getTime().toString(); 
 
-        if(product) {
+        if(product.name.length > 5 && product.name.product_price > 0 &&  product.product_category.length > 2 && product.product_img) {
             this.firestore.collection('Product').doc(d).set({
               _id: d,
               product_name: product.name,
@@ -75,6 +75,10 @@ export class AddProductComponent implements OnInit {
               product_quantity: product.quantity
           });
        } 
+
+       else {
+          this.notification = 'Please put product information correctly.';
+       }
 
 
         

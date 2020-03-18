@@ -2,11 +2,16 @@
     <div class="col-sm-12 col-md-12">
         <div class="card">
           <div class="card-body">
+              <div *ngIf="notification" class="alert alert-warning">
+                   {{ notification }}
+              </div> <!-- End Notification -->
               <div>
                   <h6>Add New Product</h6>
               </div>
               <div>
                   <form (ngSubmit)="omSubmit($event, product)">
+
+                      
                       <div class="form-group">
                           <input type="text" class="form-control" placeholder="Product Name" [(ngModel)]="product.name" name="name">
                       </div> <!-- End form group -->
