@@ -41,6 +41,7 @@ export class ProductListComponent implements OnInit {
     this.firestore.collection('Product').valueChanges()
       .subscribe(object => {
         this.products = object;
+        console.log(this.products);
         
     })
 

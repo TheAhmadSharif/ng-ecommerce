@@ -22,10 +22,10 @@ export class AddProductComponent implements OnInit {
     price: '',
     type: '',
     imgPath: '',
-    filename: '',
+    filename: 'Select a product image',
     quantity: 1,
-    category: 'Attire',
-    options: ['Attire', 'Watch', 'Shoes']
+    category: 'attire',
+    options: ['attire', 'watch', 'shoes']
   }
 
   
@@ -65,16 +65,16 @@ export class AddProductComponent implements OnInit {
 
         var d = new Date().getTime().toString(); 
 
-      /*  if(product) {
+        if(product) {
             this.firestore.collection('Product').doc(d).set({
               _id: d,
               product_name: product.name,
               product_price: product.price,
               product_category: product.category,
-              product_img: this.imagePath,
+              product_img: product.imgPath,
               product_quantity: product.quantity
           });
-       } */
+       } 
 
 
         

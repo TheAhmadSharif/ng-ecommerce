@@ -36,15 +36,13 @@
     
                       <div class="form-group">
                           <div class="input-group mb-3">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                              </div>
+                              
                               <div class="custom-file">
 
                                 <input type="hidden" [(ngModel)]="product.imgPath" name="product.imgPath">
                                
     
-                                <input type="file" class="custom-file-input" (change)="uploadFile($event)" id="inputGroupFile01" name="product.imgPath">
+                                <input type="file" class="custom-file-input" (change)="uploadFile($event)" id="inputGroupFile01" name="product.imgPath" placeholder="select a file">
                                 <label class="custom-file-label" for="inputGroupFile01">{{ product.filename }}</label>
                               </div>
                               
@@ -53,7 +51,7 @@
     
                       
     
-                      <button class="btn btn-success">Add product</button>
+                      <button class="btn btn-success"><i class="material-icons" style="color: #FFF;">playlist_add</i> Add product</button>
                   </form>
               </div>
          
