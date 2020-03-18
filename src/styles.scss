@@ -255,7 +255,7 @@ background: #f30;
   font-size: 14px;
 }
 
-.li-cart:hover i {
+.li-cart:hover i,.li-cart i:active, .li-cart i:focus, .li-cart a.active i{
   color: #FFF !important;
   
   -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
