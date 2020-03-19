@@ -23,21 +23,15 @@
                        <a routerLink="/product/watch" routerLinkActive="active">Watch</a>
                       </li>
 
-                      <li>
-                        <div ngbDropdown> <!-- **here** -->
-                          <button class="btn btn-sm btn-outline-success" 
-                              id="dropdownBasic1" ngbDropdownToggle>Login</button>
-                          <div ngbDropdownMenu>
-                           
-                              <button ngbDropdownItem routerLink="/signup" routerLinkActive="active" ngbDropdownItem>Signup</button>
-
-                              <button ngbDropdownItem routerLink="/signin" routerLinkActive="active" ngbDropdownItem>Login</button>
-
-                              <button ngbDropdownItem routerLink="/dashboard" routerLinkActive="active" ngbDropdownItem>Dashboard</button>
-                           
-                          </div>
-                        </div>
+                      <li *ngIf="getStatus">
+                        <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
                       </li>
+
+                      <li *ngIf="!getStatus">
+                        <a routerLink="/signin" routerLinkActive="active">Signin</a>
+                      </li>
+                      
+
                       
                       <li class="li-cart">
                         <a class="btn btn-sm btn-outline-success" routerLink="/cart" routerLinkActive="active"><i class="material-icons" style="color: #28a745;">add_shopping_cart</i>Cart <span class="badge badge-warning">{{ cartService.getItems().length }}</span></a>

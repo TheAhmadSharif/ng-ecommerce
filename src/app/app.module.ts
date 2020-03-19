@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
+
+
 
 import { FormsModule } from '@angular/forms';
 import { Ng5SliderModule } from 'ng5-slider';
@@ -56,6 +59,7 @@ import { AddCategoryComponent } from './dashboard/add-category/add-category.comp
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     NgbModule,
     AppRoutingModule,
     HttpClientModule,

@@ -37,6 +37,9 @@ export class CartComponent implements OnInit {
   }
 
   addNumber(quantity, product_price, index) {
+    this.products = this.cartService.getItems();
+      
+
       this.cartService.items[index].product_quantity = quantity;
       this.product_price[index] = (quantity * product_price).toFixed(2);
       this.totalAmount = 0;
@@ -44,6 +47,10 @@ export class CartComponent implements OnInit {
       for(var i = 0; i < this.product_price.length; i++) {
         this.totalAmount += parseFloat(this.product_price[i]);
       }
+
+      this.ngOnInit();
+
+      
 
   }
   

@@ -10,6 +10,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
 export class AuthService {
 
   userData: any; 
+  userStatus:any;
 
   constructor(
     public aufAuth: AngularFireAuth,
@@ -33,16 +34,16 @@ export class AuthService {
   }
 
 
-  getUserStatus() {
-    this.aufAuth.auth.onAuthStateChanged((user) => {
-        if (user) {
+   getUserStatus() {
+      this.aufAuth.auth.onAuthStateChanged((user) => {
+        this.userStatus = user;
+        if(user) {
 
-          return user;
-          console.log(user.metadata.lastSignInTime, user.metadata.creationTime,  user.email, user.uid, user.emailVerified, 'user.email, user.id');
-        } else {
-          return false;
         }
-    });
+        else {
+
+        }
+      });
 
   }
     

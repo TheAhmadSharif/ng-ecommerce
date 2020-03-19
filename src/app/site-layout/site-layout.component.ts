@@ -1,7 +1,9 @@
-import {Component, OnInit, HostListener, Directive, HostBinding, Inject} from '@angular/core';
+import {Component, OnInit, HostListener, Inject} from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { CartService } from '../services/cart.service';
 import { AuthService } from '../services/auth.service';
+import { AngularFireAuth } from "@angular/fire/auth";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-site-layout',
@@ -13,8 +15,11 @@ export class SiteLayoutComponent implements OnInit {
   cartArray: number;
   getStatus: any;
 
-  constructor(@Inject(DOCUMENT) private document: Document, public cartService: CartService,
-  public authService: AuthService) {
+  constructor(@Inject(DOCUMENT) private document: Document, 
+  public cartService: CartService,
+  public authService: AuthService,
+  public aufAuth: AngularFireAuth,
+  private router: Router) {
     this.cartArray = this.cartService.getItems.length;
   }
 
@@ -34,7 +39,15 @@ onWindowScroll() {
     this.cartArray = this.cartService.getItems().length;
     this.getStatus = this.authService.getUserStatus();
 
-    console.log(this.authService.getUserStatus(), 'this get Status');
+    this.aufAuth.auth.onAuthStateChanged((user) => {
+      if(user) {
+        this.getStatus = true;
+      }
+      else {
+        this.getStatus = false;
+      }
+    });
+
   }
 
 }
