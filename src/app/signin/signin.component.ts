@@ -29,7 +29,7 @@ export class SigninComponent implements OnInit {
       .then((result) => {
         this.authService;
 
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['dashboard/user']);
         
       }).catch((error) => {
         this.notification = error.message;

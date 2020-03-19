@@ -27,6 +27,8 @@ export class SignupComponent implements OnInit {
       this.aufauth.auth.createUserWithEmailAndPassword(email, password).then(success => {
         console.log(success, 'success');
         this.notification = "You have successfully signup in our system. Now, you are going to land in our system's dashboard page.";
+
+        this.router.navigate(['dashboard/user']);
         
 
 

@@ -5,18 +5,23 @@
             <h4>Welcome To Dashboard</h4>
             
         </div> <!-- End flex -->
-        
+
         <div class="card">
           <div class="card-body">
-              
+
+                <table class="table">
+                    <tr>
+                        <td>Email Address: </td>
+                        <td>{{ userData.email }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Creation Time: </td>
+                        <td>{{ userData.creationTime }}</td>
+                    </tr>
+                </table>
                 
-                <div>
-                    Email Address: {{ userData.email }}
-                </div>
-              <div>
-                 
-              </div>
          
-          </div> <!-- End -->
+          </div> <!-- End  card-body-->
       </div> <!-- End card -->
     </div> <!-- End col sm -->
