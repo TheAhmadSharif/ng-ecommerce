@@ -29,11 +29,22 @@
   
   
             <div class="d-flex justify-content-between">
-              <button type="submit" class="btn btn-success" (click)="doDogin(email.value, password.value)">Signin</button>
+              <div class="align-self-start">
+                <button type="submit" class="btn btn-success" (click)="doDogin(email.value, password.value)">Signin</button>
+              </div>  <!-- End -->
+             
   
+
               <span class="mt-2">
-               <small> <span class="p-2">Does not have any account ? <a routerLink="/signup">Signup</a></span></small>
+                <span class="p-2 text-muted-custom"><small>Does not have any account ? <a routerLink="/signup" style="color: #666">Signup</a></small></span>
+
+                <div class="d-flex justify-content-end mt-2 f-link">
+                    <li class="text-muted-custom"><small><a routerLink="/">&#9679; Online Shop </a></small></li>
+                    <li class="text-muted-custom"><small><a routerLink="/contact">&#9679; Need help</a></small></li>
+                </div>
               </span>
+
+
             </div> <!-- End div -->
   
       

@@ -50,4 +50,9 @@ onWindowScroll() {
 
   }
 
+  logOut() {
+    this.authService.logout();
+    this.router.navigate(['/']);
+  }
+
 }

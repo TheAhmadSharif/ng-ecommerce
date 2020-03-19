@@ -265,6 +265,31 @@ background: #f30;
   max-height: 240px;
 }
 
-.sidebar a {
+.sidebar a, a {
   cursor: pointer;
 }
+.link-border {
+  border-radius: 4px;
+  padding: 2px 5px;
+  border: 1px solid #999;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #28a745;
+}
+
+.f-link li {
+  margin-right: 5px;
+  list-style: disc;
+}
+
+.text-muted-custom, .text-muted-custom a {
+  color: #b5b5b5;
+}
+
+.text-muted-custom a:hover {
+  color: #333;
+}
+

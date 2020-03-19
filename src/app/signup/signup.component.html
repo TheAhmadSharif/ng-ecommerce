@@ -32,10 +32,18 @@
         
         
                 <div class="d-flex justify-content-between">
-                  <button type="submit" class="btn btn-success" (click)="createUser(email_address.value, password.value)">Signup</button>
+                  <div class="align-self-start">
+                    <button type="submit" class="btn btn-success" (click)="createUser(email_address.value, password.value)">Signup</button>
+                  </div>
+                  
         
                   <span class="mt-2">
-                    <span class="p-2"><small>Already have an account ? <a routerLink="/signin">Login</a></small></span>
+                    <span class="p-2 text-muted-custom"><small>Already have an account ? <a routerLink="/signin" style="color: #666">Login</a></small></span>
+
+                    <div class="d-flex justify-content-end mt-2 f-link">
+                        <li class="text-muted-custom"><small><a routerLink="/">&#9679; Online Shop </a></small></li>
+                        <li class="text-muted-custom"><small><a routerLink="/contact">&#9679; Need help</a></small></li>
+                    </div>
                   </span>
                 </div> <!-- End div -->
                 <span>

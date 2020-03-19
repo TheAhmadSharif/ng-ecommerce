@@ -24,16 +24,22 @@ export class SignupComponent implements OnInit {
     var emailaddress = email;
     var userpassword = password;
 
-      /*this.aufauth.auth.createUserWithEmailAndPassword(email, password).then(success => {
+      this.aufauth.auth.createUserWithEmailAndPassword(email, password).then(success => {
         console.log(success, 'success');
-        this.notification = "You have successfully signup in our system. Please login to place a order.";
+        this.notification = "You have successfully signup in our system. Now, you are going to land in our system's dashboard page.";
+        
+
 
       })
       .catch(error => {
-
           this.notification = error.message;
-        
-          });*/
+      });
+
+      
+
+
+
+
 
 
      /* this.aufauth.auth.onAuthStateChanged(user => {

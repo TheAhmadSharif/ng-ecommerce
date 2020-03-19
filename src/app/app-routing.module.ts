@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { CartComponent } from './cart/cart.component';
+import { ContactComponent } from './contact/contact.component';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { CustomerComponent } from './customer/customer.component';
@@ -13,10 +14,8 @@ import { AddCategoryComponent } from './dashboard/add-category/add-category.comp
 import { SiteLayoutComponent } from './site-layout/site-layout.component';
 import { ProductListComponent } from './site-layout/product-list/product-list.component';
 import { ProductCategoryComponent } from './site-layout/product-category/product-category.component';
+import { NopageComponent } from './nopage/nopage.component';
 
-
-
-import { AuthGuard } from './guard/auth.guard';
 
 
 
@@ -33,13 +32,15 @@ const routes: Routes = [
   
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'contact', component: ContactComponent },
   { path: 'dashboard', component: DashboardComponent, 
       children: [
         { path: 'add-product', component: AddProductComponent, pathMatch: 'full'},
         { path: 'add-category', component: AddCategoryComponent, pathMatch: 'full'}
       ]
   },
-  { path: 'customer', component: CustomerComponent, canActivate: [AuthGuard] },
+  { path: 'customer', component: CustomerComponent },
+  { path: '**', component: NopageComponent}
 ];
 
 

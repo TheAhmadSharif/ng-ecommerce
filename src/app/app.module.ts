@@ -37,6 +37,8 @@ import { SiteLayoutComponent } from './site-layout/site-layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddProductComponent } from './dashboard/add-product/add-product.component';
 import { AddCategoryComponent } from './dashboard/add-category/add-category.component';
+import { ContactComponent } from './contact/contact.component';
+import { NopageComponent } from './nopage/nopage.component';
 
 
 
@@ -56,6 +58,8 @@ import { AddCategoryComponent } from './dashboard/add-category/add-category.comp
     SiteLayoutComponent,
     AddProductComponent,
     AddCategoryComponent,
+    ContactComponent,
+    NopageComponent,
   ],
   imports: [
     BrowserModule,

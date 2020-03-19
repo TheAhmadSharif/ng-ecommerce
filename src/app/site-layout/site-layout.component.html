@@ -24,7 +24,23 @@
                       </li>
 
                       <li *ngIf="getStatus">
-                        <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+
+                          
+                          <div ngbDropdown> <!-- **here** -->
+                              <li ngbDropdownToggle class="link-border" style="margin-right: 0;">
+                                 <a><i class="material-icons">perm_identity</i>Profile</a>
+                              </li>
+                     
+                            <div ngbDropdownMenu>
+                                <button ngbDropdownItem routerLink="/dashboard" routerLinkActive="active" ngbDropdownItem>Dashboard</button>
+                                <button ngbDropdownItem routerLink="/logout" routerLinkActive="active" ngbDropdownItem (click)="logOut()">Logout</button>
+                             
+                            </div>
+                          </div>
+                  
+
+
+
                       </li>
 
                       <li *ngIf="!getStatus">
