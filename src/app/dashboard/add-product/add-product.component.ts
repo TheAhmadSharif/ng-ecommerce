@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { finalize } from 'rxjs/operators';
 
@@ -30,7 +31,9 @@ export class AddProductComponent implements OnInit {
   }
 
   
-  constructor(private storage: AngularFireStorage, public firestore: AngularFirestore) { }
+  constructor(private storage: AngularFireStorage, 
+              public firestore: AngularFirestore,
+              private router: Router) { }
 
 
   ngOnInit(): void {
@@ -60,20 +63,35 @@ export class AddProductComponent implements OnInit {
     .subscribe()
   }
 
-  omSubmit(event:any, product:any) {
+  onSubmit(event:any, product:any) {
+
+    console.log(product);
 
 
         var d = new Date().getTime().toString(); 
 
-        if(product.name.length > 5 && product.name.product_price > 0 &&  product.product_category.length > 2 && product.product_img) {
+        
+        if(product.name.length > 5 && product.price > 0 && product.imgPath) {
+
+
             this.firestore.collection('Product').doc(d).set({
-              _id: d,
-              product_name: product.name,
-              product_price: product.price,
-              product_category: product.category,
-              product_img: product.imgPath,
-              product_quantity: product.quantity
-          });
+                    _id: d,
+                    product_name: product.name,
+                    product_price: product.price,
+                    product_category: product.category,
+                    product_img: product.imgPath,
+                    product_quantity: product.quantity
+              }).then(object => {
+                  this.notification = 'Product has been added successfully';
+
+                  setTimeout(a =>  {
+                    this.router.navigate(['/']);
+                  }, 1500);
+                  
+            })
+            .catch(function(error) {
+                  this.notification = 'Please put product information correctly.';
+            });
        } 
 
        else {

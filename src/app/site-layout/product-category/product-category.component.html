@@ -39,7 +39,9 @@
         <div class="col-sm-4" *ngFor="let product of products | searchname : searchText; let i = index;" style="margin-bottom: 10px;">
                 <div class="card">
 
-                    <img src="{{ product.product_img }}" class="card-img-top" alt="">
+                    <div class="product-img">
+                        <img src="{{ product.product_img }}" class="card-img-top" [alt]="product.product_name">
+                    </div> <!-- End product Img -->
                         <div class="card-body">
                             <h5 class="card-title">{{ product.product_name }} <span>
                                 <small>{{ product.category | titlecase  }}</small>

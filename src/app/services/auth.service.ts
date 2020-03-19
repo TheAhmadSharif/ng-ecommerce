@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { AngularFireAuth } from "@angular/fire/auth";
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +12,8 @@ export class AuthService {
   userData: any; 
 
   constructor(
-    public afAuth: AngularFireAuth, // Inject Firebase auth service
+    public aufAuth: AngularFireAuth,
+    private router: Router,
   ) {    
     
   }
@@ -18,4 +22,32 @@ export class AuthService {
     const user = JSON.parse(localStorage.getItem('user'));
     return (user !== null && user.emailVerified !== false) ? true : false;
   }
+
+  logout() {
+    this.aufAuth.auth.signOut().then(function() {
+      console.log('Signout success');
+      localStorage.removeItem('user');
+    }).catch(function(error) {
+      console.log('Signout Failure');
+    });
+  }
+
+
+  getUserStatus() {
+    this.aufAuth.auth.onAuthStateChanged(function(user) {
+        if (user) {
+
+          return true;
+          console.log(user.metadata.lastSignInTime, user.metadata.creationTime,  user.email, user.uid, user.emailVerified, 'user.email, user.id');
+        } else {
+          return false;
+        }
+    });
+
+  }
+    
+
+
+
+
 }

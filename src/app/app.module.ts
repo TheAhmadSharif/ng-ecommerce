@@ -34,6 +34,7 @@ import { SiteLayoutComponent } from './site-layout/site-layout.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddProductComponent } from './dashboard/add-product/add-product.component';
+import { AddCategoryComponent } from './dashboard/add-category/add-category.component';
 
 
 
@@ -52,6 +53,7 @@ import { AddProductComponent } from './dashboard/add-product/add-product.compone
     DashboardComponent,
     SiteLayoutComponent,
     AddProductComponent,
+    AddCategoryComponent,
   ],
   imports: [
     BrowserModule,

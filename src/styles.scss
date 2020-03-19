@@ -261,3 +261,10 @@ background: #f30;
   -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+.product-img {
+  max-height: 240px;
+}
+
+.sidebar a {
+  cursor: pointer;
+}

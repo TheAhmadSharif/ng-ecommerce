@@ -1,6 +1,7 @@
 import {Component, OnInit, HostListener, Directive, HostBinding, Inject} from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { CartService } from '../cart.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-site-layout',
@@ -10,8 +11,10 @@ import { CartService } from '../cart.service';
 export class SiteLayoutComponent implements OnInit {
 
   cartArray: number;
+  getStatus: any;
 
-  constructor(@Inject(DOCUMENT) private document: Document, public cartService: CartService) {
+  constructor(@Inject(DOCUMENT) private document: Document, public cartService: CartService,
+  public authService: AuthService) {
     this.cartArray = this.cartService.getItems.length;
   }
 
@@ -29,6 +32,10 @@ onWindowScroll() {
 
   ngOnInit(): void {
     this.cartArray = this.cartService.getItems().length;
+    this.getStatus = this.authService.getUserStatus();
+
+    console.log(this.authService.getUserStatus(), 'this.getStatus');
+
   }
 
 }

@@ -1,0 +1,24 @@
+<div class="prodoct-insertion">
+    <div class="col-sm-12 col-md-12">
+        <div class="card">
+          <div class="card-body">
+              <div *ngIf="notification" class="alert alert-warning">
+                   {{ notification }}
+              </div> <!-- End Notification -->
+              <div>
+                  <h6>Add Product Category</h6>
+              </div>
+              <div>
+                  <form (ngSubmit)="onSubmit($event, product)">
+                      <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Product Category" [(ngModel)]="product.category" name="category">
+                      </div> <!-- End form group -->
+    
+                      <button class="btn btn-success"><i class="material-icons" style="color: #FFF;">playlist_add</i> Add Product Category</button>
+                  </form>
+              </div>
+         
+          </div> <!-- End -->
+      </div> <!-- End card -->
+    </div> <!-- End col sm -->
+</div> <!-- End product Insetation -->

@@ -46,11 +46,8 @@ export class SignupComponent implements OnInit {
     });*/
 
 
-    /*  this.aufauth.auth.authState(user => {
-      if (user) {
-        console.log(user);
-      }
-    });*/
+    
+
 
     console.log(this.aufauth, 'this.aufauth');
 
