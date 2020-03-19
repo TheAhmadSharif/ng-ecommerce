@@ -12,7 +12,7 @@ export class SignupComponent implements OnInit {
   
   notification: any;
 
-  constructor(public auth: AngularFireAuth, private router: Router) {
+  constructor(public aufauth: AngularFireAuth, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -24,8 +24,8 @@ export class SignupComponent implements OnInit {
     var emailaddress = email;
     var userpassword = password;
 
-      this.auth.auth.createUserWithEmailAndPassword(email, password).then(success => {
-        console.log(success);
+      /*this.aufauth.auth.createUserWithEmailAndPassword(email, password).then(success => {
+        console.log(success, 'success');
         this.notification = "You have successfully signup in our system. Please login to place a order.";
 
       })
@@ -33,7 +33,30 @@ export class SignupComponent implements OnInit {
 
           this.notification = error.message;
         
-          });
+          });*/
+
+
+     /* this.aufauth.auth.onAuthStateChanged(user => {
+      if (user) {
+        // show email in welcome message
+        this.email = user.email;
+        // call method that selects when authenticated
+        this.selectItems(user.uid);
+      }
+    });*/
+
+
+    /*  this.aufauth.auth.authState(user => {
+      if (user) {
+        console.log(user);
+      }
+    });*/
+
+    console.log(this.aufauth, 'this.aufauth');
+
+
+
+
         
   }
 
