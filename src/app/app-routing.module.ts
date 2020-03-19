@@ -10,6 +10,10 @@ import { CustomerComponent } from './customer/customer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddProductComponent } from './dashboard/add-product/add-product.component';
 import { AddCategoryComponent } from './dashboard/add-category/add-category.component';
+import { UserComponent } from './dashboard/user/user.component';
+
+
+
 
 import { SiteLayoutComponent } from './site-layout/site-layout.component';
 import { ProductListComponent } from './site-layout/product-list/product-list.component';
@@ -35,6 +39,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'dashboard', component: DashboardComponent, 
       children: [
+        { path: 'user', component: UserComponent, pathMatch: 'full'},
         { path: 'add-product', component: AddProductComponent, pathMatch: 'full'},
         { path: 'add-category', component: AddCategoryComponent, pathMatch: 'full'}
       ]

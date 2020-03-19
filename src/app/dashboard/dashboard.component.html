@@ -7,11 +7,11 @@
                 <ul class="list-group-flush">
                     <li class="d-flex justify-content-center">
                         <div class="logo-block">
-                            <a routerLink="/dashboard" routerLinkActive="active"><img src="assets/logo.png" alt="shop" height="40"></a>
+                            <a routerLink="/dashboard/user" routerLinkActive="active"><img src="assets/logo.png" alt="shop" height="40"></a>
                         </div> <!-- End logo Block -->
                     </li>
     
-                    <li class="list-group-item"><i class="material-icons">reorder</i><a routerLink="/dashboard" routerLinkActive="active">
+                    <li class="list-group-item"><i class="material-icons">reorder</i><a routerLink="/dashboard/user" routerLinkActive="active">
                         
                         Dashboard</a></li>
 
@@ -30,9 +30,9 @@
                         
     
                     <li class="list-group-item"><i class="material-icons">apps</i>
-                        <a routerLink="/" routerLinkActive="active"> Main Page</a></li>
+                        <a routerLink="/" routerLinkActive="active"> Online Shop</a></li>
     
-                    <li class="list-group-item"><i class="material-icons">settings_power</i><a routerLinkActive="active" (click)="logOut()">
+                    <li class="list-group-item"><i class="material-icons">power_settings_new</i><a routerLinkActive="active" (click)="logOut()">
                         
                         Logout</a></li>
                     
@@ -41,9 +41,7 @@
            </div> <!-- End sidebar -->
            <div class="dashboard">
                 <div class="col-sm-12 h-100">
-                    <div class="d-flex p-4 ">
-                        <h4>Welcome To Dashboard</h4>
-                    </div> <!-- End flex -->
+                    
                         
                         <div class="component-div">
                                 <router-outlet></router-outlet>

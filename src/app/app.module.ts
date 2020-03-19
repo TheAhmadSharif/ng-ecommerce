@@ -39,6 +39,7 @@ import { AddProductComponent } from './dashboard/add-product/add-product.compone
 import { AddCategoryComponent } from './dashboard/add-category/add-category.component';
 import { ContactComponent } from './contact/contact.component';
 import { NopageComponent } from './nopage/nopage.component';
+import { UserComponent } from './dashboard/user/user.component';
 
 
 
@@ -60,6 +61,7 @@ import { NopageComponent } from './nopage/nopage.component';
     AddCategoryComponent,
     ContactComponent,
     NopageComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
