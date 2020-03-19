@@ -1,6 +1,6 @@
 import {Component, OnInit, HostListener, Directive, HostBinding, Inject} from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { CartService } from '../cart.service';
+import { CartService } from '../services/cart.service';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -34,8 +34,7 @@ onWindowScroll() {
     this.cartArray = this.cartService.getItems().length;
     this.getStatus = this.authService.getUserStatus();
 
-    console.log(this.authService.getUserStatus(), 'this.getStatus');
-
+    console.log(this.authService.getUserStatus(), 'this get Status');
   }
 
 }

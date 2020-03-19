@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import { CartService } from '../../cart.service';
+import { CartService } from '../../services/cart.service';
 
 import { Options } from 'ng5-slider';
 

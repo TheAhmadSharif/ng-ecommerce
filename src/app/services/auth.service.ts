@@ -34,10 +34,10 @@ export class AuthService {
 
 
   getUserStatus() {
-    this.aufAuth.auth.onAuthStateChanged(function(user) {
+    this.aufAuth.auth.onAuthStateChanged((user) => {
         if (user) {
 
-          return true;
+          return user;
           console.log(user.metadata.lastSignInTime, user.metadata.creationTime,  user.email, user.uid, user.emailVerified, 'user.email, user.id');
         } else {
           return false;
