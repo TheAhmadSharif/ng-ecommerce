@@ -18,8 +18,8 @@ export class ProductListComponent implements OnInit {
   searchText:any;
   data;
 
-  minValue: number = 50;
-  maxValue: number = 200;
+  minValue: number = 0;
+  maxValue: number = 500;
   options: Options = {
     floor: 0,
     ceil: 250
@@ -49,21 +49,12 @@ export class ProductListComponent implements OnInit {
     this.cartService.addToCart(product);
   }
 
-  priceRange(min, max) {
-    console.log(min, max);
-  }
 
-  searchPrice(min, max) {
+  searchPrice(min:any, max:any) {
 
-    console.log(this.products);
-    if(parseFloat(min) < parseFloat(max)) {
+    this.products = this.products.filter(object => parseFloat(object.product_price) > parseFloat(min) && parseFloat(object.product_price) < parseFloat(max) + 1);
 
-      this.products = this.products.filter(object => parseFloat(object.product_price) > parseFloat(min) && parseFloat(object.product_price) < parseFloat(max) + 1);
-
-
-    } else {
-      console.log('Wrong combination');
-    } 
+     
   }
 
 }

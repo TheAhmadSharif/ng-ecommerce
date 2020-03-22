@@ -34,8 +34,13 @@
                         </div> <!-- End form group -->
   
   
-                        <div class="mb-4 mt-4">
-                          <div *ngIf="product.imgPath" class="product-image">
+                        <div class="mt-2">
+                          <div *ngIf="progressBar" class="mb-2">
+                            <ngb-progressbar type="warning" textType="dark" [value]="uploadPercent |  async | number : '1.2-2'" [showValue]="true"></ngb-progressbar>
+                          </div> <!-- End progressBar -->
+                          
+
+                          <div *ngIf="product.imgPath" class="product-image mb-2">
                               <img [src]="product.imgPath" alt="" width="140">
                               <div class="remove" (click)="removeImage()">x</div>
                           </div> <!-- End -->

@@ -20,6 +20,8 @@ export class AddProductComponent implements OnInit {
   notification:any;
   products:any;
   public isCollapsed = true;
+  progress:any;
+  progressBar:boolean = false;
 
   product ={
     name: '',
@@ -47,10 +49,8 @@ export class AddProductComponent implements OnInit {
 
       this.firestore.collection('ProductCategory').valueChanges()
         .subscribe(object => {
-          console.log(object, '50');
           this.product.options = object;  
           this.product.category = this.product.options[1].product_category;   
-          console.log(this.product.category, '53');   
       })
   }
 
@@ -75,14 +75,19 @@ export class AddProductComponent implements OnInit {
   }
 
   uploadFile(event:any) {
+    this.progressBar = true;
     const file = event.target.files[0];
     const filePath = 'product_image' + '/' + new Date().getTime().toString(); 
     const fileRef = this.storage.ref(filePath);
     const task = this.storage.upload(filePath, file);
 
+    
+
 
     this.product.filename = file.name;
     this.uploadPercent = task.percentageChanges();
+    
+
     task.snapshotChanges().pipe(
         finalize(() => {
           fileRef.getDownloadURL().subscribe(url=>{

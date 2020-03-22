@@ -28,7 +28,7 @@ import { ProductCategoryComponent } from './site-layout/product-category/product
 
 import { CartComponent } from './cart/cart.component';
 import { Searchname} from './searchname.pipe';
-import { PricePipe} from './range.pipe';
+
 import { SignupComponent } from './signup/signup.component';
 import { CustomerComponent } from './customer/customer.component';
 import { SigninComponent } from './signin/signin.component';
@@ -51,7 +51,6 @@ import { UserComponent } from './dashboard/user/user.component';
     ProductCategoryComponent,
     CartComponent,
     Searchname,
-    PricePipe,
     SignupComponent,
     CustomerComponent,
     SigninComponent,

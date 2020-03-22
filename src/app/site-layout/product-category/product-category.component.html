@@ -7,22 +7,6 @@
     </div> <!-- End col -->
 </div> <!-- End row -->
 
-<div class="row">
-    <div class="col-sm-12">
-        <div style="margin-top: 40px;">
-                <div class="slidecontainer">
-                    <input type="range" min="5" max="500" value="50" class="slider" [(ngModel)]="changePrice" [title]="changePrice" data-toggle="tooltip">
-
-                    
-
-                </div>
-                <div class="text-center" style="margin: 10px 0;">
-                    <span class="badge badge-warning">{{ changePrice }}</span>
-                </div>
-                
-        </div> <!-- End search -->
-    </div> <!-- End col -->
-</div> <!-- End row -->
 
 <div *ngIf="!products" class="mtb-20">
     <div class="row">
@@ -36,7 +20,7 @@
 
 <div style="margin-top: 30px">
     <div class="row">
-        <div class="col-sm-4" *ngFor="let product of products | searchname : searchText; let i = index;" style="margin-bottom: 10px;">
+        <div class="col-sm-4" *ngFor="let product of products | searchname: searchText; let i = index;" style="margin-bottom: 10px;">
                 <div class="card">
 
                     <div class="product-img">

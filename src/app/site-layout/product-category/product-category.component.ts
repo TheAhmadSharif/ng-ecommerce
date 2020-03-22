@@ -33,18 +33,14 @@ export class ProductCategoryComponent implements OnInit {
   
   ngOnInit(): void {
      let parameter = this.parameter;
+      this.route.params.subscribe( param => {
+                var product_category = param.type;
+                this.firestore.collection('Product', ref => ref.where('product_category', '==', product_category)).valueChanges().subscribe(object=> {
+                  this.products = object;
+            
+              });
 
-
-    
-
-    this.route.params.subscribe( param => {
-              var product_category = param.type;
-              this.firestore.collection('Product', ref => ref.where('product_category', '==', product_category)).valueChanges().subscribe(object=> {
-                this.products = object;
-          
-             });
-
-    }); 
+      }); 
 
 
     }
