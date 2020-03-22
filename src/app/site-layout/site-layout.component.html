@@ -11,8 +11,6 @@
               <div class="col-8">
                   <nav class="nav-block">
                     <ul class="nav">
-                      
-                      
                       <li>
                         <a routerLink="/product/attire" routerLinkActive="active">Attire</a>
                       </li>
@@ -26,19 +24,18 @@
                       <li *ngIf="getStatus">
 
                           
-                          <div ngbDropdown> <!-- **here** -->
+                          <div ngbDropdown placement="bottom-right">
                               <li ngbDropdownToggle class="link-border" style="margin-right: 0;">
                                  <a><i class="material-icons">perm_identity</i>Profile</a>
                               </li>
                      
                             <div ngbDropdownMenu>
-                                <button ngbDropdownItem routerLink="/dashboard/user" routerLinkActive="active" ngbDropdownItem><i class="material-icons md-18" >apps</i>apps</button>
+                                <button ngbDropdownItem routerLink="/dashboard/user" routerLinkActive="active" ngbDropdownItem><i class="material-icons md-18" >apps</i>Dashboard</button>
 
                                 <button ngbDropdownItem routerLink="/logout" routerLinkActive="active" ngbDropdownItem (click)="logOut()"><i class="material-icons md-18" >power_settings_new</i>Logout</button>
                              
                             </div>
                           </div>
-
 
                       </li>
 

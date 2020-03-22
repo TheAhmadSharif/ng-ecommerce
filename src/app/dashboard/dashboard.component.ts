@@ -26,9 +26,7 @@ export class DashboardComponent implements OnInit {
 
     this.afAuth.authState.subscribe(user => {
       if (user) {
-        console.log(user, 'user');
        
- 
         
       } else {
         

@@ -5,18 +5,43 @@
               <div *ngIf="notification" class="alert alert-warning">
                    {{ notification }}
               </div> <!-- End Notification -->
-              <div>
-                  <h6>Add Product Category</h6>
-              </div>
-              <div>
-                  <form (ngSubmit)="onSubmit($event, product)">
-                      <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Product Category" [(ngModel)]="product.category" name="category">
-                      </div> <!-- End form group -->
-    
-                      <button class="btn btn-sm btn-success"><i class="material-icons" style="color: #FFF;">playlist_add</i> Add Product Category</button>
-                  </form>
-              </div>
+              <div (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" class="category-heading">
+                <span class="material-icons" style="margin-right: 5px;">library_add</span> Add New Category
+              </div> <!-- End  -->
+             
+              <div id="collapseExample" [ngbCollapse]="isCollapsed">
+                <div class="card">
+                  <div class="card-body">
+                    <div>
+                        <form (ngSubmit)="onSubmit($event, product)">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Product Category" [(ngModel)]="product.category" name="category">
+                            </div> <!-- End form group -->
+          
+                            <button class="btn btn-sm btn-success"><i class="material-icons" style="color: #FFF;">playlist_add</i> Add Product Category</button>
+                        </form>
+                    </div> <!-- End  -->
+                  </div> <!-- End  -->
+                </div> <!-- End  -->
+              </div> <!-- End  -->
+
+
+             
+
+              <div class="mt-4">
+                    <table class="table table-bordered">
+                            <tr>
+                                <td>SL</td>
+                                <td>Category</td>
+                                <td>Action</td>
+                            </tr>
+                            <tr *ngFor="let cat of category; let i = index;">
+                                <td> {{ i+1 }} </td>
+                                <td> {{ cat.product_category | titlecase }} </td>
+                                <td> <span class="btn btn-sm btn-outline-danger" (click)="removeCategory(cat.product_category)">Delete</span> </td>
+                            </tr>
+                    </table>
+              </div> <!-- End Card Body -->
          
           </div> <!-- End -->
       </div> <!-- End card -->

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/firestore';
+import 'firebase/firestore';
 
 @Component({
   selector: 'app-add-category',
@@ -11,13 +14,68 @@ export class AddCategoryComponent implements OnInit {
   product = {
     category: ''
   }
+  category:any;
+  public isCollapsed = true;
 
-  constructor() { }
+
+  constructor( 
+    public firestore: AngularFirestore,
+    private router: Router) { }
 
   ngOnInit(): void {
+      this.firestore.collection('ProductCategory').valueChanges()
+        .subscribe(object => {
+          this.category = object;        
+      })
   }
 
-  onSubmit(event, product) {
+  removeCategory(cat:any) {
+
+    var txt:any;
+    var r = confirm("Press a button!");
+    if (r == true) {
+            this.firestore.collection("ProductCategory").doc(cat).delete().then(function() {
+                console.log("Document successfully deleted!");
+            }).catch(function(error) {
+                console.error("Error removing document: ", error);
+            });
+    } else {
+      txt = "You pressed Cancel!";
+    }
+
+
+   
+
+    
+
+
+      console.log(cat);
+  }
+
+  onSubmit(event:any, product:any) {
+    var d = new Date().getTime().toString(); 
+
+    var category = product.category.toLowerCase();
+
+    if(product.category.length > 2) {
+      this.firestore.collection('ProductCategory').doc(category).set({
+              _id: d,
+              product_category: category,
+            
+        }).then(object => {
+            this.notification = 'Product Category has been added successfully';
+            this.product.category = '';
+
+            setTimeout(function () {
+                this.notification = '789';
+                console.log(this.notification);
+            }, 2000);
+      })
+      .catch(function(error) {
+            this.notification = 'Please put Category information correctly.';
+      });
+ } 
+
 
   }
 

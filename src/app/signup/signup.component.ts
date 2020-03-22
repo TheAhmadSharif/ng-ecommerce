@@ -20,15 +20,30 @@ export class SignupComponent implements OnInit {
     
   }
 
-  createUser(email:string, password:string) {
+  createUser(email:string, password:string, displayName:string) {
     var emailaddress = email;
     var userpassword = password;
+    var displayName = displayName;
 
-      this.aufauth.auth.createUserWithEmailAndPassword(email, password).then(success => {
-        console.log(success, 'success');
-        this.notification = "You have successfully signup in our system. Now, you are going to land in our system's dashboard page.";
+      this.aufauth.auth.createUserWithEmailAndPassword(email, password).then(object => {
+        console.log(object, 'success');
 
-        this.router.navigate(['dashboard/user']);
+        object.user.updateProfile({
+          displayName: displayName
+        }).then(user => {
+            console.log(user, 'user');
+
+            this.notification = "You have successfully signup in our system. Now, you are going to land in our system's dashboard page.";
+
+            setTimeout(()=> {
+              this.router.navigate(['dashboard/user']);
+            }, 1500);
+
+        }, function(error) {
+          console.log(error, 'error');
+        });      
+
+
         
 
 

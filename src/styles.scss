@@ -262,7 +262,7 @@ background: #f30;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .product-img {
-  max-height: 240px;
+  max-height: 300px;
 }
 
 .sidebar a, a {
@@ -304,4 +304,10 @@ background: #f30;
 }
 .prodoct-insertion {
   margin-top: 40px !important;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #666;
+  text-decoration: none;
+  background-color: #FFF;
 }

@@ -27,12 +27,10 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.afAuth.authState.subscribe(user => {
       if (user) {
-        console.log(user, 'user');
         this.userData.email = user.email;
         this.userData.emailVerified = user.emailVerified;
+        this.userData.displayName = user.displayName;
         this.userData.creationTime = user.metadata.creationTime;
-
- 
       } else {
        
       }
