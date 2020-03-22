@@ -28,8 +28,8 @@ export class AddProductComponent implements OnInit {
     imgPath: '',
     filename: 'Select a product image',
     quantity: 1,
-    category: 'attire',
-    options: ['attire', 'watch', 'shoes']
+    category: '',
+    options: []
   }
 
   
@@ -42,6 +42,15 @@ export class AddProductComponent implements OnInit {
         this.firestore.collection('Product').valueChanges()
         .subscribe(object => {
           this.products = object;        
+      })
+
+
+      this.firestore.collection('ProductCategory').valueChanges()
+        .subscribe(object => {
+          console.log(object, '50');
+          this.product.options = object;  
+          this.product.category = this.product.options[1].product_category;   
+          console.log(this.product.category, '53');   
       })
   }
 
@@ -57,8 +66,6 @@ export class AddProductComponent implements OnInit {
     } else {
 
     }
-
-
 
   }
 

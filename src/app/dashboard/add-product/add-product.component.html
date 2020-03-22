@@ -7,7 +7,7 @@
               </div> <!-- End Notification -->
               
 
-              <div (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" class="heading">
+              <div (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" class="insert-heading">
                 <span class="material-icons" style="margin-right: 5px;">library_add</span> Add New Product
               </div> <!-- End div -->
 
@@ -29,7 +29,7 @@
                         <div class="form-group">
                             
                                 <select [(ngModel)]="product.category"  class="form-control input-sm" name="product.category">
-                                <option *ngFor="let category of product.options;" [value]="category">{{ category }}</option>
+                                <option *ngFor="let product of product.options;" [value]="product.product_category">{{ product.product_category }}</option>
                               </select>
                         </div> <!-- End form group -->
   

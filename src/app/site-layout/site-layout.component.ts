@@ -14,6 +14,7 @@ export class SiteLayoutComponent implements OnInit {
 
   cartArray: number;
   getStatus: any;
+  username:any;
 
   constructor(@Inject(DOCUMENT) private document: Document, 
   public cartService: CartService,
@@ -40,7 +41,9 @@ onWindowScroll() {
     this.getStatus = this.authService.getUserStatus();
 
     this.aufAuth.auth.onAuthStateChanged((user) => {
+      
       if(user) {
+        this.username = user.displayName;
         this.getStatus = true;
       }
       else {
