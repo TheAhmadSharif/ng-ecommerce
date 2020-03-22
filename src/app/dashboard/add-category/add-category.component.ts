@@ -11,6 +11,7 @@ import 'firebase/firestore';
 export class AddCategoryComponent implements OnInit {
 
   notification:any;
+  notifyBlock:boolean = false;
   product = {
     category: ''
   }
@@ -40,16 +41,10 @@ export class AddCategoryComponent implements OnInit {
                 console.error("Error removing document: ", error);
             });
     } else {
-      txt = "You pressed Cancel!";
+
     }
 
 
-   
-
-    
-
-
-      console.log(cat);
   }
 
   onSubmit(event:any, product:any) {
@@ -66,9 +61,9 @@ export class AddCategoryComponent implements OnInit {
             this.notification = 'Product Category has been added successfully';
             this.product.category = '';
 
-            setTimeout(function () {
-                this.notification = '789';
-                console.log(this.notification);
+            setTimeout(a =>  {
+              this.notification = null;
+              this.isCollapsed = true;
             }, 2000);
       })
       .catch(function(error) {

@@ -18,6 +18,8 @@ export class AddProductComponent implements OnInit {
   uploadPercent: Observable<number>;
   imagePath: Observable<string>;
   notification:any;
+  products:any;
+  public isCollapsed = true;
 
   product ={
     name: '',
@@ -37,6 +39,27 @@ export class AddProductComponent implements OnInit {
 
 
   ngOnInit(): void {
+        this.firestore.collection('Product').valueChanges()
+        .subscribe(object => {
+          this.products = object;        
+      })
+  }
+
+  removeProduct(id:any) {
+
+    var r = confirm("Are you sure you want to delete this prduct?");
+    if (r == true) {
+            this.firestore.collection("Product").doc(id).delete().then(function() {
+                console.log("Document successfully deleted!");
+            }).catch(function(error) {
+                console.error("Error removing document: ", error);
+            });
+    } else {
+
+    }
+
+
+
   }
 
   removeImage() {

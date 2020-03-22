@@ -2,10 +2,11 @@
     <div class="col-sm-12 col-md-12">
         <div class="card">
           <div class="card-body">
-              <div *ngIf="notification" class="alert alert-warning">
-                   {{ notification }}
-              </div> <!-- End Notification -->
-              <div (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" class="category-heading">
+            <div *ngIf="notification" class="alert alert-warning">
+                {{ notification }}
+            </div> <!-- End Notification -->
+              
+              <div (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" class="heading">
                 <span class="material-icons" style="margin-right: 5px;">library_add</span> Add New Category
               </div> <!-- End  -->
              

@@ -5,60 +5,91 @@
               <div *ngIf="notification" class="alert alert-warning">
                    {{ notification }}
               </div> <!-- End Notification -->
-              <div>
-                  <h6>Add New Product</h6>
-              </div>
-              <div>
-                  <form (ngSubmit)="onSubmit($event, product)">
+              
 
-                      
-                      <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Product Name" [(ngModel)]="product.name" name="name">
-                      </div> <!-- End form group -->
-    
-                      <div class="form-group">
-                          <input type="number" class="form-control" placeholder="Product Price" [(ngModel)]="product.price" name="price">
-    
-                          <input type="hidden" class="form-control" [(ngModel)]="product.quantity" name="quantity">
-                      </div> <!-- End form group -->
-    
-                      <div class="form-group">
-                          
-                              <select [(ngModel)]="product.category"  class="form-control input-sm" name="product.category">
-                              <option *ngFor="let category of product.options;" [value]="category">{{ category }}</option>
-                            </select>
-                      </div> <!-- End form group -->
+              <div (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" class="heading">
+                <span class="material-icons" style="margin-right: 5px;">library_add</span> Add New Product
+              </div> <!-- End div -->
 
-
-                      <div class="mb-4 mt-4">
-                        <div *ngIf="product.imgPath" class="product-image">
-                            <img [src]="product.imgPath" alt="" width="140">
-                            <div class="remove" (click)="removeImage()">x</div>
-                        </div> <!-- End -->
-                      </div> <!-- End card  -->
-    
-                     
-    
-                      <div class="form-group">
-                          <div class="input-group mb-3">
-                              
-                              <div class="custom-file">
-
-                                <input type="hidden" [(ngModel)]="product.imgPath" name="product.imgPath">
-                               
-    
-                                <input type="file" class="custom-file-input" (change)="uploadFile($event)" id="inputGroupFile01" name="product.imgPath" placeholder="select a file">
-                                <label class="custom-file-label" for="inputGroupFile01">{{ product.filename }}</label>
+              <div id="collapseExample" [ngbCollapse]="isCollapsed">
+                <div style="margin-bottom: 20px;">
+                    <form (ngSubmit)="onSubmit($event, product)">
+  
+                        
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Product Name" [(ngModel)]="product.name" name="name">
+                        </div> <!-- End form group -->
+      
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Product Price" [(ngModel)]="product.price" name="price">
+      
+                            <input type="hidden" class="form-control" [(ngModel)]="product.quantity" name="quantity">
+                        </div> <!-- End form group -->
+      
+                        <div class="form-group">
+                            
+                                <select [(ngModel)]="product.category"  class="form-control input-sm" name="product.category">
+                                <option *ngFor="let category of product.options;" [value]="category">{{ category }}</option>
+                              </select>
+                        </div> <!-- End form group -->
+  
+  
+                        <div class="mb-4 mt-4">
+                          <div *ngIf="product.imgPath" class="product-image">
+                              <img [src]="product.imgPath" alt="" width="140">
+                              <div class="remove" (click)="removeImage()">x</div>
+                          </div> <!-- End -->
+                        </div> <!-- End card  -->
+      
+                       
+      
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                
+                                <div class="custom-file">
+  
+                                  <input type="hidden" [(ngModel)]="product.imgPath" name="product.imgPath">
+                                 
+      
+                                  <input type="file" class="custom-file-input" (change)="uploadFile($event)" id="inputGroupFile01" name="product.imgPath" placeholder="select a file">
+                                  <label class="custom-file-label" for="inputGroupFile01">{{ product.filename }}</label>
+                                </div>
+                                
                               </div>
-                              
-                            </div>
-                      </div> <!-- End form group -->
-    
-                      
-    
-                      <button class="btn btn-success"><i class="material-icons" style="color: #FFF;">playlist_add</i> Add product</button>
-                  </form>
-              </div>
+                        </div> <!-- End form group -->
+      
+                        
+      
+                        <button class="btn btn-success"><i class="material-icons" style="color: #FFF;">playlist_add</i> Add product</button>
+                    </form>
+                </div>  <!-- End div -->
+
+              </div> <!-- End Toggle -->
+
+              
+
+              <div>
+                <table class="table table-bordered">
+                    <tr>
+                        <td>SL</td>
+                        <td> Product Image </td>
+                        <td> Product Name</td>
+                        <td> Product Price</td>
+                        <td> Product Category</td>
+                        <td>Action</td>
+                    </tr>
+                    <tr *ngFor="let product of products; let i = index;">
+                        <td> {{ i+1 }} </td>
+                        <td> <img [src]="product.product_img" [alt]="product.product_name" width="40"></td>
+                        <td> {{ product.product_name | titlecase }} </td>
+                        <td> {{ product.product_price  }} <small>$</small> </td>
+                        <td> {{ product.product_category  | titlecase}} </td>
+                        <td> <span class="btn btn-sm btn-outline-danger" (click)="removeProduct(product._id)">Delete</span> </td>
+                    </tr>
+                </table>
+              </div> <!-- End -->
+              
+
          
           </div> <!-- End -->
       </div> <!-- End card -->
