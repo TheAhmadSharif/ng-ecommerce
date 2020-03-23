@@ -24,6 +24,7 @@ export class ProductListComponent implements OnInit {
     floor: 0,
     ceil: 250
   };
+  reservedProducts: unknown[];
   
     
   constructor(
@@ -41,6 +42,7 @@ export class ProductListComponent implements OnInit {
     this.firestore.collection('Product').valueChanges()
       .subscribe(object => {
         this.products = object;        
+        this.reservedProducts = object;
     })
 
   }
@@ -52,7 +54,23 @@ export class ProductListComponent implements OnInit {
 
   searchPrice(min:any, max:any) {
 
-    this.products = this.products.filter(object => parseFloat(object.product_price) > parseFloat(min) && parseFloat(object.product_price) < parseFloat(max) + 1);
+
+    let filterdArray=[]
+    for(let i=0;i<this.reservedProducts.length;i++){
+      if(this.reservedProducts[i]['product_price'] >= parseFloat(min) && this.reservedProducts[i]['product_price'] <= parseFloat(max)){
+        filterdArray.push(this.reservedProducts[i])
+      }
+    }
+    console.log(filterdArray)
+    if(filterdArray.length > 0 ){
+      this.products = filterdArray;
+    }else{
+      this.products = this.reservedProducts;
+    }
+    // this.reservedProducts.map(e=>{
+    //   return this.reservedProducts['product']
+    // })
+    // this.products = this.reservedProducts.filter(object => parseFloat(object.) > parseFloat(min) && parseFloat(object.product_price) < parseFloat(max) + 1);
 
      
   }

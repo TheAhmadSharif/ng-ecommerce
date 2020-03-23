@@ -31,7 +31,8 @@ export class AddProductComponent implements OnInit {
     filename: 'Select a product image',
     quantity: 1,
     category: '',
-    options: []
+    options: [],
+    action_type: 'Add'
   }
 
   
@@ -69,6 +70,59 @@ export class AddProductComponent implements OnInit {
 
   }
 
+  editProduct (product:any) {
+      console.log(product, 'product');
+      this.isCollapsed = false;
+      console.log(product, 'id');
+      this.product.name = product.product_name;
+      this.product.price = product.product_price;
+      this.product.category = product.product_category;
+      this.product.action_type = 'Edit';
+      this.product.imgPath = product.product_img;
+
+
+      
+  }
+
+  updateItem(event:any, product:any) {
+  
+
+    if(product.name.length > 5 && product.price > 0 && product.imgPath) {
+
+
+      this.firestore.collection('Product').doc(product._id).set({
+              _id: product._id,
+              product_name: product.name,
+              product_price: product.price,
+              product_category: product.category,
+              product_img: product.imgPath,
+              product_quantity: product.quantity
+        }).then(object => {
+            this.notification = 'Product info has been updated successfully';
+
+            setTimeout(a =>  {
+              this.router.navigate(['/dashboard/add-product']);
+            }, 1500);
+            
+      })
+      .catch(function(error) {
+            this.notification = 'Please put product information correctly.';
+      });
+ } 
+
+ else {
+    this.notification = 'Please put product information correctly.';
+ }
+
+
+
+
+
+
+
+
+  }
+
   removeImage() {
     this.product.imgPath = null;
     this.product.filename = null;
@@ -98,15 +152,25 @@ export class AddProductComponent implements OnInit {
     .subscribe()
   }
 
-  onSubmit(event:any, product:any) {
+  onSubmit(event:any, product:any, action_type:string) {
 
     console.log(product);
 
 
-        var d = new Date().getTime().toString(); 
+    if(action_type == 'Edit') {
+        var d:any = product._id
+        console.log(action_type, 'action_type');
+    }
+    else {
+      var d:any = new Date().getTime().toString(); 
+      console.log(d, 'action_type');
+    }
+
 
         
-        if(product.name.length > 5 && product.price > 0 && product.imgPath) {
+
+        
+      if(product.name.length > 5 && product.price > 0 && product.imgPath) {
 
 
             this.firestore.collection('Product').doc(d).set({
@@ -133,6 +197,7 @@ export class AddProductComponent implements OnInit {
           this.notification = 'Please put product information correctly.';
        }
 
+       
 
         
   }

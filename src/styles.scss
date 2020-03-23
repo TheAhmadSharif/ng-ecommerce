@@ -64,9 +64,7 @@
      border: #495057;
  }
 
- .row {
-    width: 100%;
-}
+
 
 .nav li:last-child {
     margin-right: 0;
@@ -318,4 +316,48 @@ background: #f30;
   cursor: pointer;
   font-size: 18px;
   margin-bottom: 10px;
+}
+.pricerange-block {
+  input {
+    width: 60px;
+    padding: 2px;
+    font-size: 14px;
+    margin-right: 5px;
+  }
+  .label {
+    font-size: 10px;
+  }
+}
+.filter-block {
+  background: #ededed;
+  margin: 20px 0; 
+  border-radius: 4px;
+}
+.search-box {
+  margin: 10px 0;
+}
+.product-price {
+  font-size: 24px;
+  font-weight: 600;
+  position: relative;
+}
+.product-title {
+  font-size: 16px;
+  position: relative;
+}
+.currency {
+  font-size: 10px;
+  position: absolute;
+  top: -2px;
+  right: -10px;
+  z-index: 12;
+}
+.ng5-slider {
+  margin-top: 28px !important;
+}
+.ng5-slider.animate .ng5-slider-bubble {
+  font-size: 12px;
+}
+.nav li {
+  color: #444
 }
