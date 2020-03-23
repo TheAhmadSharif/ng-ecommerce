@@ -63,9 +63,11 @@ export class ProductComponent implements OnInit {
     this.isCollapsed = true;
     this.product.name = '';
     this.product.price = '';
-    this.product.category = '';
+    this.product.category = this.product.options[0].product_category;
     this.product.close_icon = false;
     this.product.action_type = 'Add';
+    this.product.imgPath = '';
+    this.product.filename = 'Select a product image';
   }
 
   removeProduct(id:any) {
