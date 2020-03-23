@@ -1,25 +1,29 @@
 <div class="prodoct-insertion">
     <div class="col-sm-12 col-md-12">
         <div class="card">
-          <div class="card-body">
+          <div class="card-body" style="background: #eee;">
               <div *ngIf="notification" class="alert alert-warning">
                    {{ notification }}
               </div> <!-- End Notification -->
 
 
               <div class="d-flex justify-content-between">
-                <div (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" class="insert-heading">
+                <div (click)="addProduct()" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" class="insert-heading">
                   <span class="material-icons" style="margin-right: 5px;">library_add</span> {{ product.action_type }}  Product
                 </div> <!-- End div -->
+
+                <div *ngIf="product.close_icon">
+                  <button type="button" class="close" aria-label="Close" (click)="closeForm()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div> <!-- End -->
   
-                <button type="button" class="close" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+                
               </div> <!-- End flex -->
 
 
 
-              <div id="collapseExample" [ngbCollapse]="isCollapsed">
+              <div id="collapseExample" [ngbCollapse]="isCollapsed" style="margin-bottom: 5rem;">
                 <div style="margin-bottom: 20px;">
                     <form (ngSubmit)="onSubmit($event, product, product.action_type)">
   
@@ -73,39 +77,50 @@
       
                         
       
-                        <button class="btn btn-success"><i class="material-icons" style="color: #FFF;">playlist_add</i> {{ product.action_type }} Product</button>
+                        <button class="btn btn-success"><i class="material-icons" style="color: #FFF;">playlist_add</i> {{ product.button_text }} </button>
                     </form>
                 </div>  <!-- End div -->
-
               </div> <!-- End Toggle -->
-
+            </div> <!-- End card body -->
               
 
-              <div>
-                <table class="table table-bordered">
-                    <tr>
-                        <td>SL</td>
-                        <td> Product Name</td>
-                        <td> Product Price</td>
-                        <td> Product Category</td>
-                        <td>Action</td>
-                    </tr>
-                    <tr *ngFor="let product of products; let i = index;">
-                        <td> {{ i+1 }} </td>
-        
-                        <td> <img [src]="product.product_img" [alt]="product.product_name" width="40"> {{ product.product_name | titlecase }} </td>
-                        <td> {{ product.product_price  }} <small>$</small> </td>
-                        <td> {{ product.product_category  | titlecase}} </td>
-                        <td> <span class="btn btn-sm btn-outline-danger" (click)="removeProduct(product._id)" style="margin-right: 10px">Delete</span> 
-                          <span class="btn btn-sm btn-outline-secondary" (click)="editProduct(product)">Edit</span>
-                        </td>
-                    </tr>
-                </table>
+              <div class="card-body">
+
+
+              <div *ngIf="!products" class="mtb-20">
+                  <div class="row">
+                       <li *ngFor="let index of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]" class="card-loader col-4">
+                               
+                       </li>
+                  </div>
+              </div>   <!-- End loader -->
+
+                <div *ngIf="products">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>SL</td>
+                            <td> Product Name</td>
+                            <td> Product Price</td>
+                            <td> Product Category</td>
+                            <td>Action</td>
+                        </tr>
+                        <tr *ngFor="let product of products; let i = index;">
+                            <td> {{ i+1 }} </td>
+            
+                            <td> <img [src]="product.product_img" [alt]="product.product_name" width="40"> {{ product.product_name | titlecase }} </td>
+                            <td> {{ product.product_price  }} <small>$</small> </td>
+                            <td> {{ product.product_category  | titlecase}} </td>
+                            <td> <span class="btn btn-sm btn-outline-danger" (click)="removeProduct(product._id)" style="margin-right: 10px">Delete</span> 
+                              <span class="btn btn-sm btn-outline-secondary" (click)="editProduct(product)">Edit</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div> <!-- End -->
               </div> <!-- End -->
               
 
          
-          </div> <!-- End -->
+          
       </div> <!-- End card -->
     </div> <!-- End col sm -->
 </div> <!-- End product Insetation -->

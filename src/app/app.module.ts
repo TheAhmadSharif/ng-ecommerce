@@ -30,16 +30,18 @@ import { CartComponent } from './cart/cart.component';
 import { Searchname} from './searchname.pipe';
 
 import { SignupComponent } from './signup/signup.component';
-import { CustomerComponent } from './customer/customer.component';
 import { SigninComponent } from './signin/signin.component';
 import { SiteLayoutComponent } from './site-layout/site-layout.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AddProductComponent } from './dashboard/add-product/add-product.component';
-import { AddCategoryComponent } from './dashboard/add-category/add-category.component';
+import { ProductComponent } from './dashboard/product/product.component';
+import { CategoryComponent } from './dashboard/category/category.component';
+import { UserComponent } from './dashboard/user/user.component';
+
 import { ContactComponent } from './contact/contact.component';
 import { NopageComponent } from './nopage/nopage.component';
-import { UserComponent } from './dashboard/user/user.component';
+
+import { CustomerComponent } from './customer/customer.component';
 
 
 
@@ -56,8 +58,8 @@ import { UserComponent } from './dashboard/user/user.component';
     SigninComponent,
     DashboardComponent,
     SiteLayoutComponent,
-    AddProductComponent,
-    AddCategoryComponent,
+    ProductComponent,
+    CategoryComponent,
     ContactComponent,
     NopageComponent,
     UserComponent,

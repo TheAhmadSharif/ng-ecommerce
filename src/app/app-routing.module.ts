@@ -8,8 +8,8 @@ import { SigninComponent } from './signin/signin.component';
 import { CustomerComponent } from './customer/customer.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AddProductComponent } from './dashboard/add-product/add-product.component';
-import { AddCategoryComponent } from './dashboard/add-category/add-category.component';
+import { ProductComponent } from './dashboard/product/product.component';
+import { CategoryComponent } from './dashboard/category/category.component';
 import { UserComponent } from './dashboard/user/user.component';
 
 
@@ -40,8 +40,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, 
       children: [
         { path: 'user', component: UserComponent, pathMatch: 'full'},
-        { path: 'add-product', component: AddProductComponent, pathMatch: 'full'},
-        { path: 'add-category', component: AddCategoryComponent, pathMatch: 'full'}
+        { path: 'add-product', component: ProductComponent, pathMatch: 'full'},
+        { path: 'add-category', component: CategoryComponent, pathMatch: 'full'}
       ]
   },
   { path: 'customer', component: CustomerComponent },

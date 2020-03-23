@@ -4,11 +4,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import 'firebase/firestore';
 
 @Component({
-  selector: 'app-add-category',
-  templateUrl: './add-category.component.html',
-  styleUrls: ['./add-category.component.scss']
+  selector: 'app-category',
+  templateUrl: './category.component.html',
+  styleUrls: ['./category.component.scss']
 })
-export class AddCategoryComponent implements OnInit {
+export class CategoryComponent implements OnInit {
 
   notification:any;
   notifyBlock:boolean = false;

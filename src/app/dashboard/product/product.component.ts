@@ -9,18 +9,17 @@ import 'firebase/storage';
 import 'firebase/firestore';
 
 @Component({
-  selector: 'app-add-product',
-  templateUrl: './add-product.component.html',
-  styleUrls: ['./add-product.component.scss']
+  selector: 'app-product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.scss']
 })
-export class AddProductComponent implements OnInit {
+export class ProductComponent implements OnInit {
 
   uploadPercent: Observable<number>;
   imagePath: Observable<string>;
   notification:any;
   products:any;
   public isCollapsed = true;
-  progress:any;
   progressBar:boolean = false;
 
   product ={
@@ -32,7 +31,9 @@ export class AddProductComponent implements OnInit {
     quantity: 1,
     category: '',
     options: [],
-    action_type: 'Add'
+    action_type: 'Add',
+    button_text: 'Add Product',
+    close_icon: false
   }
 
   
@@ -51,8 +52,20 @@ export class AddProductComponent implements OnInit {
       this.firestore.collection('ProductCategory').valueChanges()
         .subscribe(object => {
           this.product.options = object;  
-          this.product.category = this.product.options[1].product_category;   
+          this.product.category = this.product.options[0].product_category;   
       })
+  }
+  addProduct() {
+    this.isCollapsed =! this. isCollapsed
+  }
+
+  closeForm() {
+    this.isCollapsed = true;
+    this.product.name = '';
+    this.product.price = '';
+    this.product.category = '';
+    this.product.close_icon = false;
+    this.product.action_type = 'Add';
   }
 
   removeProduct(id:any) {
@@ -71,16 +84,14 @@ export class AddProductComponent implements OnInit {
   }
 
   editProduct (product:any) {
-      console.log(product, 'product');
+      this.product.close_icon = true;
       this.isCollapsed = false;
-      console.log(product, 'id');
       this.product.name = product.product_name;
       this.product.price = product.product_price;
       this.product.category = product.product_category;
       this.product.action_type = 'Edit';
       this.product.imgPath = product.product_img;
-
-
+      this.product.button_text = 'Edit Product';
       
   }
 
@@ -114,14 +125,7 @@ export class AddProductComponent implements OnInit {
     this.notification = 'Please put product information correctly.';
  }
 
-
-
-
-
-
-
-
-  }
+}
 
   removeImage() {
     this.product.imgPath = null;
@@ -134,9 +138,6 @@ export class AddProductComponent implements OnInit {
     const filePath = 'product_image' + '/' + new Date().getTime().toString(); 
     const fileRef = this.storage.ref(filePath);
     const task = this.storage.upload(filePath, file);
-
-    
-
 
     this.product.filename = file.name;
     this.uploadPercent = task.percentageChanges();
@@ -154,9 +155,6 @@ export class AddProductComponent implements OnInit {
 
   onSubmit(event:any, product:any, action_type:string) {
 
-    console.log(product);
-
-
     if(action_type == 'Edit') {
         var d:any = product._id
         console.log(action_type, 'action_type');
@@ -164,13 +162,8 @@ export class AddProductComponent implements OnInit {
     else {
       var d:any = new Date().getTime().toString(); 
       console.log(d, 'action_type');
-    }
-
-
-        
-
-        
-      if(product.name.length > 5 && product.price > 0 && product.imgPath) {
+    }    
+    if(product.name.length > 5 && product.price > 0 && product.imgPath) {
 
 
             this.firestore.collection('Product').doc(d).set({
@@ -192,14 +185,9 @@ export class AddProductComponent implements OnInit {
                   this.notification = 'Please put product information correctly.';
             });
        } 
-
        else {
           this.notification = 'Please put product information correctly.';
        }
-
-       
-
-        
   }
 
 
