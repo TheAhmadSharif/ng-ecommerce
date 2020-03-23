@@ -1,35 +1,41 @@
-<div class="p-2">
-            <h4>Welcome To Dashboard</h4>
-
-            <div *ngIf="!userData">
-                <div class="row">
-                     <li *ngFor="let index of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]" class="card-loader col-4">
-                             
-                     </li>
-                </div>
-            </div>   <!-- End loader -->
-
-            <div *ngIf="userData">
-
-                <table class="table table-bordered">
-                    <tr>
-                        <td>Name: </td>
-                        <td> {{ userData.displayName }}</td>
-                    </tr>
-                    <tr>
-                        <td>Email Address: </td>
-                        <td>{{ userData.email }}</td>
-                    </tr>
-
-                    <tr>
-                        <td>Creation Time: </td>
-                        <td>{{ userData.creationTime }}</td>
-                    </tr>
-                    <tr>
-                        <td>Email Verification: </td>
-                        <td>{{ userData.emailVerified }}</td>
-                    </tr>
-                </table>
-            </div>   
- </div> <!-- End card -->
+<div style="margin-top: 40px;">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <h4>Welcome To Dashboard</h4>
+    
+                <div *ngIf="!userData">
+                    <div class="row">
+                         <li *ngFor="let index of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]" class="card-loader col-4">
+                                 
+                         </li>
+                    </div>
+                </div>   <!-- End loader -->
+    
+                <div *ngIf="userData">
+    
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>Name: </td>
+                            <td> {{ userData.displayName }}</td>
+                        </tr>
+                        <tr>
+                            <td>Email Address: </td>
+                            <td>{{ userData.email }}</td>
+                        </tr>
+    
+                        <tr>
+                            <td>Creation Time: </td>
+                            <td>{{ userData.creationTime }}</td>
+                        </tr>
+                        <tr>
+                            <td>Email Verification: </td>
+                            <td>{{ userData.emailVerified }}</td>
+                        </tr>
+                    </table>
+                </div>   <!-- End -->
+            </div> <!-- End Card Body -->
+        </div> <!-- End card -->
+    </div> <!--End col  -->
+ </div> <!-- End  -->
 

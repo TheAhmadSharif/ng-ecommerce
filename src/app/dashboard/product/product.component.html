@@ -30,7 +30,8 @@
   
                         
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Product Name" [(ngModel)]="product.name" name="name">
+                            <input type="hidden" [(ngModel)]="product._id" name="product._id">
+                            <input type="text" class="form-control" placeholder="Product Name" [(ngModel)]="product.name" name="product.name">
                         </div> <!-- End form group -->
       
                         <div class="form-group">

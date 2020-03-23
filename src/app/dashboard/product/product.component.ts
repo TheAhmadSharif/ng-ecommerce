@@ -23,6 +23,7 @@ export class ProductComponent implements OnInit {
   progressBar:boolean = false;
 
   product ={
+    _id: '',
     name: '',
     price: '',
     type: '',
@@ -68,6 +69,7 @@ export class ProductComponent implements OnInit {
     this.product.action_type = 'Add';
     this.product.imgPath = '';
     this.product.filename = 'Select a product image';
+    this.notification = null;
   }
 
   removeProduct(id:any) {
@@ -94,40 +96,10 @@ export class ProductComponent implements OnInit {
       this.product.action_type = 'Edit';
       this.product.imgPath = product.product_img;
       this.product.button_text = 'Edit Product';
+      this.product._id = product._id;
       
   }
 
-  updateItem(event:any, product:any) {
-  
-
-    if(product.name.length > 5 && product.price > 0 && product.imgPath) {
-
-
-      this.firestore.collection('Product').doc(product._id).set({
-              _id: product._id,
-              product_name: product.name,
-              product_price: product.price,
-              product_category: product.category,
-              product_img: product.imgPath,
-              product_quantity: product.quantity
-        }).then(object => {
-            this.notification = 'Product info has been updated successfully';
-
-            setTimeout(a =>  {
-              this.router.navigate(['/dashboard/add-product']);
-            }, 1500);
-            
-      })
-      .catch(function(error) {
-            this.notification = 'Please put product information correctly.';
-      });
- } 
-
- else {
-    this.notification = 'Please put product information correctly.';
- }
-
-}
 
   removeImage() {
     this.product.imgPath = null;
@@ -158,8 +130,8 @@ export class ProductComponent implements OnInit {
   onSubmit(event:any, product:any, action_type:string) {
 
     if(action_type == 'Edit') {
-        var d:any = product._id
-        console.log(action_type, 'action_type');
+        var d:any = product._id;
+        console.log(d, action_type, 'action_type162');
     }
     else {
       var d:any = new Date().getTime().toString(); 
