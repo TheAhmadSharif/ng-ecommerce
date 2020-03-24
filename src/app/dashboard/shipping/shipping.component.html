@@ -35,6 +35,14 @@
                         </select>
                       </div>
                     </div>
+
+                    <div>
+                        <h4 style="font-size: 18px;">Payment Method</h4>
+                    </div>
+
+                    <div>
+                        Cash on delivery: <input type="radio" name="cash">
+                    </div>
                   
                     <button type="submit" class="btn btn-success">Continue To Payment</button>
                 </form>
@@ -58,7 +66,7 @@
                                 <tbody>
                                 <tr>
                                     <td>Subtotal</td>
-                                    <td class="text-right" id="subtotal">644 Tk.</td>
+                                    <td class="text-right">{{ totalAmount }} Tk.</td>
                                 </tr>
                                 
                                 
@@ -68,17 +76,13 @@
                                         
                                     </td>
         
-                                    <td class="text-right" id="shipping">50 Tk.</td>
+                                    <td class="text-right"> {{ shippingcost }} Tk.</td>
                                 </tr>
-                                <tr>
-                                    <td>Total</td>
-                                    <td class="text-right" id="total">694 Tk.</td>
-                                </tr>
-                                
+                               
                                 
                                     <tr>
                                         <td>Payable Total</td>
-                                        <td class="text-right" id="payable">694 Tk.</td>
+                                        <td class="text-right"> {{ payable }} Tk.</td>
                                     </tr>
                                 </tbody>
                             </table>

@@ -8,7 +8,7 @@ import { CartService } from '../services/cart.service';
 })
 export class CartComponent implements OnInit {
 
-  products;
+  products:any;
   totalAmount:any;
   quantity:Array<number> = [1];
   product_totalprice:any;
