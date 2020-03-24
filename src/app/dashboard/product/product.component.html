@@ -111,8 +111,18 @@
                             <td> <img [src]="product.product_img" [alt]="product.product_name" width="20"> {{ product.product_name | titlecase }} </td>
                             <td> {{ product.product_price  }} <small>$</small> </td>
                             <td> {{ product.product_category  | titlecase}} </td>
-                            <td> <span class="btn btn-sm btn-outline-secondary" (click)="removeProduct(product._id)" style="margin-right: 10px">Delete</span> 
-                              <span class="btn btn-sm btn-outline-secondary" (click)="editProduct(product)">Edit</span>
+                            <td> 
+
+                              <span class="material-icons-outlined cp" (click)="removeProduct(product._id)" style="margin-right: 10px" placement="top" ngbTooltip="Delete Product">
+                                delete_sweep
+                              </span>
+
+
+
+                              <span class="material-icons-outlined cp" (click)="editProduct(product)" style="margin-right: 10px" placement="top" ngbTooltip="Edit Product">
+                                post_add
+                              </span>
+
                             </td>
                         </tr>
                     </table>

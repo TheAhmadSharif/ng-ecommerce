@@ -61,16 +61,11 @@ export class ProductListComponent implements OnInit {
         filterdArray.push(this.reservedProducts[i])
       }
     }
-    console.log(filterdArray)
     if(filterdArray.length > 0 ){
       this.products = filterdArray;
     }else{
       this.products = this.reservedProducts;
     }
-    // this.reservedProducts.map(e=>{
-    //   return this.reservedProducts['product']
-    // })
-    // this.products = this.reservedProducts.filter(object => parseFloat(object.) > parseFloat(min) && parseFloat(object.product_price) < parseFloat(max) + 1);
 
      
   }

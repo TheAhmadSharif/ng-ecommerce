@@ -29,20 +29,33 @@
              
 
               <div class="mt-4">
-                    <table class="table table-bordered">
-                            <tr>
-                                <td>SL</td>
-                                <td>Category</td>
-                                <td>Action</td>
-                            </tr>
-                            <tr *ngFor="let cat of category; let i = index;">
-                                <td> {{ i+1 }} </td>
-                                <td> {{ cat.product_category | titlecase }} </td>
-                                <td> <span class="material-icons cp" (click)="removeCategory(cat.product_category)">
-                                  delete_sweep_outline
-                                  </span> </td>
-                            </tr>
-                    </table>
+
+                <div *ngIf="!category" class="mtb-20">
+                    <div class="row">
+                        <li *ngFor="let index of [0,1,2,3,4,5,6,7,8,9,10,11,12,13]" class="card-loader col-6">
+                                
+                        </li>
+                    </div> <!-- End products -->
+                </div>   <!-- End loader -->
+
+
+
+                <div *ngIf="category">
+                  <table class="table table-bordered">
+                    <tr>
+                        <td>SL</td>
+                        <td>Category</td>
+                        <td>Action</td>
+                    </tr>
+                    <tr *ngFor="let cat of category; let i = index;">
+                        <td> {{ i+1 }} </td>
+                        <td> {{ cat.product_category | titlecase }} </td>
+                        <td> <span class="material-icons-outlined cp" (click)="removeCategory(cat.product_category)"  placement="top" ngbTooltip="Delete Product">
+                          delete_sweep
+                          </span> </td>
+                              </tr>
+                      </table>
+                </div> <!-- End -->
               </div> <!-- End Card Body -->
          
           </div> <!-- End -->
