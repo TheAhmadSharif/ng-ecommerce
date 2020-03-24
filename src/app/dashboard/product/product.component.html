@@ -8,7 +8,7 @@
 
               <div class="d-flex justify-content-between">
                 <div (click)="addProduct()" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" class="insert-heading">
-                  <span class="material-icons" style="margin-right: 5px;">library_add</span> 
+                  <span class="material-icons-outlined" style="margin-right: 5px;">library_add</span> 
                   {{ product.action_type }}  Product
                 </div> <!-- End div -->
 
@@ -114,7 +114,7 @@
                             <td> 
 
                               <span class="material-icons-outlined cp" (click)="removeProduct(product._id)" style="margin-right: 10px" placement="top" ngbTooltip="Delete Product">
-                                delete_sweep
+                                delete_outline
                               </span>
 
 
