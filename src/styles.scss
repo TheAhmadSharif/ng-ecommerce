@@ -311,9 +311,9 @@ background: #f30;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .product-img {
-  max-height: 300px;
-  min-height: 300px;
-  height: 300px;
+  max-height: 260px;
+  overflow: hidden;
+  height: auto;
 }
 
 .sidebar a, a {
@@ -381,9 +381,10 @@ background: #f30;
   background: #ededed;
   margin: 20px 0; 
   border-radius: 4px;
+  padding: 5px 0;
 }
 .search-box {
-  margin: 10px 0;
+  margin: 0;
 }
 .product-price {
   font-size: 24px;
@@ -393,6 +394,7 @@ background: #f30;
 .product-title {
   font-size: 16px;
   position: relative;
+  line-height: 1.3em;
 }
 .currency {
   font-size: 10px;
@@ -436,4 +438,19 @@ background: #f30;
 
 .table td {
   padding: 0.6rem;
+}
+.range-label {
+  width: 24px;
+  font-size: 10px;
+  display: inline-block;
+}
+.ng5-slider {
+  height: 0 !important;
+}
+select {
+  font-size: 14px;
+  line-height: 16px;
+}
+#checkout-sidebar .checkout-sidebar__header {
+  padding: 0 0 10px;
 }

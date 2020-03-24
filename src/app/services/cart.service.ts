@@ -8,10 +8,10 @@ import { Observable, of } from 'rxjs';
 export class CartService {
 
   items = [];
+  constructor() {}
 
   addToCart(product:any) {
     this.items.push(product);
-    console.log(this.items);
   }
 
   getItems() {
@@ -24,6 +24,6 @@ export class CartService {
   }
 
 
-  constructor() {}
+  
 
 }

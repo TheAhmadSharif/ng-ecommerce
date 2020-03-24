@@ -11,9 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductComponent } from './dashboard/product/product.component';
 import { CategoryComponent } from './dashboard/category/category.component';
 import { UserComponent } from './dashboard/user/user.component';
-
-
-
+import { ShippingComponent } from './dashboard/shipping/shipping.component';
 
 import { SiteLayoutComponent } from './site-layout/site-layout.component';
 import { ProductListComponent } from './site-layout/product-list/product-list.component';
@@ -30,7 +28,8 @@ const routes: Routes = [
     children: [
       { path: '', component: ProductListComponent, pathMatch: 'full'},
       { path: 'product/:type', component: ProductCategoryComponent },
-      { path: 'cart', component: CartComponent }
+      { path: 'cart', component: CartComponent },
+      { path: 'shipping', component: ShippingComponent, pathMatch: 'full'}
     ]
   },
   
@@ -42,6 +41,7 @@ const routes: Routes = [
         { path: 'user', component: UserComponent, pathMatch: 'full'},
         { path: 'add-product', component: ProductComponent, pathMatch: 'full'},
         { path: 'add-category', component: CategoryComponent, pathMatch: 'full'}
+        
       ]
   },
   { path: 'customer', component: CustomerComponent },

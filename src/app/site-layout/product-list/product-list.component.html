@@ -1,14 +1,37 @@
-<div class="row filter-block">
+<div class="row filter-block d-flex align-items-center">
     <div class="col-sm-6 col-12">
-        <div class="d-flex pricerange-block">
-                    <p><span class="label">Min</span> <input type="number" [(ngModel)]="minValue" name="minValue" (input)="searchPrice(minValue, maxValue)"></p>
-                    <p><span class="label">Max</span> <input type="number" [(ngModel)]="maxValue" (input)="searchPrice(minValue, maxValue)" name="maxValue"></p>
+        <div class="pricerange-block">
+                <div class="row">
+                    <div class="col-sm-4 col-12">
+                        <div>
+                            <span class="range-label">Min</span> <input type="number" [(ngModel)]="minValue" name="minValue" (input)="searchPrice(minValue, maxValue)">
 
-                    <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" (click)="searchPrice(minValue, maxValue)"></ng5-slider>
+                        </div>  <!-- End -->
+
+                        <div>
+                            <span class="range-label">Max</span> <input type="number" [(ngModel)]="maxValue" (input)="searchPrice(minValue, maxValue)" name="maxValue">
+                        </div> <!-- End -->
+                        
+                        
+
+                    </div> <!-- End col -->
+
+                    <div class="col-sm-8 col-12">
+                        
+                            <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" (click)="searchPrice(minValue, maxValue)"></ng5-slider>
+
+                        
+                    </div> <!-- End col -->
+                </div> <!-- End row -->
+
+                    
+                    
         </div> <!-- End div -->
     </div> <!-- End col 6 -->
     <div class="col-sm-6 col-12">
-        <input [(ngModel)]="searchText" placeholder="Search ..." class="form-control search-box" />
+        <div class="">
+            <input [(ngModel)]="searchText" placeholder="Search ..." class="form-control search-box" />
+        </div> <!-- End -->
     </div> <!-- End col -->
 </div> <!-- End row -->
 
@@ -38,10 +61,7 @@
                                 <div style="margin: 5px 0;" class="product-price"> 
                                     {{ product.product_price }} <span class="currency">$</span>
                                 </div> <!-- End  -->
-
                             </div>  <!-- End d-flex -->
-                           
-                            
                             
                             <div (click)="addToCart(product)" class="btn btn-sm btn-success"><i class="material-icons" style="color: #FFF;">add_shopping_cart</i>Add To Cart</div>
                         </div> <!-- End card body -->

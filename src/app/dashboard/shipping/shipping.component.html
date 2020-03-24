@@ -1,0 +1,93 @@
+<div class="row" style="margin-top: 40px">
+    <div class="col-sm-7 col-12">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <h4 style="font-size: 18px;">Shipping Address</h4>
+                </div>
+                <form>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="Name">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="Phone No">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Address: Banani, Dhaka">
+                    </div>
+                   
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <select name="city" >
+                            <option value="null" disable>Select a City </option>
+                            <option value="Dhaka">Dhaka</option>
+                            <option value="Sylhet">Sylhet</option>
+                        </select>
+                      </div>
+                      
+                      <div class="form-group col-md-2">
+                        <select name="zip" >
+                            <option value="null" disable>Your Area Zip Code</option>
+                            <option value="1200">1200</option>
+                            <option value="3100">3100</option>
+                        </select>
+                      </div>
+                    </div>
+                  
+                    <button type="submit" class="btn btn-success">Continue To Payment</button>
+                </form>
+            </div> <!-- End card body -->
+        </div>     <!-- End card -->
+    </div> <!-- End col 8 -->
+    
+    <div class="col-sm-5 col-12">
+        <div class="card">
+            <div class="card-body">
+                <section id="checkout-sidebar">
+                    <div class="checkout-sidebar__header">
+                        <h4 style="font-size: 18px;">Checkout Summary</h4>
+                    </div>
+        
+                   
+                    <div class="payment-breakdown">
+                        
+                        <div class="payment-breakdown__content">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <td>Subtotal</td>
+                                    <td class="text-right" id="subtotal">644 Tk.</td>
+                                </tr>
+                                
+                                
+                                <tr>
+                                    <td id="shippingText">Shipping
+        
+                                        
+                                    </td>
+        
+                                    <td class="text-right" id="shipping">50 Tk.</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td class="text-right" id="total">694 Tk.</td>
+                                </tr>
+                                
+                                
+                                    <tr>
+                                        <td>Payable Total</td>
+                                        <td class="text-right" id="payable">694 Tk.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                 </div>
+        
+                </section>
+            </div>  <!-- End -->
+        </div> <!-- End -->
+    
+    </div> <!-- End col 4 -->
+</div> <!-- End row -->

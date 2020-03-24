@@ -37,6 +37,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductComponent } from './dashboard/product/product.component';
 import { CategoryComponent } from './dashboard/category/category.component';
 import { UserComponent } from './dashboard/user/user.component';
+import { ShippingComponent } from './dashboard/shipping/shipping.component';
 
 import { ContactComponent } from './contact/contact.component';
 import { NopageComponent } from './nopage/nopage.component';
@@ -63,6 +64,7 @@ import { CustomerComponent } from './customer/customer.component';
     ContactComponent,
     NopageComponent,
     UserComponent,
+    ShippingComponent,
   ],
   imports: [
     BrowserModule,

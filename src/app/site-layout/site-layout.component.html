@@ -1,14 +1,14 @@
 <header id="topHeader">
     <div class="container">
       <div class="row header-section">
-              <div class="col-4">
+              <div class="col-sm-4 col-12">
                     <div class="logo-block">
                         <a routerLink="/" routerLinkActive="active"><img src="assets/logo.png" alt="shop" height="40"></a>
                     </div>  <!-- End Logo Block -->
               </div>  <!-- End md 2 -->
   
   
-              <div class="col-8">
+              <div class="col-sm-8 col-12">
                   <nav class="nav-block">
                     <ul class="nav">
                       <li>
@@ -21,7 +21,7 @@
                        <a routerLink="/product/watch" routerLinkActive="active">Watch</a>
                       </li>
 
-                      <li *ngIf="getStatus">
+                      <li *ngIf="getStatus" style="margin-right: 0;">
 
                           
                           <div ngbDropdown placement="bottom-right">
@@ -39,13 +39,13 @@
 
                       </li>
 
-                      <li *ngIf="!getStatus">
+                      <li *ngIf="!getStatus" style="margin-right: 0;">
                         <a routerLink="/signin" routerLinkActive="active">Signin</a>
                       </li>
                       
 
                       
-                      <li class="li-cart">
+                      <li class="li-cart" style="margin-left: 10px;">
                         <a class="btn btn-sm btn-outline-success" routerLink="/cart" routerLinkActive="active"><i class="material-icons" style="color: #28a745;">add_shopping_cart</i>Cart <span class="badge badge-warning">{{ cartService.getItems().length }}</span></a>
                       </li>
 

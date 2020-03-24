@@ -26,10 +26,10 @@ export class DashboardComponent implements OnInit {
 
     this.afAuth.authState.subscribe(user => {
       if (user) {
-       
+        
         
       } else {
-        
+        this.router.navigate(['/']);
       }
     })
 
@@ -39,7 +39,6 @@ export class DashboardComponent implements OnInit {
   logOut() {
     this.authService.logout();
     this.router.navigate(['/']);
-    console.log('Authservice is called');
   }
 
 }
