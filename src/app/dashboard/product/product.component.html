@@ -1,5 +1,4 @@
-<div class="prodoct-insertion">
-    <div class="col-sm-12 col-md-12">
+<div class="col-sm-12 col-md-12" style="margin-top: 40px">
         <div class="card">
           <div class="card-body" style="background: #eee;">
               <div *ngIf="notification" class="alert alert-warning">
@@ -109,20 +108,15 @@
                         <tr *ngFor="let product of products; let i = index;">
                             <td> {{ i+1 }} </td>
             
-                            <td> <img [src]="product.product_img" [alt]="product.product_name" width="40"> {{ product.product_name | titlecase }} </td>
+                            <td> <img [src]="product.product_img" [alt]="product.product_name" width="20"> {{ product.product_name | titlecase }} </td>
                             <td> {{ product.product_price  }} <small>$</small> </td>
                             <td> {{ product.product_category  | titlecase}} </td>
-                            <td> <span class="btn btn-sm btn-outline-danger" (click)="removeProduct(product._id)" style="margin-right: 10px">Delete</span> 
+                            <td> <span class="btn btn-sm btn-outline-secondary" (click)="removeProduct(product._id)" style="margin-right: 10px">Delete</span> 
                               <span class="btn btn-sm btn-outline-secondary" (click)="editProduct(product)">Edit</span>
                             </td>
                         </tr>
                     </table>
                 </div> <!-- End -->
               </div> <!-- End -->
-              
-
-         
-          
       </div> <!-- End card -->
-    </div> <!-- End col sm -->
-</div> <!-- End product Insetation -->
+</div> <!-- End col sm -->

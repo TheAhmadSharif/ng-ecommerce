@@ -32,8 +32,10 @@ export class CategoryComponent implements OnInit {
 
   removeCategory(cat:any) {
 
-    var txt:any;
-    var r = confirm("Press a button!");
+
+    var text: string = 'Are you sure you want to delete ' + cat  + ' category';
+
+    var r = confirm(text);
     if (r == true) {
             this.firestore.collection("ProductCategory").doc(cat).delete().then(function() {
                 console.log("Document successfully deleted!");

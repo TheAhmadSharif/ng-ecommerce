@@ -1,9 +1,10 @@
 <div class="row filter-block">
     <div class="col-sm-6 col-12">
         <div class="d-flex pricerange-block">
-                    <p><span class="label">Min</span> <input type="number" [(ngModel)]="minValue" (input)="searchPrice(minValue, maxValue)"></p>
-                    <p><span class="label">Max</span> <input type="number" [(ngModel)]="maxValue" (input)="searchPrice(minValue, maxValue)"></p>
-                    <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" (input)="searchPrice(minValue, maxValue)"></ng5-slider>
+                    <p><span class="label">Min</span> <input type="number" [(ngModel)]="minValue" name="minValue" (input)="searchPrice(minValue, maxValue)"></p>
+                    <p><span class="label">Max</span> <input type="number" [(ngModel)]="maxValue" (input)="searchPrice(minValue, maxValue)" name="maxValue"></p>
+
+                    <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" (click)="searchPrice(minValue, maxValue)"></ng5-slider>
         </div> <!-- End div -->
     </div> <!-- End col 6 -->
     <div class="col-sm-6 col-12">

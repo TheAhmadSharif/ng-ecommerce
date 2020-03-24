@@ -38,7 +38,9 @@
                             <tr *ngFor="let cat of category; let i = index;">
                                 <td> {{ i+1 }} </td>
                                 <td> {{ cat.product_category | titlecase }} </td>
-                                <td> <span class="btn btn-sm btn-outline-danger" (click)="removeCategory(cat.product_category)">Delete</span> </td>
+                                <td> <span class="material-icons cp" (click)="removeCategory(cat.product_category)">
+                                  delete_sweep_outline
+                                  </span> </td>
                             </tr>
                     </table>
               </div> <!-- End Card Body -->

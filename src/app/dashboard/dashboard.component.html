@@ -3,36 +3,35 @@
         <div class="row h-100">
             <div class="sidebar">
                <div class="sb-content">
+                <div class="d-flex justify-content-center">
+                    <div class="logo-block">
+                        <a routerLink="/dashboard/user" routerLinkActive="active"><img src="assets/logo.png" alt="shop" height="35"></a>
+                    </div> <!-- End logo Block -->
+                </div> <!-- End -->
     
-                <ul class="list-group-flush">
-                    <li class="d-flex justify-content-center">
-                        <div class="logo-block">
-                            <a routerLink="/dashboard/user" routerLinkActive="active"><img src="assets/logo.png" alt="shop" height="40"></a>
-                        </div> <!-- End logo Block -->
-                    </li>
+                <ul class="dashboard-link">
+                   
     
-                    <li class="list-group-item"><i class="material-icons">reorder</i><a routerLink="/dashboard/user" routerLinkActive="active">
+                    <li><i class="material-icons md-18">reorder</i><a routerLink="/dashboard/user" routerLinkActive="active">
                         
                         Dashboard</a></li>
 
-
-                    
     
-                    <li class="list-group-item"><i class="material-icons">playlist_add</i><a routerLink="add-product" routerLinkActive="active">
+                    <li><i class="material-icons md-18">playlist_add</i><a routerLink="add-product" routerLinkActive="active">
                         
                         Product List</a></li>
 
 
-                        <li class="list-group-item"><i class="material-icons">sort</i><a routerLink="add-category" routerLinkActive="active">
+                        <li><i class="material-icons md-18">sort</i><a routerLink="add-category" routerLinkActive="active">
                         
                             Product Category</a></li>
 
                         
     
-                    <li class="list-group-item"><i class="material-icons">apps</i>
+                    <li><i class="material-icons md-18">apps</i>
                         <a routerLink="/" routerLinkActive="active"> Online Shop</a></li>
     
-                    <li class="list-group-item"><i class="material-icons">power_settings_new</i><a routerLinkActive="active" (click)="logOut()">
+                    <li><i class="material-icons md-18">power_settings_new</i><a routerLinkActive="active" (click)="logOut()">
                         
                         Logout</a></li>
                     

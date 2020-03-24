@@ -38,6 +38,8 @@ onWindowScroll() {
 
   ngOnInit(): void {
     this.cartArray = this.cartService.getItems().length;
+
+    this.cartService.getItems()
     this.getStatus = this.authService.getUserStatus();
 
     this.aufAuth.auth.onAuthStateChanged((user) => {
