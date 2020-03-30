@@ -41,7 +41,7 @@
       
                         <div class="form-group">
                             
-                                <select [(ngModel)]="product.category"  class="form-control input-sm" name="product.category">
+                                <select [(ngModel)]="product.category"  class="form-control input-sm custom-select" name="product.category">
                                 <option *ngFor="let product of product.options;" [value]="product.product_category">{{ product.product_category }}</option>
                               </select>
                         </div> <!-- End form group -->
