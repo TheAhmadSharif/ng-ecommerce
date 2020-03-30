@@ -8,20 +8,46 @@
                 <form>
                     <div class="form-row">
                       <div class="form-group col-md-6">
-                        <input type="text" class="form-control" placeholder="Name">
-                      </div>
+
+                        <div class="input-group">
+                            
+                            <div class="input-group-prepend">
+                                  <span class="input-group-text material-icons">perm_identity</span>
+                            </div> <!-- End  -->
+                            <input type="text" class="form-control" placeholder="Name">                          
+                        </div> <!-- End Input Group -->
+                        
+                      </div> <!-- End -->
+
                       <div class="form-group col-md-6">
-                        <input type="text" class="form-control" placeholder="Phone No">
-                      </div>
-                    </div>
+
+                        <div class="input-group">
+                            
+                            <div class="input-group-prepend">
+                                  <span class="input-group-text material-icons">call</span>
+                            </div> <!-- End  -->
+                            <input type="text" class="form-control" placeholder="Phone No">                          
+                        </div> <!-- End Input Group -->
+                      </div><!-- End form group -->
+                    </div><!-- End form row -->
+
                     <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Address: Banani, Dhaka">
+                      <div class="input-group">
+                            
+                            <div class="input-group-prepend">
+                                  <span class="input-group-text material-icons">location_on</span>
+                            </div> <!-- End  -->
+                            <input type="text" class="form-control" placeholder="Address: Banani, Dhaka">                          
+                        </div> <!-- End Input Group -->
+
+
+                      
                     </div>
                    
    
                       <div class="form-group">
                         <select name="city" (click)="getShippingArea(shppingArea.value)" class="custom-select" #shppingArea>
-                            <option value="null" disable>Select a City</option>
+                            <option selected disabled>Select a City</option>
                             <option value="70">Dhaka</option>
                             <option value="50">Sylhet</option>
                         </select>
@@ -30,16 +56,15 @@
              
 
                     <div class="form-heading">
-                        <h4 style="font-size: 18px;">Payment Method</h4>
+                        <h4 style="font-size: 18px;">Select a Payment Method</h4>
                     </div>
 
                     <div>
-                        <ul class="ul-ib">
                             <li>
                                 <input type="radio" class="form-control" id="cash" name="payment_method">
                                 <label for="cash"> 
                                       <div class="radiobox-holder">
-                                             <span class="fa-circle">&#11044;</span>
+                                             <span>&#11044;</span>
                                       </div> 
                                       Cash on delivery
 
@@ -50,22 +75,25 @@
                                 <input type="radio" class="form-control" id="bkash" name="payment_method">
                                 <label for="bkash"> 
                                       <div class="radiobox-holder">
-                                             <span class="fa-circle">&#11044;</span>
+                                             <span>&#11044;</span>
                                       </div> 
-                                      Bkash
+                                      Bkash <span class="material-icons md-18">
+stay_current_portrait
+</span>
 
                                  </label>
+
+
                             </li>
                             <li>
-                                <input type="radio" class="form-control" id="female" name="payment_method">
-                                <label for="female"> 
+                                <input type="radio" class="form-control" id="credit_card" name="payment_method">
+                                <label for="credit_card"> 
                                   <div class="radiobox-holder">
-                                         <span class="fa-circle">&#11044;</span>
+                                         <span>&#11044;</span>
                                   </div> 
-                                  Credit Card (VISA or AMEX)
+                                  Credit Card (VISA or AMEX) <span class="material-icons">credit_card</span>
                                 </label>
                             </li>
-                        </ul>
                     </div>
 
                   

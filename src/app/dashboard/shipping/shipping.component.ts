@@ -38,7 +38,6 @@ export class ShippingComponent implements OnInit {
   getShippingArea(shippingArea) {
     this.shippingcost = parseInt(shippingArea);
     this.payable = this.totalAmount + this.shippingcost;
-    console.log(shippingArea, 'shippingArea');
   }
 
 }
