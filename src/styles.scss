@@ -507,3 +507,13 @@ input:checked .radiobox-holder span {
   padding-bottom: 5px;
   border-bottom: 1px solid #eee;
 }
+
+.product-img img:hover {
+    transform: scale(1.28);
+    -webkit-transform: scale(1.28);
+    -moz-transform: scale(1.28);
+    -ms-transform: scale(1.28);
+
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
