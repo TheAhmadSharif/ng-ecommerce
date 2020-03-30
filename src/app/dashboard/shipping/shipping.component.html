@@ -2,9 +2,9 @@
     <div class="col-sm-7 col-12">
         <div class="card">
             <div class="card-body">
-                <div>
+                <div class="form-heading">
                     <h4 style="font-size: 18px;">Shipping Address</h4>
-                </div>
+                </div> <!-- End Form Heading -->
                 <form>
                     <div class="form-row">
                       <div class="form-group col-md-6">
@@ -36,13 +36,45 @@
                       </div>
                     </div>
 
-                    <div>
+                    <div class="form-heading">
                         <h4 style="font-size: 18px;">Payment Method</h4>
                     </div>
 
                     <div>
-                        Cash on delivery: <input type="radio" name="cash">
+                        <ul class="ul-ib">
+                            <li>
+                                <input type="radio" class="form-control" id="cash" name="payment_method">
+                                <label for="cash"> 
+                                      <div class="radiobox-holder">
+                                             <span class="fa-circle">&#11044;</span>
+                                      </div> 
+                                      Cash on delivery
+
+                                 </label>
+                            </li>
+
+                            <li>
+                                <input type="radio" class="form-control" id="bkash" name="payment_method">
+                                <label for="bkash"> 
+                                      <div class="radiobox-holder">
+                                             <span class="fa-circle">&#11044;</span>
+                                      </div> 
+                                      Bkash
+
+                                 </label>
+                            </li>
+                            <li>
+                                <input type="radio" class="form-control" id="female" name="payment_method">
+                                <label for="female"> 
+                                  <div class="radiobox-holder">
+                                         <span class="fa-circle">&#11044;</span>
+                                  </div> 
+                                  Credit Card (VISA or AMEX)
+                                </label>
+                            </li>
+                        </ul>
                     </div>
+
                   
                     <button type="submit" class="btn btn-success">Continue To Payment</button>
                 </form>

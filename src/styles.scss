@@ -454,3 +454,59 @@ select {
 #checkout-sidebar .checkout-sidebar__header {
   padding: 0 0 10px;
 }
+
+
+/* Form radio */
+
+
+label {
+    font-weight: normal;
+    line-height: 16px;
+}
+
+form input[type="radio"],form input[type="checkbox"] {
+    display: none;
+    opacity: 0;
+}
+
+.radiobox-holder {
+    font-size: 13px;
+    border-radius: 40px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    border: 1px solid #BBB;
+    text-align: center;
+    line-height: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    float: left;
+}
+
+.radiobox-holder span {
+    font-size: 7px;
+    opacity: 0;
+    color: #666;
+}
+
+input:checked+label span {
+  opacity: 1;
+}
+input:checked .radiobox-holder span {
+    font-size: 5px !important;
+}
+input[type="radio"]:checked+label span {
+  font-size: 7px !important;
+}
+
+/* End radio */
+
+.form-heading {
+  padding-bottom: 5px;
+}
+
+.form-heading h4 {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
