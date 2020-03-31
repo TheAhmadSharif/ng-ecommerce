@@ -533,14 +533,14 @@ input:checked .radiobox-holder span {
 }
 
 .product-img img:hover {
-    transform: scale(1.28);
-    -webkit-transform: scale(1.28);
-    -moz-transform: scale(1.28);
-    -ms-transform: scale(1.28);
+    transform: scale(1.12);
+    -webkit-transform: scale(1.12);
+    -moz-transform: scale(1.12);
+    -ms-transform: scale(1.12);
 
     cursor: pointer;
     transition: all 0.4s ease;
-}nt
+}
 
 
 /* Cart Page */
@@ -562,6 +562,7 @@ input:checked .radiobox-holder span {
   background: #F1F1F1;
   padding: 20px;
   border: 0 solid #eee;
+  margin-bottom: 2px;
 }
 .item-price {
   position: relative;
