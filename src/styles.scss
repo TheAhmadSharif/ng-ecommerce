@@ -318,6 +318,8 @@ input {
     transition: all 0.25s linear;
     width: 17px;
     height: 17px;
+    margin: 0;
+    margin-left: 20px;
  
 }
 .remove:hover {
@@ -557,9 +559,9 @@ input:checked .radiobox-holder span {
   }
 }
 .cart-product-block {
-  background: #FFF;
+  background: #F1F1F1;
   padding: 20px;
-  border: 1px solid #eee;
+  border: 0 solid #eee;
 }
 .item-price {
   position: relative;
@@ -581,4 +583,7 @@ input:checked .radiobox-holder span {
 .empty-cart {
   font-size: 1rem;
   line-height: 1rem;
+}
+.item-price-block {
+  margin: 20px 0;
 }
