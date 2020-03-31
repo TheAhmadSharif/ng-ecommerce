@@ -1,0 +1,42 @@
+You don't have any items in your cart. Let's get shopping!
+
+
+
+<div class="wrap cf" *ngIf="cartService.getItems().length > 0">
+    <h1 class="projTitle"> Shopping Cart</h1>
+    <div class="heading cf">
+      <h1>My Cart</h1>
+    </div>
+    <div class="cart">
+
+      <ul class="cartWrap">
+        <li class="items" *ngFor="let product of products; let i = index;" [ngClass]="{'even': i%2 == 0}">
+                <div class="infoWrap"> 
+                    <div class="cartSection">
+                        <img [src]="product.product_img" style="max-width: 100px;" class="itemImg" />
+                        <p class="itemNumber">Item number: {{ product._id }}</p>
+                
+                        <h3>{{ product.product_name}}</h3>
+                            <p> 
+                              <input type="number" style="max-width: 60px;" min="1" [value]="product.product_quantity" (click)="addNumber(quantity.value, product.product_price, i)" #quantity> 
+                              
+                              x ${{ product.product_price }}</p>
+
+                    </div>   <!-- End cartSection -->
+                            <div class="prodTotal cartSection">
+                                <p>$ {{  product.product_price * product.product_quantity | number: '1.1-2' }}</p>
+                            </div>
+                            <div class="cartSection removeWrap">
+                                <div class="remove" (click)="removeItem(i)">x</div>
+                            </div> <!-- End cartSection -->
+                </div>  <!-- End infoWrap -->
+        </li>
+      </ul>
+    </div>
+    <div class="subtotal cf">
+      <ul>
+        <li class="totalRow final"><span class="label">Total</span><span class="value"> ${{ totalAmount | number: '1.1-2' }}</span></li>
+        <li class="totalRow"><a routerLink="/shipping" class="btn">Go To Shipping Page</a></li>
+      </ul>
+    </div> <!-- End subtotal -->
+</div> <!-- End Wrap -->

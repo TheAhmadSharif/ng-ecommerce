@@ -26,8 +26,8 @@ export class SiteLayoutComponent implements OnInit {
 
   @HostListener('window:scroll', [])
 onWindowScroll() {
-  if (document.body.scrollTop > 20 ||     
-  document.documentElement.scrollTop > 20) {
+  if (document.body.scrollTop > 60 ||     
+  document.documentElement.scrollTop > 60) {
     document.getElementById('topHeader').classList.add('fixedheader');
   }
   else {
