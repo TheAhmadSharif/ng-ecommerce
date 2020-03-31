@@ -538,7 +538,7 @@ input:checked .radiobox-holder span {
 
     cursor: pointer;
     transition: all 0.4s ease;
-}
+}nt
 
 
 /* Cart Page */
@@ -577,4 +577,8 @@ input:checked .radiobox-holder span {
 }
 .price, .total {
   font-size: 20px;
+}
+.empty-cart {
+  font-size: 1rem;
+  line-height: 1rem;
 }
