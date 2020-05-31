@@ -1,0 +1,101 @@
+[
+  {
+    "_id": "01",
+    "category": "attire",
+    "product_name": "White T-Shirt",
+    "product_image": "1",
+    "product_price": "8.97",
+    "product_quantity": "1",
+    "date": "27 February 2020"
+  },
+  {
+    "_id": "02",
+    "category": "attire",
+    "product_name": "Blue T-Shirt",
+    "product_image": "2",
+    "product_price": "10.99",
+    "product_quantity": "1",
+    "date": "27 February 2020"
+  },
+  {
+    "_id": "03",
+    "category": "attire",
+    "product_name": "Black T-Shirt",
+    "product_image": "3",
+    "product_price": "12.97",
+    "product_quantity": "1",
+    "date": "27 February 2020"
+  },
+  {
+    "_id": "04",
+    "category": "attire",
+    "product_name": "Gray T-Shirt",
+    "product_image": "4",
+    "product_price": "9.96",
+    "product_quantity": "1",
+    "date": "27 February 2020"
+  },
+  {
+    "_id": "06",
+    "category": "watch",
+    "product_name": "Swiss  Wrist",
+    "product_image": "1",
+    "product_price": "220",
+    "product_quantity": "1",
+    "date": "27 February 2020"
+  },
+  {
+    "_id": "07",
+    "category": "watch",
+    "product_name": "Rolex",
+    "product_image": "2",
+    "product_price": "152",
+    "product_quantity": "1",
+    "date": "27 February 2020"
+  },
+  {
+    "_id": "08",
+    "category": "watch",
+    "product_name": "Patek Philippe",
+    "product_image": "3",
+    "product_price": "120",
+    "product_quantity": "1",
+    "date": "27 February 2020"
+  },
+  {
+    "_id": "09",
+    "category": "watch",
+    "product_name": "Audemars Piguet",
+    "product_image": "4",
+    "product_price": "244",
+    "product_quantity": "1",
+    "date": "27 February 2020"
+  },
+  {
+    "_id": "10",
+    "category": "shoes",
+    "product_name": "Adidas",
+    "product_image": "1",
+    "product_price": "102",
+    "product_quantity": "1",
+    "date": "01 March 2020"
+  },
+  {
+    "_id": "11",
+    "category": "shoes",
+    "product_name": "Bespoke Brown",
+    "product_image": "2",
+    "product_price": "202",
+    "product_quantity": "1",
+    "date": "01 March 2020"
+  },
+  {
+    "_id": "12",
+    "category": "shoes",
+    "product_name": "Bespoke Black",
+    "product_image": "3",
+    "product_price": "182",
+    "product_quantity": "1",
+    "date": "01 March 2020"
+  }
+]
