@@ -22,7 +22,7 @@ export class ProductComponent implements OnInit {
   public isCollapsed = true;
   progressBar:boolean = false;
 
-  product ={
+  product = {
     _id: '',
     name: '',
     price: '',
@@ -37,7 +37,8 @@ export class ProductComponent implements OnInit {
     close_icon: false
   }
 
-  
+     
+
   constructor(private storage: AngularFireStorage, 
               public firestore: AngularFirestore,
               private router: Router) { }
