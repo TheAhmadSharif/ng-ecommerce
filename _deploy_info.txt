@@ -1,0 +1,6 @@
+ng build --prod --output-path docs --base-href https://theahmadsharif.github.io/ng-ecommerce/
+
+git remote set-url origin git@github.com:TheAhmadSharif/ng-ecommerce.git
+
+
+ng deploy

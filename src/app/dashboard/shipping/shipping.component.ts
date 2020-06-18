@@ -16,6 +16,7 @@ export class ShippingComponent implements OnInit {
   product_price:any = [];
   shippingcost:number = 50;
   payable:number;
+  discount:number = 0;
 
   constructor(public cartService: CartService) { }
 
@@ -30,6 +31,13 @@ export class ShippingComponent implements OnInit {
       this.product_price[i] = arr[i].product_price * arr[i].product_quantity;
     }
 
+    this.payable = this.totalAmount + this.shippingcost;
+
+  }
+
+  getShippingArea(shippingArea) {
+    this.shippingcost = parseInt(shippingArea);
+    this.payable = this.totalAmount + this.shippingcost;
   }
 
 }

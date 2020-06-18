@@ -2,45 +2,66 @@
     <div class="col-sm-7 col-12">
         <div class="card">
             <div class="card-body">
-                <div>
-                    <h4 style="font-size: 18px;">Shipping Address</h4>
-                </div>
+                <div class="form-heading">
+                    <h4 style="font-size: 18px;">Where should we deliver your order?
+</h4>
+                </div> <!-- End Form Heading -->
                 <form>
                     <div class="form-row">
                       <div class="form-group col-md-6">
-                        <input type="text" class="form-control" placeholder="Name">
-                      </div>
+
+                        <div class="input-group">
+                            
+                            <div class="input-group-prepend">
+                                  <span class="input-group-text material-icons">perm_identity</span>
+                            </div> <!-- End  -->
+                            <input type="text" class="form-control" placeholder="Name">                          
+                        </div> <!-- End Input Group -->
+                        
+                      </div> <!-- End -->
+
                       <div class="form-group col-md-6">
-                        <input type="text" class="form-control" placeholder="Phone No">
-                      </div>
-                    </div>
+
+                        <div class="input-group">
+                            
+                            <div class="input-group-prepend">
+                                  <span class="input-group-text material-icons">call</span>
+                            </div> <!-- End  -->
+                            <input type="text" class="form-control" placeholder="Phone No">                          
+                        </div> <!-- End Input Group -->
+                      </div><!-- End form group -->
+                    </div><!-- End form row -->
+
                     <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Address: Banani, Dhaka">
+                      <div class="input-group">
+                            
+                            <div class="input-group-prepend">
+                                  <span class="input-group-text material-icons">location_on</span>
+                            </div> <!-- End  -->
+                            <input type="text" class="form-control" placeholder="Address: Banani, Dhaka">                          
+                        </div> <!-- End Input Group -->
+
+
+                      
                     </div>
                    
-                    <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <select name="city" >
-                            <option value="null" disable>Select a City </option>
-                            <option value="Dhaka">Dhaka</option>
-                            <option value="Sylhet">Sylhet</option>
+   
+                      <div class="form-group">
+                        <select name="city" (click)="getShippingArea(shppingArea.value)" class="custom-select" #shppingArea>
+                            <option selected disabled>Select a City</option>
+                            <option value="70">Dhaka</option>
+                            <option value="50">Sylhet</option>
                         </select>
                       </div>
                       
-                      <div class="form-group col-md-2">
-                        <select name="zip" >
-                            <option value="null" disable>Your Area Zip Code</option>
-                            <option value="1200">1200</option>
-                            <option value="3100">3100</option>
-                        </select>
-                      </div>
+             
+
+                    <div class="form-heading">
+                        <h4 style="font-size: 18px;">Select a Payment Method</h4>
                     </div>
 
                     <div>
-                        <h4 style="font-size: 18px;">Payment Method</h4>
-                    </div>
-
-                    <div>
+<<<<<<< HEAD
 
                         <input type="radio" id="cash" name="payment_method" value="cash">
                         <label for="cash">Cash on delivery:</label>
@@ -51,9 +72,48 @@
                         <input type="radio" id="credit_card" name="payment_method" value="credit_card">
                         <label for="credit_card">Credit Card</label>
 
+=======
+                            <li>
+                                <input type="radio" class="form-control" id="cash" name="payment_method">
+                                <label for="cash"> 
+                                      <div class="radiobox-holder">
+                                             <span>&#11044;</span>
+                                      </div> 
+                                      Cash on delivery
+
+                                 </label>
+                            </li>
+
+                            <li>
+                                <input type="radio" class="form-control" id="bkash" name="payment_method">
+                                <label for="bkash"> 
+                                      <div class="radiobox-holder">
+                                             <span>&#11044;</span>
+                                      </div> 
+                                      Bkash <span class="material-icons md-18">
+stay_current_portrait
+</span>
+
+                                 </label>
+
+
+                            </li>
+                            <li>
+                                <input type="radio" class="form-control" id="credit_card" name="payment_method">
+                                <label for="credit_card"> 
+                                  <div class="radiobox-holder">
+                                         <span>&#11044;</span>
+                                  </div> 
+                                  Credit Card (VISA or AMEX) <span class="material-icons">credit_card</span>
+                                </label>
+                            </li>
+>>>>>>> d12cc630fab8f4a1d10903cc599ced814faa65ff
                     </div>
+
                   
-                    <button type="submit" class="btn btn-success">Continue To Payment</button>
+                    <button type="submit" class="btn btn-success">Continue To Payment <span class="material-icons" style="color: #FFF;">
+chevron_right
+</span></button>
                 </form>
             </div> <!-- End card body -->
         </div>     <!-- End card -->
@@ -64,7 +124,7 @@
             <div class="card-body">
                 <section id="checkout-sidebar">
                     <div class="checkout-sidebar__header">
-                        <h4 style="font-size: 18px;">Checkout Summary</h4>
+                        <h4 style="font-size: 18px;">Invoice Summary</h4>
                     </div>
         
                    
@@ -87,12 +147,22 @@
         
                                     <td class="text-right"> {{ shippingcost }} Tk.</td>
                                 </tr>
+
+
+                                <tr>
+                                    <td id="shippingText">Discount
+        
+                                        
+                                    </td>
+        
+                                    <td class="text-right"> {{ discount }} Tk.</td>
+                                </tr>
                                
                                 
-                                    <tr>
-                                        <td>Payable Total</td>
-                                        <td class="text-right"> {{ payable }} Tk.</td>
-                                    </tr>
+                                  <tr>
+                                      <td>Payable Total</td>
+                                      <td class="text-right"> {{ payable }} Tk.</td>
+                                  </tr>
                                 </tbody>
                             </table>
                         </div>

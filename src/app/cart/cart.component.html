@@ -1,43 +1,82 @@
-<div *ngIf="cartService.getItems().length < 1" class="d-flex justify-content-center align-items-center mh">
-  <h2 class="projTitle"> Your Cart is empty. </h2>
-</div>
+ <div *ngIf="cartService.getItems().length < 1" class="d-flex justify-content-center align-items-center mh empty-cart">
+     <div>
+          <h2 class="text-center"> You don't have any items in your cart. Let's get shopping! </h2>
+          <div class="text-center">
+            <a routerLink="/" class="btn btn-success">Go To Shopping Page <span _ngcontent-yxa-c118="" class="material-icons" style="color: #FFF;">chevron_right</span></a>
+          </div> <!-- End -->
+    </div> <!-- End -->
+</div> <!-- End  -->
 
 
-<div class="wrap cf" *ngIf="cartService.getItems().length > 0">
-    <h1 class="projTitle"> Shopping Cart</h1>
-    <div class="heading cf">
-      <h1>My Cart</h1>
-    </div>
-    <div class="cart">
 
-      <ul class="cartWrap">
-        <li class="items" *ngFor="let product of products; let i = index;" [ngClass]="{'even': i%2 == 0}">
-                <div class="infoWrap"> 
-                    <div class="cartSection">
-                        <img [src]="product.product_img" style="max-width: 100px;" class="itemImg" />
-                        <p class="itemNumber">Item number: {{ product._id }}</p>
-                
-                        <h3>{{ product.product_name}}</h3>
-                            <p> 
-                              <input type="number" style="max-width: 60px;" min="1" [value]="product.product_quantity" (click)="addNumber(quantity.value, product.product_price, i)" #quantity> 
-                              
-                              x ${{ product.product_price }}</p>
+<div class="cart-container" *ngIf="cartService.getItems().length > 0">
+    <div class="d-flex justify-content-center cart-heading">
+        <h2 class="text-uppercase">Shopping Cart</h2>
+    </div>  <!-- End block -->
 
-                    </div>   <!-- End cartSection -->
-                            <div class="prodTotal cartSection">
-                                <p>$ {{  product.product_price * product.product_quantity | number: '1.1-2' }}</p>
-                            </div>
-                            <div class="cartSection removeWrap">
-                                <div class="remove" (click)="removeItem(i)">x</div>
-                            </div> <!-- End cartSection -->
-                </div>  <!-- End infoWrap -->
-        </li>
-      </ul>
-    </div>
-    <div class="subtotal cf">
-      <ul>
-        <li class="totalRow final"><span class="label">Total</span><span class="value"> ${{ totalAmount | number: '1.1-2' }}</span></li>
-        <li class="totalRow"><a routerLink="/shipping" class="btn">Go To Shipping Page</a></li>
-      </ul>
-    </div>
-  </div>
+
+
+    <div class="cart-product-block" *ngFor="let product of products; let i = index;">
+      <div class="row">
+          <div class="col-sm-8 col-12">
+               <div class="cart-item d-flex justify-content-between">
+            <div class="item-details  d-flex justify-content-start">
+                  <div class="item-img">
+                      <img [src]="product.product_img" width="120px" class="border">
+                  </div>  <!-- End Item info -->
+
+                  <div class="item-info">
+                      <div class="item-number">
+                        <span class="number">#{{ product._id }}</span>
+                      </div>  <!-- End Item Number -->
+                      <div class="item-name">
+                          <h2 class="">{{ product.product_name }}</h2>
+                      </div> <!-- End Item Name -->
+                  </div>  <!-- End Item info -->
+            </div> <!-- End Item Details -->
+            </div>  <!-- End cart Item -->
+          </div>  <!-- End col -->   
+
+          <div class="col-sm-4 col-12">
+              <div class="d-flex justify-content-between item-price-block">
+                  <div class="item-quantity d-flex">
+                    <div class="">
+                      <input type="number" value="1" min="1" style="width: 60px;" class="form-control" [value]="product.product_quantity" (click)="addNumber(quantity.value, product.product_price, i)" #quantity> 
+                    </div>
+                    <div class="item-price">
+                        <span class="multiply-symbol">x</span>  <span class="price">{{ product.product_price }}</span> <span class="currency">$</span> = 
+                    </div> 
+                  </div> <!-- End Item Quantity -->
+
+                <div class="item-totalprice d-flex justify-content-end">
+                        <div>
+                          <span class="price">{{  product.product_price * product.product_quantity | number: '1.1-2' }}</span> <span class="currency">$</span>
+                        </div>
+
+                          <div class="remove" (click)="removeItem(i)">x</div>
+                </div> <!-- End Item totalprice -->
+              </div>    <!-- End  -->
+          </div> <!-- End col --> 
+
+
+      </div> <!-- End row -->
+    </div>   <!-- End product List --> 
+
+        <div class="d-flex flex-column align-items-end">
+            <div style="margin: 0 0 20px 0">
+                <span class="total">Total = </span><span class="price">{{ totalAmount | number: '1.1-2' }}<span class="currency">$</span></span>
+            </div> <!-- End -->
+            <div>
+              <a routerLink="/shipping" class="btn btn-success">Go To Shipping Page <span _ngcontent-yxa-c118="" class="material-icons" style="color: #FFF;">chevron_right</span></a>
+            </div>
+        </div> <!-- End subtotal -->
+</div>  <!-- End cart container -->
+
+
+
+
+
+
+
+
+
