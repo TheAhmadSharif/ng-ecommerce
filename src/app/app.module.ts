@@ -1,23 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
-
-
-
 import { FormsModule } from '@angular/forms';
 import { Ng5SliderModule } from 'ng5-slider';
-
-
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
 
-import { environment } from '../environments/environment';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ProductListReducer } from './site-layout/product-list/product-list.reducers'; 
+import { ProductListEffects } from './site-layout/product-list/product-list.effects'; 
 
+
+
+import { environment } from '../environments/environment';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -78,6 +80,11 @@ import { CustomerComponent } from './customer/customer.component';
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
+
+    EffectsModule.forRoot([ProductListEffects]),
+    StoreModule.forRoot({
+      products: ProductListReducer
+    })
 
 
   ],

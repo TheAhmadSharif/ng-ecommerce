@@ -1,11 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+import { Observable, from } from 'rxjs';
+
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import { Options } from 'ng5-slider';
 import { AngularFirestore } from '@angular/fire/firestore';
 import 'firebase/firestore';
 
+import { Store, select, createSelector } from '@ngrx/store';
+import { getProducts, loadProducts } from './product-list.actions';
 
 @Component({
   selector: 'app-product-list',
@@ -13,7 +18,7 @@ import 'firebase/firestore';
   styleUrls: ['./product-list.component.scss']
 }) 
 export class ProductListComponent implements OnInit {
-  products: any;
+  products$: Observable<any>;
   cart: any;
   searchText:any;
   data;
@@ -28,6 +33,7 @@ export class ProductListComponent implements OnInit {
   
     
   constructor(
+    private store: Store,
     public http: HttpClient,
     private route: ActivatedRoute,
     private cartService: CartService,
@@ -38,13 +44,20 @@ export class ProductListComponent implements OnInit {
 
     
   ngOnInit(): void {
+
+      this.store.dispatch(getProducts());
+      this.store.pipe(select((state: any) => state.products)).subscribe((object:any) => {
+            this.products$ = object;
+            this.reservedProducts = object;
+      });
    
-    this.firestore.collection('Product').valueChanges()
+
+  /*  this.firestore.collection('Product').valueChanges()
       .subscribe(object => {
         this.products = object;        
         this.reservedProducts = object;
     })
-
+*/
   }
 
   addToCart(product:any) {
@@ -62,9 +75,9 @@ export class ProductListComponent implements OnInit {
       }
     }
     if(filterdArray.length > 0 ){
-      this.products = filterdArray;
+      this.products$ = filterdArray;
     }else{
-      this.products = this.reservedProducts;
+      this.products$ = this.reservedProducts;
     }
 
      
