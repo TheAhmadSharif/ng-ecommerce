@@ -80,7 +80,9 @@ import { CustomerComponent } from './customer/customer.component';
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, 
+    }),
     EffectsModule.forRoot([ProductListEffects]),
     StoreModule.forRoot({
       products: ProductListReducer

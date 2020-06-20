@@ -16,18 +16,18 @@ import { ProductListServices } from './product-list.services';
 @Injectable() 
 export class ProductListEffects {
 	constructor(
-		private acations$: Actions,
+		private actions$: Actions,
 		private productListServices: ProductListServices
 		) {}
 
 
 		loadProducts$: Observable<any> = createEffect(() => 
-			this.acations$.pipe(
+			this.actions$.pipe(
 				ofType(getProducts),
 				mergeMap(() => this.productListServices.getProduct()
 					.pipe(
 					map (products => {
-						return ({type: '[product] loadProducts', products: products})
+						return ({type: '[product] load products', products: products})
 					}),
 					catchError(() => EMPTY)
 

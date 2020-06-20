@@ -11,7 +11,7 @@ export class ProductListServices {
 
   constructor(public angularFirestore: AngularFirestore) {}
 
-  getProduct():Observable<any> {
+  getProduct():Observable<any[]> {
   	var data = this.angularFirestore.collection('Product').valueChanges();
   	return data;
   }

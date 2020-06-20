@@ -5,8 +5,11 @@ import { CartService } from '../../services/cart.service';
 
 import { Options } from 'ng5-slider';
 
-import { AngularFirestore } from '@angular/fire/firestore';
-import 'firebase/firestore';
+import { Store, select, createSelector  } from '@ngrx/store';
+import { getProducts, loadProducts } from '../product-list/product-list.actions';
+
+import * as _ from 'lodash';
+
 
 
 @Component({
@@ -32,24 +35,32 @@ export class ProductCategoryComponent implements OnInit {
   reservedProducts: unknown[];
 
 
-  constructor(public http: HttpClient, 
+  constructor(
+    public store: Store,
     private route: ActivatedRoute,
     private cartService: CartService,
-    public firestore: AngularFirestore 
     ) {
       this.parameter = this.route.snapshot.paramMap.get('type');
   }
 
   
   ngOnInit(): void {
-     let parameter = this.parameter;
+      this.store.dispatch(getProducts());
+      let parameter = this.parameter;
       this.route.params.subscribe( param => {
                 var product_category = param.type;
-                this.firestore.collection('Product', ref => ref.where('product_category', '==', product_category)).valueChanges().subscribe(object=> {
-                  this.products = object;
-                  this.reservedProducts = object;
-            
-              });
+                
+                this.store.pipe(select((state: any) => {
+                  return state.products;
+                })).subscribe((object:any) => {
+                      let data  = object;
+
+                      this.products = data.filter((o) => {
+                        console.log(o, 'o');
+                        return o.product_category == this.parameter;
+                      });
+                      this.reservedProducts = object;
+                });
 
       }); 
 
@@ -73,8 +84,6 @@ export class ProductCategoryComponent implements OnInit {
       }else{
         this.products = this.reservedProducts;
       }
-  
-       
+    
     }
-
 }
