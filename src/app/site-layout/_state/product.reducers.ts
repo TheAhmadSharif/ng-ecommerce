@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { getProducts, loadProducts } from './product-list.actions';
+import { getProducts, loadProducts } from './product.actions';
 
 
 export const initialState = {};

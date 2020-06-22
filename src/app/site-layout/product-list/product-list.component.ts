@@ -8,7 +8,7 @@ import { Options } from 'ng5-slider';
 
 
 import { Store, select, createSelector } from '@ngrx/store';
-import { getProducts, loadProducts } from './product-list.actions';
+import { getProducts, loadProducts } from '../_state/product.actions';
 
 @Component({
   selector: 'app-product-list',
@@ -35,7 +35,6 @@ export class ProductListComponent implements OnInit {
     private route: ActivatedRoute,
     private cartService: CartService
     ) { 
-      console.log('constructor');
 
     }
 
@@ -43,7 +42,6 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
       this.store.dispatch(getProducts());
       this.store.pipe(select((state: any) => {
-        console.log(state, 'state');
         return state.products;
       })).subscribe((object:any) => {
             this.products$ = object;

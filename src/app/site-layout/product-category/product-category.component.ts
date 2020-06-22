@@ -6,7 +6,7 @@ import { CartService } from '../../services/cart.service';
 import { Options } from 'ng5-slider';
 
 import { Store, select, createSelector  } from '@ngrx/store';
-import { getProducts, loadProducts } from '../product-list/product-list.actions';
+import { getProducts, loadProducts } from '../_state/product.actions';
 
 import * as _ from 'lodash';
 
@@ -45,27 +45,41 @@ export class ProductCategoryComponent implements OnInit {
 
   
   ngOnInit(): void {
-      this.store.dispatch(getProducts());
       let parameter = this.parameter;
-      this.route.params.subscribe( param => {
+      this.store.dispatch(getProducts());
+      this.store.pipe(select((state: any) => {
+        console.log(state, 'state');
+
+        let data = state.products.filter((o:any) => {
+                      return o.product_category == this.parameter;
+                  });
+        return data;
+      })).subscribe((object:any) => {
+            this.products = object;
+            this.reservedProducts = object;
+      });
+
+
+     /* this.route.params.subscribe( param => {
+                this.store.dispatch(getProducts());
                 var product_category = param.type;
+                console.log(product_category, '52');
                 
                 this.store.pipe(select((state: any) => {
-                  return state.products;
+                  console.log(state, 'state55');
+                  let data = state.products.filter((o:any) => {
+                      return o.product_category == product_category;
+                  })
+                  return data;
                 })).subscribe((object:any) => {
-                      let data  = object;
-
-                      this.products = data.filter((o) => {
-                        console.log(o, 'o');
-                        return o.product_category == this.parameter;
-                      });
+                      this.products = object;
                       this.reservedProducts = object;
                 });
 
-      }); 
-
+      }); */
 
     }
+
 
     addToCart(product:any) {
       this.cartService.addToCart(product);

@@ -15,7 +15,9 @@ export class ProductListServices {
   	var data = this.angularFirestore.collection('Product').valueChanges();
   	return data;
   }
-
- 
+  getProductByCategory(product_category:string): Observable<any[]> {
+  	var data = this.angularFirestore.collection('Product').valueChanges();
+  	return data;
+  }
 
 }

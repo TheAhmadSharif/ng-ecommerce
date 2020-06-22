@@ -14,8 +14,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { ProductListReducer } from './site-layout/product-list/product-list.reducers'; 
-import { ProductListEffects } from './site-layout/product-list/product-list.effects'; 
+import { ProductListReducer } from './site-layout/_state/product.reducers'; 
+import { ProductListEffects } from './site-layout/_state/product.effects'; 
 
 
 

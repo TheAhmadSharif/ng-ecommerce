@@ -10,8 +10,8 @@ import { createEffect, Actions, ofType, Effect } from '@ngrx/effects';
 import { map, mergeMap, switchMap, catchError } from 'rxjs/operators';
 import { EMPTY, of, Observable,  } from 'rxjs';
 
-import { getProducts, loadProducts } from './product-list.actions';
-import { ProductListServices } from './product-list.services';
+import { getProducts, loadProducts } from './product.actions';
+import { ProductListServices } from './product.services';
 
 @Injectable() 
 export class ProductListEffects {
@@ -26,7 +26,7 @@ export class ProductListEffects {
 				ofType(getProducts),
 				mergeMap(() => this.productListServices.getProduct()
 					.pipe(
-					map (products => {
+					map(products => {
 						return ({type: '[product] load products', products: products})
 					}),
 					catchError(() => EMPTY)
