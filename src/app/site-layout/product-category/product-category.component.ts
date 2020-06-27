@@ -3,14 +3,16 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 
+import { Observable, from } from 'rxjs';
+import { map, filter } from 'rxjs/operators';
+
+
 import { Options } from 'ng5-slider';
 
 import { Store, select, createSelector  } from '@ngrx/store';
 import { getProducts, loadProducts } from '../_state/product.actions';
 
 import * as _ from 'lodash';
-
-
 
 @Component({
   selector: 'app-category',
@@ -21,7 +23,7 @@ export class ProductCategoryComponent implements OnInit {
   parameter: string;
   data:any;
   title:any;
-  products:any;
+  products$:any;
   searchText:any;
   changePrice:number = 500;
 
@@ -32,7 +34,7 @@ export class ProductCategoryComponent implements OnInit {
     floor: 0,
     ceil: 250
   };
-  reservedProducts: unknown[];
+  reservedProducts;
 
 
   constructor(
@@ -46,39 +48,19 @@ export class ProductCategoryComponent implements OnInit {
   
   ngOnInit(): void {
       let parameter = this.parameter;
+      console.log(parameter, '49');
       this.store.dispatch(getProducts());
-      this.store.pipe(select((state: any) => {
-        console.log(state, 'state');
 
-        let data = state.products.filter((o:any) => {
-                      return o.product_category == this.parameter;
-                  });
-        return data;
+
+
+      this.store.pipe(select((state: any) => {
+        return state.products;
       })).subscribe((object:any) => {
-            this.products = object;
+            this.products$ = object;
             this.reservedProducts = object;
       });
 
-
-     /* this.route.params.subscribe( param => {
-                this.store.dispatch(getProducts());
-                var product_category = param.type;
-                console.log(product_category, '52');
-                
-                this.store.pipe(select((state: any) => {
-                  console.log(state, 'state55');
-                  let data = state.products.filter((o:any) => {
-                      return o.product_category == product_category;
-                  })
-                  return data;
-                })).subscribe((object:any) => {
-                      this.products = object;
-                      this.reservedProducts = object;
-                });
-
-      }); */
-
-    }
+}
 
 
     addToCart(product:any) {
@@ -87,16 +69,17 @@ export class ProductCategoryComponent implements OnInit {
 
 
     searchPrice(min:any, max:any) {
-      let filterdArray=[]
-      for(let i=0;i<this.reservedProducts.length;i++){
+      let filterdArray = []
+      this.reservedProducts = [];
+      for(let i=0; i < this.reservedProducts.length; i++){
         if(this.reservedProducts[i]['product_price'] >= parseFloat(min) && this.reservedProducts[i]['product_price'] <= parseFloat(max)){
           filterdArray.push(this.reservedProducts[i])
         }
       }
       if(filterdArray.length > 0 ){
-        this.products = filterdArray;
+        this.products$ = filterdArray;
       }else{
-        this.products = this.reservedProducts;
+        this.products$ = this.reservedProducts;
       }
     
     }

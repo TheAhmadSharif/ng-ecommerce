@@ -10,12 +10,13 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
-
-import { StoreModule } from '@ngrx/store';
+/* State Manegement */
+import { StoreModule, ActionReducer, MetaReducer } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { ProductListReducer } from './site-layout/_state/product.reducers'; 
+import { ProductListReducer, metaReducers } from './site-layout/_state/product.reducers'; 
 import { ProductListEffects } from './site-layout/_state/product.effects'; 
+
 
 
 
@@ -80,15 +81,16 @@ import { CustomerComponent } from './customer/customer.component';
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-    StoreDevtoolsModule.instrument({
-      maxAge: 25, 
-    }),
+    
     EffectsModule.forRoot([ProductListEffects]),
     StoreModule.forRoot({
       products: ProductListReducer
+    }, {metaReducers}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, 
+      logOnly: environment.production, // Restrict extension to log-only mode
+
     })
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]

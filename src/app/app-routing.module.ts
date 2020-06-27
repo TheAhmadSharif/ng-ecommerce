@@ -27,9 +27,9 @@ const routes: Routes = [
     component: SiteLayoutComponent,
     children: [
       { path: '', component: ProductListComponent, pathMatch: 'full'},
-      { path: 'product/:type', component: ProductCategoryComponent },
       { path: 'cart', component: CartComponent },
-      { path: 'shipping', component: ShippingComponent, pathMatch: 'full'}
+      { path: 'shipping', component: ShippingComponent, pathMatch: 'full'},
+      { path: 'product/:type', component: ProductCategoryComponent }
     ]
   },
   
