@@ -48,20 +48,17 @@ export class ProductCategoryComponent implements OnInit {
   
   ngOnInit(): void {
       let parameter = this.parameter;
-      console.log(parameter, '49');
       this.store.dispatch(getProducts());
 
-
-
-      this.store.pipe(select((state: any) => {
-        return state.products;
-      })).subscribe((object:any) => {
+      this.store.pipe(map(state => state.products,
+    filter(o => o.product_category == 'watch')
+  )).subscribe((object:any) => {
             this.products$ = object;
             this.reservedProducts = object;
       });
+     
 
 }
-
 
     addToCart(product:any) {
       this.cartService.addToCart(product);
