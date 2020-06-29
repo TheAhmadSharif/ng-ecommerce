@@ -26,6 +26,9 @@ export class ProductCategoryComponent implements OnInit {
   products$:any;
   searchText:any;
   changePrice:number = 500;
+  state = {
+    products: []
+  }
 
 
   minValue: number = 0;
@@ -50,12 +53,19 @@ export class ProductCategoryComponent implements OnInit {
       let parameter = this.parameter;
       this.store.dispatch(getProducts());
 
-      this.store.pipe(map(state => state.products,
-    filter(o => o.product_category == 'watch')
-  )).subscribe((object:any) => {
-            this.products$ = object;
-            this.reservedProducts = object;
-      });
+
+            this.route.params.subscribe( param => {
+                  console.log(param, '58');
+                  this.store.pipe(map((state:any) => {
+                    return state.products;
+                  }), map(x => 
+                      x.filter(x=> x.product_category == param.type)
+                    )).subscribe((object:any) => {
+                            this.products$ = object;
+                            this.reservedProducts = object;
+                      });
+      
+            }); 
      
 
 }
@@ -66,18 +76,7 @@ export class ProductCategoryComponent implements OnInit {
 
 
     searchPrice(min:any, max:any) {
-      let filterdArray = []
-      this.reservedProducts = [];
-      for(let i=0; i < this.reservedProducts.length; i++){
-        if(this.reservedProducts[i]['product_price'] >= parseFloat(min) && this.reservedProducts[i]['product_price'] <= parseFloat(max)){
-          filterdArray.push(this.reservedProducts[i])
-        }
-      }
-      if(filterdArray.length > 0 ){
-        this.products$ = filterdArray;
-      }else{
-        this.products$ = this.reservedProducts;
-      }
+     
     
     }
 }

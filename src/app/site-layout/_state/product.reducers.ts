@@ -2,7 +2,7 @@ import { createReducer, on, StoreModule, ActionReducer, MetaReducer } from '@ngr
 import { getProducts, loadProducts } from './product.actions';
 
 
-export const initialState = {};
+export const initialState = [];
 
 export const ProductListReducer = createReducer(initialState, 
 	on(loadProducts, (state, payload) => {
