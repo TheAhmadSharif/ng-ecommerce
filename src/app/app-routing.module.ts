@@ -16,6 +16,7 @@ import { ShippingComponent } from './dashboard/shipping/shipping.component';
 import { SiteLayoutComponent } from './site-layout/site-layout.component';
 import { ProductListComponent } from './site-layout/product-list/product-list.component';
 import { ProductCategoryComponent } from './site-layout/product-category/product-category.component';
+import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
 import { NopageComponent } from './nopage/nopage.component';
 
 
@@ -35,6 +36,7 @@ const routes: Routes = [
   
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'restaurant', component: RestaurantDetailsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'dashboard', component: DashboardComponent, 
       children: [

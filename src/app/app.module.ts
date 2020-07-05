@@ -16,6 +16,9 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
 
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
+
 import { environment } from '../environments/environment';
 
 
@@ -43,6 +46,7 @@ import { ContactComponent } from './contact/contact.component';
 import { NopageComponent } from './nopage/nopage.component';
 
 import { CustomerComponent } from './customer/customer.component';
+import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
 
 
 
@@ -65,6 +69,7 @@ import { CustomerComponent } from './customer/customer.component';
     NopageComponent,
     UserComponent,
     ShippingComponent,
+    RestaurantDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,6 +83,7 @@ import { CustomerComponent } from './customer/customer.component';
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
+    AngularFireDatabaseModule
 
 
   ],

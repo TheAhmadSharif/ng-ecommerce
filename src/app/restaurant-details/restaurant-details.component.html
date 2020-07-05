@@ -1,0 +1,22 @@
+<header id="topHeader">
+    <div class="container">
+      <div class="row header-section">
+              <div class="col-sm-4 col-12">
+                    <div class="logo-block">
+                        <a routerLink="/" routerLinkActive="active"><img src="assets/logo.png" alt="shop" height="40"></a>
+                    </div>  <!-- End Logo Block -->
+              </div>  <!-- End md 2 -->
+             
+        </div>    <!-- End row -->
+    </div>    <!-- End container -->
+  </header>
+
+  <div class="container" style="margin-top: 4rem;">
+
+     <ul>
+       <li *ngFor="let item of items | async">
+            {{ item | json }}
+       </li>
+     </ul>
+    		  
+</div> <!--  End container -->  
