@@ -16,8 +16,6 @@ import 'firebase/firestore';
 export class DashboardComponent implements OnInit {
 
   userData:any;
-
-  
   constructor(
     public authService: AuthService,
     public afAuth: AngularFireAuth,
