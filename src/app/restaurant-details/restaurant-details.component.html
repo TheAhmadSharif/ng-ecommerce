@@ -11,12 +11,16 @@
     </div>    <!-- End container -->
   </header>
 
-  <div class="container" style="margin-top: 4rem;">
+<div class="container" style="margin-top: 4rem;">
 
-     <ul>
-       <li *ngFor="let item of items | async">
-            {{ item | json }}
-       </li>
-     </ul>
+        <div *ngIf="items">
+
+
+            <li *ngFor="let o of items">
+                  {{ o | json }}
+            </li>
+        </div>
+
+    
     		  
 </div> <!--  End container -->  
