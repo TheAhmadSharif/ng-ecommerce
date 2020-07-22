@@ -55,8 +55,28 @@ export class ProductListComponent implements OnInit {
   }
 
 
+searchObject(searchText:string) {
+  console.log(searchText);
+
+    if(!this.products$) return [];
+    if(!searchText) return !this.products$;
+
+    searchText = searchText.toLowerCase();
+    this.products$ = this.products$.filter( it => {
+          return it.product_name.toLowerCase().includes(searchText);
+    });
+
+}
+
+
+
+
+
+
+
+
   searchPrice(min:any, max:any) {
-    let filterdArray=[]
+    let filterdArray=[];
     for(let i=0;i<this.reservedProducts.length;i++){
       if(this.reservedProducts[i]['product_price'] >= parseFloat(min) && this.reservedProducts[i]['product_price'] <= parseFloat(max)){
         filterdArray.push(this.reservedProducts[i])

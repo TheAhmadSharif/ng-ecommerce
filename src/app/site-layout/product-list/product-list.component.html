@@ -30,7 +30,7 @@
     </div> <!-- End col 6 -->
     <div class="col-sm-6 col-12">
         <div class="">
-            <input [(ngModel)]="searchText" placeholder="Search ..." class="form-control search-box" />
+            <input [(ngModel)]="searchText" (keyup)="searchObject(keyword.value)" #keyword placeholder="Search ..." class="form-control search-box" />
         </div> <!-- End -->
     </div> <!-- End col -->
 </div> <!-- End row -->
@@ -47,7 +47,7 @@
 
 <div *ngIf="products$?.length > 0">
         <div class="product-list row" style="margin-top: 10px">
-                <div class="col-sm-4" *ngFor="let product of products$ | searchname: searchText" style="margin-bottom: 30px;"> <div class="card">
+                <div class="col-sm-4" *ngFor="let product of products$" style="margin-bottom: 30px;"> <div class="card">
                                 <div class="product-img">
                                       <img src="{{ product.product_img }}" class="card-img-top" [alt]="product.product_name">
                                 </div> <!-- End product Img -->

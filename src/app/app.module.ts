@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { Ng5SliderModule } from 'ng5-slider';
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
@@ -49,6 +50,7 @@ import { NopageComponent } from './nopage/nopage.component';
 
 import { CustomerComponent } from './customer/customer.component';
 import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
+import { SponsorComponent } from './sponsor/sponsor.component';
 
 
 
@@ -72,6 +74,7 @@ import { RestaurantDetailsComponent } from './restaurant-details/restaurant-deta
     UserComponent,
     ShippingComponent,
     RestaurantDetailsComponent,
+    SponsorComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,6 +83,7 @@ import { RestaurantDetailsComponent } from './restaurant-details/restaurant-deta
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     Ng5SliderModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
