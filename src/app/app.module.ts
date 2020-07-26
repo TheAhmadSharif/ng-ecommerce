@@ -49,12 +49,8 @@ import { ContactComponent } from './contact/contact.component';
 import { NopageComponent } from './nopage/nopage.component';
 
 import { CustomerComponent } from './customer/customer.component';
-<<<<<<< HEAD
-import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
-=======
 import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
 import { SponsorComponent } from './sponsor/sponsor.component';
->>>>>>> 0824bfd0351995018f8d7b728f3d567e87a85eaa
 
 
 
@@ -78,10 +74,7 @@ import { SponsorComponent } from './sponsor/sponsor.component';
     UserComponent,
     ShippingComponent,
     RestaurantDetailsComponent,
-<<<<<<< HEAD
-=======
     SponsorComponent,
->>>>>>> 0824bfd0351995018f8d7b728f3d567e87a85eaa
   ],
   imports: [
     BrowserModule,
