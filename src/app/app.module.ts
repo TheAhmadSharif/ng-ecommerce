@@ -1,19 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
-
-import { FormsModule } from '@angular/forms';
 import { Ng5SliderModule } from 'ng5-slider';
-
-
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+
+/* State Manegement */
+import { StoreModule, ActionReducer, MetaReducer } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ProductListReducer, metaReducers } from './site-layout/_state/product.reducers'; 
+import { ProductListEffects } from './site-layout/_state/product.effects'; 
+
+
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 
 import { environment } from '../environments/environment';
@@ -43,7 +49,12 @@ import { ContactComponent } from './contact/contact.component';
 import { NopageComponent } from './nopage/nopage.component';
 
 import { CustomerComponent } from './customer/customer.component';
+<<<<<<< HEAD
 import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
+=======
+import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
+import { SponsorComponent } from './sponsor/sponsor.component';
+>>>>>>> 0824bfd0351995018f8d7b728f3d567e87a85eaa
 
 
 
@@ -67,6 +78,10 @@ import { RestaurantDetailsComponent } from './restaurant-details/restaurant-deta
     UserComponent,
     ShippingComponent,
     RestaurantDetailsComponent,
+<<<<<<< HEAD
+=======
+    SponsorComponent,
+>>>>>>> 0824bfd0351995018f8d7b728f3d567e87a85eaa
   ],
   imports: [
     BrowserModule,
@@ -75,13 +90,22 @@ import { RestaurantDetailsComponent } from './restaurant-details/restaurant-deta
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     Ng5SliderModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    EffectsModule.forRoot([ProductListEffects]),
+    StoreModule.forRoot({
+      products: ProductListReducer
+    }, {metaReducers}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, 
+      logOnly: environment.production, // Restrict extension to log-only mode
 
-
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
