@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, FormArray  }  from '@angular/forms';
+
 
 @Component({
   selector: 'app-sponsor',
@@ -7,7 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SponsorComponent implements OnInit {
 
-  constructor() { }
+   constructor(private fb: FormBuilder) { }
+
+  /* Dynamic Form  */
+   sponsor_form = this.fb.group({
+	        amount_list: this.fb.array([])
+    });
+    get amount_list() {
+        return this.sponsor_form.get('amount_list') as FormArray;
+    }
+    /* End Dynamic Form  */
+
+
+
 
   ngOnInit(): void {
   }
