@@ -5,6 +5,12 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
+/* Material */
+import { MatSliderModule } from '@angular/material/slider';
+import  {MatSelectModule } from '@angular/material/select';
+
+
 import { Ng5SliderModule } from 'ng5-slider';
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
@@ -51,6 +57,7 @@ import { NopageComponent } from './nopage/nopage.component';
 import { CustomerComponent } from './customer/customer.component';
 import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
 import { SponsorComponent } from './sponsor/sponsor.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -79,6 +86,8 @@ import { SponsorComponent } from './sponsor/sponsor.component';
   imports: [
     BrowserModule,
     CommonModule,
+    MatSliderModule, 
+    MatSelectModule,
     NgbModule,
     AppRoutingModule,
     HttpClientModule,
@@ -98,7 +107,8 @@ import { SponsorComponent } from './sponsor/sponsor.component';
       maxAge: 25, 
       logOnly: environment.production, // Restrict extension to log-only mode
 
-    })
+    }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
