@@ -6,73 +6,7 @@
                         <a routerLink="/" routerLinkActive="active"><img src="assets/logo.png" alt="shop" height="40"></a>
                     </div>  <!-- End Logo Block -->
               </div>  <!-- End md 2 -->
-<<<<<<< HEAD
-  
-  
-              <div class="col-sm-8 col-12">
-                  <nav class="nav-block">
-                    <ul class="nav">
-                      <li>
-                        <a routerLink="/product/attire" routerLinkActive="active">Attire</a>
-                      </li>
-                      <li>
-                        <a routerLink="/product/shoes" routerLinkActive="active">Shoes</a>
-                      </li>
-                      <li>
-                       <a routerLink="/product/watch" routerLinkActive="active">Watch</a>
-                      </li>
 
-                      <li *ngIf="getStatus" style="margin-right: 0;">
-
-                          
-                          <div ngbDropdown placement="bottom-right">
-                              <li ngbDropdownToggle class="link-border" style="margin-right: 0;">
-                                 <a><i class="material-icons">perm_identity</i>{{ username }}</a>
-                              </li>
-                     
-                            <div ngbDropdownMenu>
-                                <button ngbDropdownItem routerLink="/dashboard/user" routerLinkActive="active" ngbDropdownItem><i class="material-icons md-18" >apps</i>Dashboard</button>
-
-                                <button ngbDropdownItem routerLink="/logout" routerLinkActive="active" ngbDropdownItem (click)="logOut()"><i class="material-icons md-18" >power_settings_new</i>Logout</button>
-                             
-                            </div>
-                          </div>
-
-                      </li>
-
-                      <li *ngIf="!getStatus" style="margin-right: 0;">
-                        <a routerLink="/signin" routerLinkActive="active">Signin</a>
-                      </li>
-                      
-
-                      
-                      <li class="li-cart" style="margin-left: 10px;">
-                        <a class="btn btn-sm btn-outline-success" routerLink="/cart" routerLinkActive="active"><i class="material-icons" style="color: #28a745;">shopping_cart</i>Cart <span class="badge badge-warning">{{ cartService.getItems().length }}</span></a>
-                      </li>
-
-                      
-                    </ul> 
-                 </nav>
-            </div> <!-- End col 8 -->
-        </div>    <!-- End row -->
-    </div>    <!-- End container -->
-  </header>
-
-  <div class="container mh">
-    <div class="component-div h70">
-    		
-    </div>  <!-- End component-div -->
-</div> <!--  End container -->  
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-          &copy; 2020. All rights reserved.
-      </div> <!-- End col sm --> 
-    </div> <!-- End row -->
-  </div> <!--  End container --> 
-</footer> 
-=======
              
         </div>    <!-- End row -->
     </div>    <!-- End container -->
@@ -96,4 +30,3 @@
     
     		  
 </div> <!--  End container -->  
->>>>>>> 00e618c9332134a3ed34ae71fdc32605837be1cd

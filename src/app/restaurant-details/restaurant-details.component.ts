@@ -1,20 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-<<<<<<< HEAD
-=======
 import { FormGroup, FormControl } from '@angular/forms';
 
->>>>>>> 00e618c9332134a3ed34ae71fdc32605837be1cd
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from '../services/cart.service';
 import { Options } from 'ng5-slider';
 import { AngularFireDatabase } from '@angular/fire/database';
 import 'firebase/firestore';
-<<<<<<< HEAD
-=======
-import { Observable } from 'rxjs';
-
->>>>>>> 00e618c9332134a3ed34ae71fdc32605837be1cd
 
 @Component({
   selector: 'app-restaurant-details',
@@ -22,14 +14,11 @@ import { Observable } from 'rxjs';
   styleUrls: ['./restaurant-details.component.scss']
 })
 export class RestaurantDetailsComponent implements OnInit {
-<<<<<<< HEAD
-=======
   items:any = [];
   rlist:any;
   reservedLists: any[];
   limit:number = 2;
   btn_visibility:boolean = false;
->>>>>>> 00e618c9332134a3ed34ae71fdc32605837be1cd
 
   constructor(
     public http: HttpClient,
@@ -40,10 +29,6 @@ export class RestaurantDetailsComponent implements OnInit {
     }
 
   ngOnInit(): void {
-<<<<<<< HEAD
-  }
-
-=======
 
        this.db.database.ref("restaurant_details").once("value", async (snapshot) => {
 
@@ -138,5 +123,4 @@ export class RestaurantDetailsComponent implements OnInit {
 
 }
 
->>>>>>> 00e618c9332134a3ed34ae71fdc32605837be1cd
 }
