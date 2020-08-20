@@ -1,3 +1,5 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 @font-face {
   font-family: 'jostLight';
   src: URL('assets/fonts/Jost-400-Book.ttf') format('truetype');
@@ -588,3 +590,5 @@ input:checked .radiobox-holder span {
 .item-price-block {
   margin: 20px 0;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

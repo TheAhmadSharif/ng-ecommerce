@@ -1,11 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+import { Observable, from } from 'rxjs';
+
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import { Options } from 'ng5-slider';
-import { AngularFirestore } from '@angular/fire/firestore';
-import 'firebase/firestore';
 
+
+import { Store, select, createSelector } from '@ngrx/store';
+import { getProducts, loadProducts } from '../_state/product.actions';
 
 @Component({
   selector: 'app-product-list',
@@ -13,7 +16,7 @@ import 'firebase/firestore';
   styleUrls: ['./product-list.component.scss']
 }) 
 export class ProductListComponent implements OnInit {
-  products: any;
+  products$: any;
   cart: any;
   searchText:any;
   data;
@@ -28,23 +31,23 @@ export class ProductListComponent implements OnInit {
   
     
   constructor(
-    public http: HttpClient,
+    private store: Store,
     private route: ActivatedRoute,
-    private cartService: CartService,
-    public firestore: AngularFirestore ) { 
+    private cartService: CartService
+    ) { 
 
     }
 
-
     
   ngOnInit(): void {
+      this.store.dispatch(getProducts());
+      this.store.pipe(select((state: any) => {
+        return state.products;
+      })).subscribe((object:any) => {
+            this.products$ = object;
+            this.reservedProducts = object;
+      });
    
-    this.firestore.collection('Product').valueChanges()
-      .subscribe(object => {
-        this.products = object;        
-        this.reservedProducts = object;
-    })
-
   }
 
   addToCart(product:any) {
@@ -52,22 +55,37 @@ export class ProductListComponent implements OnInit {
   }
 
 
+searchObject(searchText:string) {
+  console.log(searchText);
+
+    if(!this.products$) return [];
+    if(!searchText) return !this.products$;
+
+    searchText = searchText.toLowerCase();
+    this.products$ = this.products$.filter( it => {
+          return it.product_name.toLowerCase().includes(searchText);
+    });
+
+}
+
+
+
+
+
+
+
+
   searchPrice(min:any, max:any) {
-
-
-    let filterdArray=[]
+    let filterdArray=[];
     for(let i=0;i<this.reservedProducts.length;i++){
       if(this.reservedProducts[i]['product_price'] >= parseFloat(min) && this.reservedProducts[i]['product_price'] <= parseFloat(max)){
         filterdArray.push(this.reservedProducts[i])
       }
     }
     if(filterdArray.length > 0 ){
-      this.products = filterdArray;
+      this.products$ = filterdArray;
     }else{
-      this.products = this.reservedProducts;
-    }
-
-     
+      this.products$ = this.reservedProducts;
+    }  
   }
-
 }

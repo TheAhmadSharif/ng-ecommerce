@@ -1,0 +1,47 @@
+{
+    "id_1" : {
+      "shop_hours" : {
+        "time" : "5-9"
+      },
+      "shop_temp_closing" : {
+        "status" : "Open",
+        "status_booking" : "Open",
+        "status_delivery" : "Close"
+      }
+    },
+    "id_2" : {
+      "shop_hours" : {
+        "time" : "9-8"
+      },
+      "shop_temp_closing" : {
+        "status" : "Open",
+        "status_booking" : "Open",
+        "status_delivery" : "Open"
+      }
+    },
+    "id_3" : {
+      "shop_hours" : {
+        "time" : "10-6"
+      }
+    },
+    "id_4" : {
+      "shop_hours" : {
+        "time" : "10-6"
+      }
+    },
+    "shop_temp_closing" : {
+        "status" : "Close",
+        "status_booking" : "Close",
+        "status_delivery" : "Open"
+      },
+    "id_5" : {
+      "shop_hours" : {
+        "time" : "11-9"
+      }
+    },
+    "shop_temp_closing" : {
+        "status" : "Open",
+        "status_booking" : "Open",
+        "status_delivery" : "Open"
+      }
+}

@@ -6,6 +6,7 @@
                         <a routerLink="/" routerLinkActive="active"><img src="assets/logo.png" alt="shop" height="40"></a>
                     </div>  <!-- End Logo Block -->
               </div>  <!-- End md 2 -->
+<<<<<<< HEAD
   
   
               <div class="col-sm-8 col-12">
@@ -71,3 +72,28 @@
     </div> <!-- End row -->
   </div> <!--  End container --> 
 </footer> 
+=======
+             
+        </div>    <!-- End row -->
+    </div>    <!-- End container -->
+  </header>
+
+<div class="container" style="margin-top: 4rem;">
+
+
+        
+          <div class="my-4">
+               <li *ngFor="let o of items" class="mb-2">
+                    {{ o["restaurant_details"]["name"] }}
+
+              </li>
+              
+          </div>  <!-- End  -->
+           <div class="my-4" *ngIf="btn_visibility">
+                  <button class="btn btn-success" (click)="update($event)"> More </button>
+
+           </div> <!-- End  -->
+    
+    		  
+</div> <!--  End container -->  
+>>>>>>> 00e618c9332134a3ed34ae71fdc32605837be1cd

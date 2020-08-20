@@ -1,19 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
+/* Material */
+import { MatSliderModule } from '@angular/material/slider';
+import  {MatSelectModule } from '@angular/material/select';
 
-import { FormsModule } from '@angular/forms';
+
 import { Ng5SliderModule } from 'ng5-slider';
-
-
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+
+/* State Manegement */
+import { StoreModule, ActionReducer, MetaReducer } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ProductListReducer, metaReducers } from './site-layout/_state/product.reducers'; 
+import { ProductListEffects } from './site-layout/_state/product.effects'; 
+
+
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 
 import { environment } from '../environments/environment';
@@ -44,6 +56,11 @@ import { NopageComponent } from './nopage/nopage.component';
 
 import { CustomerComponent } from './customer/customer.component';
 import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
+<<<<<<< HEAD
+=======
+import { SponsorComponent } from './sponsor/sponsor.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+>>>>>>> 00e618c9332134a3ed34ae71fdc32605837be1cd
 
 
 
@@ -67,21 +84,37 @@ import { RestaurantDetailsComponent } from './restaurant-details/restaurant-deta
     UserComponent,
     ShippingComponent,
     RestaurantDetailsComponent,
+<<<<<<< HEAD
+=======
+    SponsorComponent,
+>>>>>>> 00e618c9332134a3ed34ae71fdc32605837be1cd
   ],
   imports: [
     BrowserModule,
     CommonModule,
+    MatSliderModule, 
+    MatSelectModule,
     NgbModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     Ng5SliderModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    EffectsModule.forRoot([ProductListEffects]),
+    StoreModule.forRoot({
+      products: ProductListReducer
+    }, {metaReducers}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, 
+      logOnly: environment.production, // Restrict extension to log-only mode
 
-
+    }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

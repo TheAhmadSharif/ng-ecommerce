@@ -1,0 +1,39 @@
+<header id="topHeader">
+    <div class="container">
+      <div class="row header-section">
+              <div class="col-sm-4 col-12">
+                    <div class="logo-block">
+                        <a routerLink="/" routerLinkActive="active"><img src="assets/logo.png" alt="shop" height="40"></a>
+                    </div>  <!-- End Logo Block -->
+              </div>  <!-- End md 2 -->
+             
+        </div>    <!-- End row -->
+    </div>    <!-- End container -->
+  </header>
+
+<div class="container" style="margin-top: 4rem;">
+
+           <form [formGroup]="sponsor_form">
+                <div formArrayName="amount_list">
+                <div *ngFor="let object of sponsorList; let i = index;">
+                  <label> {{ object["post_code"] }}</label>
+                  <mat-form-field appearance="fill">
+                      <mat-select [placeholder]='object["amount"]["amount"]' [value]='object["amount"]["amount"]' formControlName="{{ i }}" [disabled]="editBtnSwitch">
+                        <mat-option *ngFor="let option of dropdown_option" [value]='option["value"]'>
+                                {{ option["label"] }}
+                        </mat-option>
+                      </mat-select>
+                  </mat-form-field>
+                </div> <!-- End -->
+                <div class="listSponsor mb-0">
+                     <button type="button" class="btn btn-secondary" style="margin: 10px auto;" (click)='updateData(sponsorList[0]["business_id"])'> {{ editBtnSwitch == true ? 'Edit': 'Update' }}
+                    </button>
+                    
+                </div> <!-- End Button -->
+              </div>  <!-- End amount_list -->
+
+          </form>
+        
+    
+    		  
+</div> <!--  End container -->  
