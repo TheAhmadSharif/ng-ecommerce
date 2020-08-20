@@ -56,11 +56,8 @@ import { NopageComponent } from './nopage/nopage.component';
 
 import { CustomerComponent } from './customer/customer.component';
 import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
-<<<<<<< HEAD
-=======
 import { SponsorComponent } from './sponsor/sponsor.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
->>>>>>> 00e618c9332134a3ed34ae71fdc32605837be1cd
 
 
 
@@ -84,10 +81,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UserComponent,
     ShippingComponent,
     RestaurantDetailsComponent,
-<<<<<<< HEAD
-=======
     SponsorComponent,
->>>>>>> 00e618c9332134a3ed34ae71fdc32605837be1cd
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,8 @@ import { CartService } from '../services/cart.service';
 import { Options } from 'ng5-slider';
 import { AngularFireDatabase } from '@angular/fire/database';
 import 'firebase/firestore';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-restaurant-details',

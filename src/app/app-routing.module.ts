@@ -17,10 +17,7 @@ import { SiteLayoutComponent } from './site-layout/site-layout.component';
 import { ProductListComponent } from './site-layout/product-list/product-list.component';
 import { ProductCategoryComponent } from './site-layout/product-category/product-category.component';
 import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
-<<<<<<< HEAD
-=======
 import { SponsorComponent } from './sponsor/sponsor.component';
->>>>>>> 00e618c9332134a3ed34ae71fdc32605837be1cd
 import { NopageComponent } from './nopage/nopage.component';
 
 
@@ -41,10 +38,7 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'restaurant', component: RestaurantDetailsComponent },
-<<<<<<< HEAD
-=======
   { path: 'sponsor', component: SponsorComponent },
->>>>>>> 00e618c9332134a3ed34ae71fdc32605837be1cd
   { path: 'contact', component: ContactComponent },
   { path: 'dashboard', component: DashboardComponent, 
       children: [
