@@ -43,6 +43,7 @@ import { ContactComponent } from './contact/contact.component';
 import { NopageComponent } from './nopage/nopage.component';
 
 import { CustomerComponent } from './customer/customer.component';
+import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
 
 
 
@@ -65,6 +66,7 @@ import { CustomerComponent } from './customer/customer.component';
     NopageComponent,
     UserComponent,
     ShippingComponent,
+    RestaurantDetailsComponent,
   ],
   imports: [
     BrowserModule,
