@@ -17,22 +17,10 @@ export class SponsorComponent implements OnInit {
 
   }
 
-foods: any= [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
-
-  select = 'tacos-2';
 
 
 sponsor_form = this.fb.group({
-	amount_list: this.fb.array([
-	    this.fb.control(''),
-	    this.fb.control(''),
-	    this.fb.control(''),
-	    this.fb.control(''),
-	  ])
+	 amount_list: this.fb.array([])
 });
 
 

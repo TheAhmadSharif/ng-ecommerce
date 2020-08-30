@@ -14,27 +14,14 @@
 <div class="container" style="margin-top: 4rem;">
 
 
-	<h4>Basic mat-select</h4>
-	<mat-form-field appearance="fill">
-	  <mat-select [value]="select">
-	    <mat-option *ngFor="let food of foods" [value]="food.value">
-	      {{food.viewValue}}
-	    </mat-option>
-	  </mat-select>
-	</mat-form-field>
 
-	<mat-form-field appearance="fill">
-	 <mat-select placeholder="select" value="02" >
-	        <mat-option value="01"> 01</mat-option>
-	        <mat-option value="02"> 02</mat-option>
-	        <mat-option value="03"> 03</mat-option>
-	  </mat-select>
-	</mat-form-field>
+
+
 
 
 	<form [formGroup]="sponsor_form">
 		<div formArrayName="amount_list">
-			  <button (click)="addAlias()">Add Alias</button>
+			  <button class="btn btn-secondary" (click)="addAlias()">Add Alias</button>
 				<div *ngFor="let alias of [1,2,3]; let i=index">
 			      		<input type="text" [formControlName]="i" class="form-control my-2" placeholder="Name">
 			    </div>  <!-- End -->
