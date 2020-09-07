@@ -20,13 +20,9 @@
 
 
 	<form [formGroup]="sponsor_form">
-		<div formArrayName="amount_list">
-			  <button class="btn btn-secondary" (click)="addAlias()">Add Alias</button>
-				<div *ngFor="let alias of [1,2,3]; let i=index">
-			      		<input type="text" [formControlName]="i" class="form-control my-2" placeholder="Name">
-			    </div>  <!-- End -->
-		</div>  <!-- End -->
-			 
+			<div class="my-4">
+				<input type="text" formControlName="about_us" name="about_us" placeholder="About us">
+			</div>
 		<button type="submit" class="btn btn-secondary" (click)="updateDate()">Submit</button>
 			 
 	</form>

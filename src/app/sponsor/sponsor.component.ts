@@ -1,5 +1,5 @@
 import { NgModule, Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, ReactiveFormsModule, FormArray }  from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, ReactiveFormsModule, FormArray, Validator }  from '@angular/forms';
 
 
 @Component({
@@ -20,18 +20,9 @@ export class SponsorComponent implements OnInit {
 
 
 sponsor_form = this.fb.group({
-	 amount_list: this.fb.array([])
+   about_us: this.fb.control('', []),
 });
 
-
-get amount_list() {
-  return this.sponsor_form.get('amount_list') as FormArray;
-}
-
-
- addAlias() {
-  this.amount_list.push(this.fb.control(''));
-}
 
   updateDate() {
   	console.log(this.sponsor_form.value);
