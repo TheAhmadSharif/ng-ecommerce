@@ -14,16 +14,45 @@
 <div class="container" style="margin-top: 4rem;">
 
 
+  <h4>Basic mat-select</h4>
+  <mat-form-field appearance="fill">
+    <mat-select [value]="select">
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+   <mat-select placeholder="select" value="02" >
+          <mat-option value="01"> 01</mat-option>
+          <mat-option value="02"> 02</mat-option>
+          <mat-option value="03"> 03</mat-option>
+    </mat-select>
+  </mat-form-field>
 
 
+  <form #companyForm="ngForm">
+   
+       <div>
+          <input type="text" placeholder="Company Name" name="companyForm.name" #name="ngModel" [(ngModel)]="companyForm.name" minlength="10" required>
+
+          <div [hidden]="name.valid || name.pristine"
+               class="alert alert-warning my-2">
+            Name is required
+          </div>
 
 
+       </div>
 
-	<form [formGroup]="sponsor_form">
-			<div class="my-4">
-				<input type="text" formControlName="about_us" name="about_us" placeholder="About us">
-			</div>
-		<button type="submit" class="btn btn-secondary" (click)="updateDate()">Submit</button>
-			 
-	</form>
+       <div>
+           <input type="text" placeholder="Phone" name="phone" [(ngModel)]="companyForm.phone" required>
+       </div>
+
+       <div>
+         <button type="submit" class="btn btn-secondary" [disabled]="!companyForm.form.valid" (click)="updateObject()">Submit</button>
+       </div>
+    
+       
+  </form>
 </div> <!--  End container -->  
