@@ -11,7 +11,7 @@ export class SponsorComponent implements OnInit {
 
    companyForm:any = {
       "name": '',
-      "phone": ''
+      "phoneNumber": '',
     }
 
     select = 'steak-0';

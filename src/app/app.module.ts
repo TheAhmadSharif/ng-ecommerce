@@ -58,6 +58,7 @@ import { CustomerComponent } from './customer/customer.component';
 import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
 import { SponsorComponent } from './sponsor/sponsor.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CompanyComponent } from './company/company.component';
 
 
 
@@ -82,6 +83,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ShippingComponent,
     RestaurantDetailsComponent,
     SponsorComponent,
+    CompanyComponent,
   ],
   imports: [
     BrowserModule,

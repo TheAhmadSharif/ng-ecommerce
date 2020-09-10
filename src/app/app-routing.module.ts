@@ -19,6 +19,8 @@ import { ProductCategoryComponent } from './site-layout/product-category/product
 import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
 import { SponsorComponent } from './sponsor/sponsor.component';
 import { NopageComponent } from './nopage/nopage.component';
+import { CompanyComponent } from './company/company.component';
+
 
 
 
@@ -39,6 +41,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'restaurant', component: RestaurantDetailsComponent },
   { path: 'sponsor', component: SponsorComponent },
+  { path: 'company', component: CompanyComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'dashboard', component: DashboardComponent, 
       children: [
